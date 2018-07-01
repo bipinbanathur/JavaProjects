@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript"  src="angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myctr"> 
+{{variable}}
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myctr', function($scope, $http) 
+{
+	$scope.variable = "Hello World";
+});
+
+
+</script>
+
+</body>
+</html>

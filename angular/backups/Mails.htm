@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript"  src="angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myctr"> <br>
+<pre>{{status | json }} </pre>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myctr', function($scope, $http) 
+{
+	$scope.mail_url = "http://api.sendgrid.com/api/mail.send.json";
+	$scope.mail_content =
+	[{
+        "api_user" 	: "banathur",
+		"api_key" 	: "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",
+		"to" 		: "bipin.banathur@gmail.com",
+		"toname" 	: "Bipin",
+		"subject" 	: "Example",
+		"text" 		: "Test",
+		"from" 		: "bipinbanathur@gmail.com",
+		"fromname"  : "Bipin Banathur",
+		"headers" 	: {"X-Accept-Language": "en", "X-Mailer": "MyApp"}
+    }];	
+	$scope.sendMail = function() 
+	{
+		console.log('Calling POST Method to Send Mail Success');
+		$http.post($scope.mail_url, $scope.mail_content)
+		.then(function(response) 
+		{
+			$scope.status = response.data;
+		}, 
+		function(response) 
+		{
+			console.log('Calling POST Method Failed');
+		});
+	};
+	$scope.sendMail();
+
+});
+</script>
+
+</body>
+</html>

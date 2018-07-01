@@ -1,0 +1,1815 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Offbeat Tourism</title>
+		<link href="css/style.css" rel='stylesheet' type='text/css' />
+        <link href="css/grid.css" rel='stylesheet' type='text/css' />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.jqtransform.js"></script>
+        <script type="text/javascript" >
+		jQuery(function(jQuery){	
+			
+			// Transforming the form's Select control using jqTransform Plugin.
+			$(".jqtransform").jqTransform();					
+			
+			// Capturing the change event of the Non-Transformed Select Box.
+			$("#box-trip select").change(function(){
+				var value= $(this).val();
+			    alert("Value Selected = "+value);	    	
+			});
+			
+			// Capturing the change event of the Transformed Select Box using the default jQuery method of capturing value change.
+			$("#box-level select").change(function(){
+				var value= $(this).val();
+			    alert("Value Selected = "+value);	    	
+			});
+			
+				    	    	    
+	});				
+	</script>
+		<!---script---->
+		<link rel="stylesheet" href="css/jquery.bxslider.css" type="text/css" />
+        <link rel="stylesheet" href="css/bg-slider.css" type="text/css" />
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,100' rel='stylesheet' type='text/css'>
+		<script src="js/jquery.bxslider.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$('.bxslider').bxSlider({
+						 auto: true,
+ 						 autoControls: true,
+						 minSlides: 4,
+						 maxSlides: 4,
+						 slideWidth:450,
+						 slideMargin: 10
+					});
+				});
+									
+			</script>
+		<!---//script---->
+		 <!---smoth-scrlling---->
+			<script type="text/javascript">
+								
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+&& location.hostname == this.hostname) {
+
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 100 //offsets for fixed header
+        }, 1000);
+        return false;
+      }
+    }
+  });
+  //Executed on page load with URL containing an anchor tag.
+  if($(location.href.split("#")[1])) {
+      var target = $('#'+location.href.split("#")[1]);
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top - 100 //offset height of header here too.
+        }, 1000);
+        return false;
+      }
+    }
+});
+
+
+				</script>
+                
+		<!---//smoth-scrlling---->
+        
+        
+        <script type="text/javascript" src="js/jquery-util.min.f3fc66718297.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/superslides.min.1fd3af44252c.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/common-fb.min.34ebf71bcdd6.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/home.min.d48fd602eff2.js" charset="utf-8"></script> 
+         <!----start-login-popup-script---->
+        <script type="text/javascript">
+				 jQuery(document).ready(function($){
+	var $form_modal = $('.cd-user-modal'),
+		$form_login = $form_modal.find('#cd-login'),
+		$form_signup = $form_modal.find('#cd-signup'),
+		$form_forgot_password = $form_modal.find('#cd-reset-password'),
+		$form_modal_tab = $('.cd-switcher'),
+		$tab_login = $form_modal_tab.children('li').eq(0).children('a'),
+		$tab_signup = $form_modal_tab.children('li').eq(1).children('a'),
+		$forgot_password_link = $form_login.find('.cd-form-bottom-message a'),
+		$back_to_login_link = $form_forgot_password.find('.cd-form-bottom-message a'),
+		$main_nav = $('.main-nav');
+
+	//open modal
+	$main_nav.on('click', function(event){
+
+		if( $(event.target).is($main_nav) ) {
+			// on mobile open the submenu
+			$(this).children('ul').toggleClass('is-visible');
+		} else {
+			// on mobile close submenu
+			$main_nav.children('ul').removeClass('is-visible');
+			//show modal layer
+			$form_modal.addClass('is-visible');	
+			//show the selected form
+			( $(event.target).is('.cd-signup') ) ? signup_selected() : login_selected();
+		}
+
+	});
+
+	//close modal
+	$('.cd-user-modal').on('click', function(event){
+		if( $(event.target).is($form_modal) || $(event.target).is('.cd-close-form') ) {
+			$form_modal.removeClass('is-visible');
+		}	
+	});
+	//close modal when clicking the esc keyboard button
+	$(document).keyup(function(event){
+    	if(event.which=='27'){
+    		$form_modal.removeClass('is-visible');
+	    }
+    });
+
+	//switch from a tab to another
+	$form_modal_tab.on('click', function(event) {
+		event.preventDefault();
+		( $(event.target).is( $tab_login ) ) ? login_selected() : signup_selected();
+	});
+
+	//hide or show password
+	$('.hide-password').on('click', function(){
+		var $this= $(this),
+			$password_field = $this.prev('input');
+		
+		( 'password' == $password_field.attr('type') ) ? $password_field.attr('type', 'text') : $password_field.attr('type', 'password');
+		( 'Hide' == $this.text() ) ? $this.text('Show') : $this.text('Hide');
+		//focus and move cursor to the end of input field
+		$password_field.putCursorAtEnd();
+	});
+
+	//show forgot-password form 
+	$forgot_password_link.on('click', function(event){
+		event.preventDefault();
+		forgot_password_selected();
+	});
+
+	//back to login from the forgot-password form
+	$back_to_login_link.on('click', function(event){
+		event.preventDefault();
+		login_selected();
+	});
+
+	function login_selected(){
+		$form_login.addClass('is-selected');
+		$form_signup.removeClass('is-selected');
+		$form_forgot_password.removeClass('is-selected');
+		$tab_login.addClass('selected');
+		$tab_signup.removeClass('selected');
+	}
+
+	function signup_selected(){
+		$form_login.removeClass('is-selected');
+		$form_signup.addClass('is-selected');
+		$form_forgot_password.removeClass('is-selected');
+		$tab_login.removeClass('selected');
+		$tab_signup.addClass('selected');
+	}
+
+	function forgot_password_selected(){
+		$form_login.removeClass('is-selected');
+		$form_signup.removeClass('is-selected');
+		$form_forgot_password.addClass('is-selected');
+	}
+
+	//REMOVE THIS - it's just to show error messages 
+	$form_login.find('input[type="submit"]').on('click', function(event){
+		event.preventDefault();
+		$form_login.find('input[type="email"]').toggleClass('has-error').next('span').toggleClass('is-visible');
+	});
+	$form_signup.find('input[type="submit"]').on('click', function(event){
+		event.preventDefault();
+		$form_signup.find('input[type="email"]').toggleClass('has-error').next('span').toggleClass('is-visible');
+	});
+
+
+	//IE9 placeholder fallback
+	//credits http://www.hagenburger.net/BLOG/HTML5-Input-Placeholder-Fix-With-jQuery.html
+	if(!Modernizr.input.placeholder){
+		$('[placeholder]').focus(function() {
+			var input = $(this);
+			if (input.val() == input.attr('placeholder')) {
+				input.val('');
+		  	}
+		}).blur(function() {
+		 	var input = $(this);
+		  	if (input.val() == '' || input.val() == input.attr('placeholder')) {
+				input.val(input.attr('placeholder'));
+		  	}
+		}).blur();
+		$('[placeholder]').parents('form').submit(function() {
+		  	$(this).find('[placeholder]').each(function() {
+				var input = $(this);
+				if (input.val() == input.attr('placeholder')) {
+			 		input.val('');
+				}
+		  	})
+		});
+	}
+});
+
+				</script>
+        <!----End-login-popup-script---->
+		<!----start-top-nav-script---->
+		<script type="text/javascript" src="js/flexy-menu.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+		 $(".flexy-menu").flexymenu({speed: 400,type: "horizontal",align: "right"});
+		});
+        </script>
+		<!----//End-top-nav-script---->
+       
+		<!---webfonts---->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<!---webfonts---->
+		<!--start slider -->
+	    <link rel="stylesheet" href="css/fwslider.css" media="all">
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+		<script src="js/fwslider.js"></script>
+		<!--end slider -->
+		<!---calender-style---->
+		<link rel="stylesheet" href="css/jquery-ui.css" />
+		<!---//calender-style---->
+      
+	</head>
+	<body>
+    
+     <div class="material-menu-button"><span></span><span></span><span></span></div>
+		<!----start-wrap---->
+			<!----start-top-header----->
+            <div id="Home"></div>
+			<div class="header-container" ><div class="top-header" id="header">
+				<div class="wrap">
+                <div class="top-nav-contact">
+                <ul >
+                <li><i class="fa fa-phone"></i>+91 1234 567 890</li>
+                <li><i class="fa fa-envelope"></i><a href="#">contactus@offbeattourism.com</a></li>
+                </ul>
+                </div>
+                <div class="top-header-right">
+					<ul>
+						<li><a class="face" href="#"><span class="fa fa-facebook"> </span></a></li>
+						<li><a class="twit" href="#"><span class="fa fa-twitter"> </span></a></li>
+						<li><a class="thum" href="#"><span class="fa fa-google-plus"> </span></a></li>
+						<div class="clear"> </div>
+					</ul>
+				</div>
+				<div class="top-header-left " >
+					<ul>
+						
+						<li class="main-nav "><a  href="#0" class="link-log"> <i class="fa fa-sign-in"></i>Login/Register</a></li>
+						
+						
+						<div class="clear"> </div>
+					</ul>
+				</div>
+                
+                
+				
+				<div class="clear"> </div>
+			</div>
+			</div>
+			<!----//End-top-header----->
+			<!---start-header---->
+			<div class="header">
+				<div class="wrap">
+				<!--- start-logo---->
+				<div class="logo" >
+					<a href="#Home" ><img src="images/logo.png" alt="Offbeat Tourism"><span>Offbeat Tourism</span></a>
+                    </div>
+				<!--- //End-logo---->
+				<!--- start-top-nav---->
+				<div class="top-nav material-menu">
+						<nav class="top-bar"><ul >
+                        
+                        <li><div class="logo"><a href="#Home" style="font-size:25px; display:block; line-height:25px;">Offbeat Tourism</a></div></li>
+                        <li><div class="search-top"><input name="" type="text" placeholder="Search.."><input name="" type="submit" class="search-btn "><i class="fa fa-search"></i></div></li>
+							<li class="active"><a href="#Home">Home</a></li>
+							
+							<li><a href="#Packages">Packages</a></li>
+							<li><a href="#Attractions">Attractions</a></li>
+							<li><a href="#Contact">Contact Us</a></li>
+							
+						</ul>
+				  </nav>
+						<!--<div class="search-box">
+							<div id="sb-search" class="sb-search">
+								<form>
+									<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+									<input class="sb-search-submit" type="submit" value="">
+									<span class="sb-icon-search"> </span>
+								</form>
+							</div>
+						</div>
+						<script src="js/modernizr.custom.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/uisearch.js"></script>
+<script>
+							new UISearch( document.getElementById( 'sb-search' ) );
+						</script>-->
+				</div>
+				<!--- //End-top-nav---->
+				<div class="clear"> </div>
+			</div>
+			<!---//End-header---->
+		</div>
+        </div>
+<div id="page" > <ul class="cb-slideshow" >
+            <li><span>Image 01</span></li>
+            <li><span>Image 02</span></li>
+           
+        </ul>
+        <div class="plan-tour-block">
+        <h1>Plan Your Holiday Here!</h1>
+        <div class="plan-tour-form">
+         
+         
+         <div class="input-block">
+         <i class="fa fa-map-marker clr-red"></i>
+         <input name="" type="text" placeholder="Destination">
+         </div>
+         
+         <div class="input-block select-interest">
+         <p>Choose interests</p>
+         <ul>
+								
+									<li class="culture">
+										<span class="culture-gray"></span>
+										<p>
+											Culture
+										</p>
+									</li>
+									<li class="lifestyle">
+										<span class="lifestyle-gray"></span>
+										<p>
+											Lifestyle
+										</p>
+									</li>
+                                    
+                                    <li class="adventure">
+										<span class="adventure-gray"></span>
+										<p>
+											Adventure
+										</p>
+									</li>
+									<li class="friends">
+										<span class="friends-gray"></span>
+										<p>
+											Friends
+										</p>
+									</li>
+                                    <li class="nature">
+										<span class="nature-gray"></span>
+										<p>
+											Nature
+										</p>
+									</li>
+                                    <li class="family">
+										<span class="family-gray"></span>
+										<p>
+											Family
+										</p>
+									</li>
+									<li class="hideaway">
+										<span class="hideaway-disabled"></span>
+										<p>
+											Hideaway
+										</p>
+										<div class="tooltip" style="display: none;">Coming Soon</div>
+									</li>
+									<li class="wildlife">
+										<span class="wildlife-gray"></span>
+										<p>
+											Wildlife
+										</p>
+									</li>
+									
+									<li class="romantic">
+										<span class="romantic-gray"></span>
+										<p>
+											Romantic
+										</p>
+									</li>
+									<li class="spiritual">
+										<span class="spiritual-gray"></span>
+										<p>
+											Spiritual
+										</p>
+									</li>
+									
+								</ul>
+         </div>
+         
+                           <!-- Start Date End Date New HTML  -->
+         <div class="date-holder start-date">
+								<p class="date-title">
+									Starts on
+								</p>
+								<div class="date-container">
+									<p class="current-date">23</p>
+									<p class="current-week-day">Wed</p>
+								</div>
+								<div class="month-year-container">
+									<p class="current-month">December</p>
+									<p class="current-year">2015</p>
+								</div>
+								<input type="text" id="start-date" class="datepicker-input">
+							</div>
+							<div class="date-holder end-date">
+								<p class="date-title">
+									Ends on
+								</p>
+								<div class="date-container">
+									<p class="current-date">30</p>
+									<p class="current-week-day">Wed</p>
+								</div>
+								<div class="month-year-container">
+									<p class="current-month">December</p>
+									<p class="current-year">2015</p>
+								</div>
+								<input type="text" id="end-date" class="datepicker-input">
+							</div>
+                   <!-- Ending Start Date End Date New HTML  -->    
+                            
+                             <div class="count-container">
+                             <p class="count-title">Adults</p>
+                             <div class="input-group spinner">
+    <input type="text" class="form-control" value="2">
+    <div class="input-group-btn-vertical">
+      <button class="btn spinner-btn" type="button"><i class="fa fa-caret-up"></i></button>
+      <button class="btn spinner-btn" type="button"><i class="fa fa-caret-down"></i></button>
+    </div>
+        </div></div>
+        
+        <div class="count-container">
+                             <p class="count-title">Childrens</p>
+                             <div class="input-group spinner2">
+    <input type="text" class="form-control" value="2">
+    <div class="input-group-btn-vertical">
+      <button class="btn spinner-btn" type="button"><i class="fa fa-caret-up"></i></button>
+      <button class="btn spinner-btn" type="button"><i class="fa fa-caret-down"></i></button>
+    </div>
+        </div></div>
+        
+       <div class="dropdown-options-holder"><form class="jqtransform">					
+			<div id="box-level" class="select-menus">
+				<select name="select-country">
+                <option selected>Energy Level</option>
+	 				<option>Relaxed</option>
+					<option>Normal</option>
+					<option>Active</option>
+				</select>
+				<div class="clear"></div>
+			</div>				
+		</form>
+        
+        <form class="jqtransform">					
+			<div id="box-trip" class="select-menus">
+				<select name="select-country">
+                <option selected>Trip Type</option>
+	 				<option>Economy</option>
+					<option>Premium</option>
+					<option>Luxury</option>
+				</select>
+				<div class="clear"></div>
+			</div>				
+		</form></div>
+  <div class="divider"></div>
+ <div class="btn-plan-now-holder"> <button class="btn-plan-now" type="button">Plan Now</button></div>
+        </div>
+        <!----end-plan-tour---->
+        
+		<!----start-find-place---->
+		
+		<!----//End-find-place---->
+      
+        </div>
+        
+        <div class="holiday-offers">
+        
+        <div class="offers-block">
+        <h2>Mehman e Hyderabad</h2>
+        <p>Starting Rs 10K/Person</p>
+        <a href="#">More Info</a>
+        </div>
+        </div>
+        </div>
+        
+        
+        <!----start-plan-tour---->
+        
+<!----start-offers---->
+		<div class="offers" id="Packages">
+			<div class="head-main">
+						  <h3>Featured Packages</h3>
+				
+			</div>
+	    <!-- start content_slider -->
+            <div class="package_row clearfix">
+             <!-- FlexSlider -->
+			  <script defer src="js/jquery.flexslider.js"></script>
+			  <script type="text/javascript">
+			    $(function(){
+			      SyntaxHighlighter.all();
+			    });
+			    $(window).load(function(){
+			      $('.flexslider').flexslider({
+			        animation: "slide",
+			        animationLoop: true,
+			        itemWidth:400,
+			        itemMargin: 3,
+			        start: function(slider){
+			          $('body').removeClass('loading');
+			        }
+			      });
+			    });
+			  </script>
+             <section class="slider">
+		        <div class="flexslider carousel">
+		          <ul class="slides">
+		            <li onClick="location.href='#';">
+	    <div class="grid  ">
+        	
+        	<!--start accomodation-->
+    		<div class="nicdark_focus">
+	        	<img class="nicdark_width_percentage100" alt="" src="images/img3.jpg">
+	        	
+	        	<!--title e descr-->
+	        	<div class="nicdark_margin020 nicdark_border_bottom_none nicdark_relative nicdark_sizing nicdark_bg_white nicdark_margintop30_negative">
+		        	
+
+                    <div class="nicdark_focus nicdark_sizing nicdark_bg_greydark "> 
+                        <h4 class="white nicdark_margin1520">Big Carvan for your Family</h4>
+                    </div>
+		        	<p class="nicdark_padding20 nicdark_border_grey nicdark_border_bottom_none nicdark_display_inlineblock">Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed ultricies diam, lorem ipsum.</p>
+	        	
+                </div>
+	        	<!--end title e descr-->
+
+	        	<!--icons-->
+	        	<div class="nicdark_focus nicdark_padding020  nicdark_border_grey nicdark_sizing nicdark_bg_grey">
+	        		<a title="Wifi" class=" nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey  nicdark_marginleft0"><i class="fa fa-rss"></i> Wifi</a>
+	        		<a title="Air Conditional" class="nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class="greydark fa fa-thumbs-up"></i> Yes</a>
+	        		<a title="Medical Care" class=" nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class="greydark fa fa-medkit"></i> 24 h</a>
+	        		<a title="People" class=" nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class=" fa fa-users"></i> 4</a>
+	        	</div>
+	        	<!--end icons-->
+
+	        	<!--btns-->
+	        	<div class="nicdark_paddingtop0 nicdark_focus nicdark_sizing nicdark_padding20  nicdark_relative nicdark_sizing nicdark_bg_white ">
+		        	<div class="nicdark_border_top_none nicdark_focus nicdark_padding20 nicdark_sizing nicdark_border_grey ">
+			        	<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_bg_blue left btn-red  medium white">READ MORE</a>
+		        		</div>
+		        		<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_border_grey nicdark_bg_white right medium grey">From 350 $</a>
+		        		</div>
+		            </div>
+	        	</div>
+	        	<!--end btns-->
+
+        	</div>
+        	<!--end accomodation-->
+
+        </div>
+        </li>
+        <li onClick="location.href='#';">
+        <div class="grid  ">
+        	
+        	<!--start accomodation-->
+    		<div class="nicdark_focus">
+	        	<img class="nicdark_width_percentage100" alt="" src="images/img4.jpg">
+	        	
+	        	<!--title e descr-->
+	        	<div class="nicdark_margin020 nicdark_border_bottom_none nicdark_relative nicdark_sizing nicdark_bg_white nicdark_margintop30_negative">
+		        	
+
+                    <div class="nicdark_focus nicdark_sizing nicdark_bg_greydark "> 
+                        <h4 class="white nicdark_margin1520">XSmall Tent - Safe for Your Kids</h4>
+                    </div>
+		        	<p class="nicdark_padding20 nicdark_border_grey nicdark_border_bottom_none nicdark_display_inlineblock">Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed ultricies diam, lorem ipsum.</p>
+	        	
+                </div>
+	        	<!--end title e descr-->
+
+	        	<!--icons-->
+	        	<div class="nicdark_focus nicdark_padding020  nicdark_border_grey nicdark_sizing nicdark_bg_grey">
+	        		<a title="Wifi" class=" nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey  nicdark_marginleft0"><i class="fa fa-rss"></i> Wifi</a>
+	        		<a title="Air Conditional" class="nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class="greydark fa fa-thumbs-up"></i> Yes</a>
+	        		<a title="Medical Care" class=" nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class="greydark fa fa-medkit"></i> 24 h</a>
+	        		<a title="People" class=" nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class=" fa fa-users"></i> 4</a>
+	        	</div>
+	        	<!--end icons-->
+
+	        	<!--btns-->
+	        	<div class="nicdark_paddingtop0 nicdark_focus nicdark_sizing nicdark_padding20  nicdark_relative nicdark_sizing nicdark_bg_white ">
+		        	<div class="nicdark_border_top_none nicdark_focus nicdark_padding20 nicdark_sizing nicdark_border_grey ">
+			        	<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_bg_blue left btn-red  medium white">READ MORE</a>
+		        		</div>
+		        		<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_border_grey nicdark_bg_white right medium grey">From 280 $</a>
+		        		</div>
+		            </div>
+	        	</div>
+	        	<!--end btns-->
+
+        	</div>
+        	<!--end accomodation-->
+
+        </div>
+        </li>
+        <li onClick="location.href='#';">
+        <div class="grid  ">
+        	
+        	<!--start accomodation-->
+    		<div class="nicdark_focus">
+	        	<img class="nicdark_width_percentage100" alt="" src="images/img6.jpg">
+	        	
+	        	<!--title e descr-->
+	        	<div class="nicdark_margin020 nicdark_border_bottom_none nicdark_relative nicdark_sizing nicdark_bg_white nicdark_margintop30_negative">
+		        	
+
+                    <div class="nicdark_focus nicdark_sizing nicdark_bg_greydark "> 
+                        <h4 class="white nicdark_margin1520">XLarge Pitch - Barbecue incl.</h4>
+                    </div>
+		        	<p class="nicdark_padding20 nicdark_border_grey nicdark_border_bottom_none nicdark_display_inlineblock">Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed ultricies diam, lorem ipsum.</p>
+	        	
+                </div>
+	        	<!--end title e descr-->
+
+	        	<!--icons-->
+	        	<div class="nicdark_focus nicdark_padding020  nicdark_border_grey nicdark_sizing nicdark_bg_grey">
+	        		<a title="Wifi" class=" nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey  nicdark_marginleft0"><i class="fa fa-rss"></i> Wifi</a>
+	        		<a title="Air Conditional" class="nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class="greydark fa fa-thumbs-up"></i> Yes</a>
+	        		<a title="Medical Care" class=" nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class="greydark fa fa-medkit"></i> 24 h</a>
+	        		<a title="People" class=" nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class=" fa fa-users"></i> 4</a>
+	        	</div>
+	        	<!--end icons-->
+
+	        	<!--btns-->
+	        	<div class="nicdark_paddingtop0 nicdark_focus nicdark_sizing nicdark_padding20  nicdark_relative nicdark_sizing nicdark_bg_white ">
+		        	<div class="nicdark_border_top_none nicdark_focus nicdark_padding20 nicdark_sizing nicdark_border_grey ">
+			        	<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_bg_blue left btn-red  medium white">READ MORE</a>
+		        		</div>
+		        		<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_border_grey nicdark_bg_white right medium grey">From 300 $</a>
+		        		</div>
+		            </div>
+	        	</div>
+	        	<!--end btns-->
+
+        	</div>
+        	<!--end accomodation-->
+
+        </div>
+        </li>
+        
+        <li onClick="location.href='#';">
+	    <div class="grid  ">
+        	
+        	<!--start accomodation-->
+    		<div class="nicdark_focus">
+	        	<img class="nicdark_width_percentage100" alt="" src="images/img3.jpg">
+	        	
+	        	<!--title e descr-->
+	        	<div class="nicdark_margin020 nicdark_border_bottom_none nicdark_relative nicdark_sizing nicdark_bg_white nicdark_margintop30_negative">
+		        	
+
+                    <div class="nicdark_focus nicdark_sizing nicdark_bg_greydark "> 
+                        <h4 class="white nicdark_margin1520">Big Carvan for your Family</h4>
+                    </div>
+		        	<p class="nicdark_padding20 nicdark_border_grey nicdark_border_bottom_none nicdark_display_inlineblock">Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed ultricies diam, lorem ipsum.</p>
+	        	
+                </div>
+	        	<!--end title e descr-->
+
+	        	<!--icons-->
+	        	<div class="nicdark_focus nicdark_padding020  nicdark_border_grey nicdark_sizing nicdark_bg_grey">
+	        		<a title="Wifi" class=" nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey  nicdark_marginleft0"><i class="fa fa-rss"></i> Wifi</a>
+	        		<a title="Air Conditional" class="nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class="greydark fa fa-thumbs-up"></i> Yes</a>
+	        		<a title="Medical Care" class=" nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class="greydark fa fa-medkit"></i> 24 h</a>
+	        		<a title="People" class=" nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class=" fa fa-users"></i> 4</a>
+	        	</div>
+	        	<!--end icons-->
+
+	        	<!--btns-->
+	        	<div class="nicdark_paddingtop0 nicdark_focus nicdark_sizing nicdark_padding20  nicdark_relative nicdark_sizing nicdark_bg_white ">
+		        	<div class="nicdark_border_top_none nicdark_focus nicdark_padding20 nicdark_sizing nicdark_border_grey ">
+			        	<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_bg_blue left btn-red  medium white">READ MORE</a>
+		        		</div>
+		        		<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_border_grey nicdark_bg_white right medium grey">From 350 $</a>
+		        		</div>
+		            </div>
+	        	</div>
+	        	<!--end btns-->
+
+        	</div>
+        	<!--end accomodation-->
+
+        </div>
+        </li>
+        <li onClick="location.href='#';">
+        <div class="grid  ">
+        	
+        	<!--start accomodation-->
+    		<div class="nicdark_focus">
+	        	<img class="nicdark_width_percentage100" alt="" src="images/img4.jpg">
+	        	
+	        	<!--title e descr-->
+	        	<div class="nicdark_margin020 nicdark_border_bottom_none nicdark_relative nicdark_sizing nicdark_bg_white nicdark_margintop30_negative">
+		        	
+
+                    <div class="nicdark_focus nicdark_sizing nicdark_bg_greydark "> 
+                        <h4 class="white nicdark_margin1520">XSmall Tent - Safe for Your Kids</h4>
+                    </div>
+		        	<p class="nicdark_padding20 nicdark_border_grey nicdark_border_bottom_none nicdark_display_inlineblock">Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed ultricies diam, lorem ipsum.</p>
+	        	
+                </div>
+	        	<!--end title e descr-->
+
+	        	<!--icons-->
+	        	<div class="nicdark_focus nicdark_padding020  nicdark_border_grey nicdark_sizing nicdark_bg_grey">
+	        		<a title="Wifi" class=" nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey  nicdark_marginleft0"><i class="fa fa-rss"></i> Wifi</a>
+	        		<a title="Air Conditional" class="nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class="greydark fa fa-thumbs-up"></i> Yes</a>
+	        		<a title="Medical Care" class=" nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class="greydark fa fa-medkit"></i> 24 h</a>
+	        		<a title="People" class=" nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class=" fa fa-users"></i> 4</a>
+	        	</div>
+	        	<!--end icons-->
+
+	        	<!--btns-->
+	        	<div class="nicdark_paddingtop0 nicdark_focus nicdark_sizing nicdark_padding20  nicdark_relative nicdark_sizing nicdark_bg_white ">
+		        	<div class="nicdark_border_top_none nicdark_focus nicdark_padding20 nicdark_sizing nicdark_border_grey ">
+			        	<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_bg_blue left btn-red  medium white">READ MORE</a>
+		        		</div>
+		        		<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_border_grey nicdark_bg_white right medium grey">From 280 $</a>
+		        		</div>
+		            </div>
+	        	</div>
+	        	<!--end btns-->
+
+        	</div>
+        	<!--end accomodation-->
+
+        </div>
+        </li>
+        <li onClick="location.href='#';">
+        <div class="grid  ">
+        	
+        	<!--start accomodation-->
+    		<div class="nicdark_focus">
+	        	<img class="nicdark_width_percentage100" alt="" src="images/img6.jpg">
+	        	
+	        	<!--title e descr-->
+	        	<div class="nicdark_margin020 nicdark_border_bottom_none nicdark_relative nicdark_sizing nicdark_bg_white nicdark_margintop30_negative">
+		        	
+
+                    <div class="nicdark_focus nicdark_sizing nicdark_bg_greydark "> 
+                        <h4 class="white nicdark_margin1520">XLarge Pitch - Barbecue incl.</h4>
+                    </div>
+		        	<p class="nicdark_padding20 nicdark_border_grey nicdark_border_bottom_none nicdark_display_inlineblock">Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed ultricies diam, lorem ipsum.</p>
+	        	
+                </div>
+	        	<!--end title e descr-->
+
+	        	<!--icons-->
+	        	<div class="nicdark_focus nicdark_padding020  nicdark_border_grey nicdark_sizing nicdark_bg_grey">
+	        		<a title="Wifi" class=" nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey  nicdark_marginleft0"><i class="fa fa-rss"></i> Wifi</a>
+	        		<a title="Air Conditional" class="nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class="greydark fa fa-thumbs-up"></i> Yes</a>
+	        		<a title="Medical Care" class=" nicdark_border_right_grey nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class="greydark fa fa-medkit"></i> 24 h</a>
+	        		<a title="People" class=" nicdark_bg_grey_hover nicdark_tooltip nicdark_transition nicdark_btn_icon  small grey "><i class=" fa fa-users"></i> 4</a>
+	        	</div>
+	        	<!--end icons-->
+
+	        	<!--btns-->
+	        	<div class="nicdark_paddingtop0 nicdark_focus nicdark_sizing nicdark_padding20  nicdark_relative nicdark_sizing nicdark_bg_white ">
+		        	<div class="nicdark_border_top_none nicdark_focus nicdark_padding20 nicdark_sizing nicdark_border_grey ">
+			        	<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_bg_blue left btn-red  medium white">READ MORE</a>
+		        		</div>
+		        		<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_border_grey nicdark_bg_white right medium grey">From 300 $</a>
+		        		</div>
+		            </div>
+	        	</div>
+	        	<!--end btns-->
+
+        	</div>
+        	<!--end accomodation-->
+
+        </div>
+        </li>
+        </ul></div>
+        </section>
+		</div>		 
+              <!-- //End content_slider -->
+              
+              <div class=" grid nicdark_center clearfix d-block">
+                <div class="nicdark_space10"></div>
+                <a href="#" class="nicdark_btn btn_dark_red  medium white"><i class="fa fa-th"></i>&nbsp;&nbsp;&nbsp;View All</a>
+                
+            </div>
+		</div>
+        
+        <!---start-events---->
+        <div class="offers" id="Attractions">
+			<div class="head-main">
+			  <h3>Attractions & Events</h3>
+				
+			</div>
+	    <!-- start content_slider -->
+            <div class="package_row clearfix">
+            <section class="slider">
+		        <div class="flexslider carousel">
+		          <ul class="slides">
+		<li onClick="location.href='#';">
+		<div class="grid ">
+        	
+        	<!--start accomodation-->
+    		<div class="nicdark_focus">
+	        	<img class="nicdark_width_percentage100" alt="" src="images/img7.jpg">
+	        	
+	        	<!--title e descr-->
+	        	<div class="nicdark_margin020 nicdark_border_bottom_none nicdark_relative nicdark_sizing nicdark_bg_white nicdark_margintop30_negative">
+		        	
+
+                    <div class="nicdark_focus nicdark_sizing nicdark_bg_greydark "> 
+                        <h4 class="white nicdark_margin1520">Canoein Premier White water</h4>
+                    </div>
+		        	<p class="nicdark_padding20 nicdark_border_grey nicdark_border_bottom_none nicdark_display_inlineblock">Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed ultricies diam, lorem ipsum.</p>
+	        	
+                </div>
+	        	<!--end title e descr-->
+
+	        	
+
+	        	<!--btns-->
+	        	<div class="nicdark_paddingtop0 nicdark_focus nicdark_sizing nicdark_padding20  nicdark_relative nicdark_sizing nicdark_bg_white ">
+		        	<div class="nicdark_border_top_none nicdark_focus nicdark_padding20 nicdark_sizing nicdark_border_grey ">
+			        	<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_bg_blue left btn-red  medium white">JOIN US</a>
+		        		</div>
+		        		<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_border_grey nicdark_bg_white right medium grey">From 350 $</a>
+		        		</div>
+		            </div>
+	        	</div>
+	        	<!--end btns-->
+
+        	</div>
+        	<!--end accomodation-->
+
+        </div>
+         </li>
+        <li onClick="location.href='#';">
+        <div class="grid ">
+        	
+        	<!--start accomodation-->
+    		<div class="nicdark_focus">
+	        	<img class="nicdark_width_percentage100" alt="" src="images/img8.jpg">
+	        	
+	        	<!--title e descr-->
+	        	<div class="nicdark_margin020 nicdark_border_bottom_none nicdark_relative nicdark_sizing nicdark_bg_white nicdark_margintop30_negative">
+		        	
+
+                    <div class="nicdark_focus nicdark_sizing nicdark_bg_greydark "> 
+                        <h4 class="white nicdark_margin1520">Rock Climbing Sport</h4>
+                    </div>
+		        	<p class="nicdark_padding20 nicdark_border_grey nicdark_border_bottom_none nicdark_display_inlineblock">Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed ultricies diam, lorem ipsum.</p>
+	        	
+                </div>
+	        	<!--end title e descr-->
+
+	        	
+
+	        	<!--btns-->
+	        	<div class="nicdark_paddingtop0 nicdark_focus nicdark_sizing nicdark_padding20  nicdark_relative nicdark_sizing nicdark_bg_white ">
+		        	<div class="nicdark_border_top_none nicdark_focus nicdark_padding20 nicdark_sizing nicdark_border_grey ">
+			        	<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_bg_blue left btn-red  medium white">JOIN US</a>
+		        		</div>
+		        		<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_border_grey nicdark_bg_white right medium grey">From 280 $</a>
+		        		</div>
+		            </div>
+	        	</div>
+	        	<!--end btns-->
+
+        	</div>
+        	<!--end accomodation-->
+
+        </div>
+        </li>
+        <li onClick="location.href='#';">
+        <div class="grid ">
+        	
+        	<!--start accomodation-->
+    		<div class="nicdark_focus">
+	        	<img class="nicdark_width_percentage100" alt="" src="images/img9.jpg">
+	        	
+	        	<!--title e descr-->
+	        	<div class="nicdark_margin020 nicdark_border_bottom_none nicdark_relative nicdark_sizing nicdark_bg_white nicdark_margintop30_negative">
+		        	
+
+                    <div class="nicdark_focus nicdark_sizing nicdark_bg_greydark "> 
+                        <h4 class="white nicdark_margin1520">Bungy Jump Adventure</h4>
+                    </div>
+		        	<p class="nicdark_padding20 nicdark_border_grey nicdark_border_bottom_none nicdark_display_inlineblock">Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed ultricies diam, lorem ipsum.</p>
+	        	
+                </div>
+	        	<!--end title e descr-->
+
+
+	        	<!--btns-->
+	        	<div class="nicdark_paddingtop0 nicdark_focus nicdark_sizing nicdark_padding20  nicdark_relative nicdark_sizing nicdark_bg_white ">
+		        	<div class="nicdark_border_top_none nicdark_focus nicdark_padding20 nicdark_sizing nicdark_border_grey ">
+			        	<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_bg_blue left btn-red  medium white">JOIN US</a>
+		        		</div>
+		        		<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_border_grey nicdark_bg_white right medium grey">From 300 $</a>
+		        		</div>
+		            </div>
+	        	</div>
+	        	<!--end btns-->
+
+        	</div>
+        	<!--end accomodation-->
+
+        </div>
+        </li>
+        <li onClick="location.href='#';">
+		<div class="grid ">
+        	
+        	<!--start accomodation-->
+    		<div class="nicdark_focus">
+	        	<img class="nicdark_width_percentage100" alt="" src="images/img7.jpg">
+	        	
+	        	<!--title e descr-->
+	        	<div class="nicdark_margin020 nicdark_border_bottom_none nicdark_relative nicdark_sizing nicdark_bg_white nicdark_margintop30_negative">
+		        	
+
+                    <div class="nicdark_focus nicdark_sizing nicdark_bg_greydark "> 
+                        <h4 class="white nicdark_margin1520">Canoein Premier White water</h4>
+                    </div>
+		        	<p class="nicdark_padding20 nicdark_border_grey nicdark_border_bottom_none nicdark_display_inlineblock">Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed ultricies diam, lorem ipsum.</p>
+	        	
+                </div>
+	        	<!--end title e descr-->
+
+	        	
+
+	        	<!--btns-->
+	        	<div class="nicdark_paddingtop0 nicdark_focus nicdark_sizing nicdark_padding20  nicdark_relative nicdark_sizing nicdark_bg_white ">
+		        	<div class="nicdark_border_top_none nicdark_focus nicdark_padding20 nicdark_sizing nicdark_border_grey ">
+			        	<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_bg_blue left btn-red  medium white">JOIN US</a>
+		        		</div>
+		        		<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_border_grey nicdark_bg_white right medium grey">From 350 $</a>
+		        		</div>
+		            </div>
+	        	</div>
+	        	<!--end btns-->
+
+        	</div>
+        	<!--end accomodation-->
+
+        </div>
+         </li>
+        <li onClick="location.href='#';">
+        <div class="grid ">
+        	
+        	<!--start accomodation-->
+    		<div class="nicdark_focus">
+	        	<img class="nicdark_width_percentage100" alt="" src="images/img8.jpg">
+	        	
+	        	<!--title e descr-->
+	        	<div class="nicdark_margin020 nicdark_border_bottom_none nicdark_relative nicdark_sizing nicdark_bg_white nicdark_margintop30_negative">
+		        	
+
+                    <div class="nicdark_focus nicdark_sizing nicdark_bg_greydark "> 
+                        <h4 class="white nicdark_margin1520">Rock Climbing Sport</h4>
+                    </div>
+		        	<p class="nicdark_padding20 nicdark_border_grey nicdark_border_bottom_none nicdark_display_inlineblock">Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed ultricies diam, lorem ipsum.</p>
+	        	
+                </div>
+	        	<!--end title e descr-->
+
+	        	
+
+	        	<!--btns-->
+	        	<div class="nicdark_paddingtop0 nicdark_focus nicdark_sizing nicdark_padding20  nicdark_relative nicdark_sizing nicdark_bg_white ">
+		        	<div class="nicdark_border_top_none nicdark_focus nicdark_padding20 nicdark_sizing nicdark_border_grey ">
+			        	<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_bg_blue left btn-red  medium white">JOIN US</a>
+		        		</div>
+		        		<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_border_grey nicdark_bg_white right medium grey">From 280 $</a>
+		        		</div>
+		            </div>
+	        	</div>
+	        	<!--end btns-->
+
+        	</div>
+        	<!--end accomodation-->
+
+        </div>
+        </li>
+        <li onClick="location.href='#';">
+        <div class="grid ">
+        	
+        	<!--start accomodation-->
+    		<div class="nicdark_focus">
+	        	<img class="nicdark_width_percentage100" alt="" src="images/img9.jpg">
+	        	
+	        	<!--title e descr-->
+	        	<div class="nicdark_margin020 nicdark_border_bottom_none nicdark_relative nicdark_sizing nicdark_bg_white nicdark_margintop30_negative">
+		        	
+
+                    <div class="nicdark_focus nicdark_sizing nicdark_bg_greydark "> 
+                        <h4 class="white nicdark_margin1520">Bungy Jump Adventure</h4>
+                    </div>
+		        	<p class="nicdark_padding20 nicdark_border_grey nicdark_border_bottom_none nicdark_display_inlineblock">Lorem ipsum dolor sit amet, consec adipiscing elit. Pellentesque tincidunt rutrum sapien, sed ultricies diam, lorem ipsum.</p>
+	        	
+                </div>
+	        	<!--end title e descr-->
+
+
+	        	<!--btns-->
+	        	<div class="nicdark_paddingtop0 nicdark_focus nicdark_sizing nicdark_padding20  nicdark_relative nicdark_sizing nicdark_bg_white ">
+		        	<div class="nicdark_border_top_none nicdark_focus nicdark_padding20 nicdark_sizing nicdark_border_grey ">
+			        	<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_bg_blue left btn-red  medium white">JOIN US</a>
+		        		</div>
+		        		<div class="grid percentage nicdark_width100_ipadpotr">
+		        			<a href="#" class="nicdark_width100_ipadpotr nicdark_width100_iphonepotr nicdark_width100_iphoneland  nicdark_sizing nicdark_btn nicdark_border_grey nicdark_bg_white right medium grey">From 300 $</a>
+		        		</div>
+		            </div>
+	        	</div>
+	        	<!--end btns-->
+
+        	</div>
+        	<!--end accomodation-->
+
+        </div>
+        </li>
+        </ul>
+        </div>
+        </section>
+		</div>		 
+              <!-- //End content_slider -->
+              
+              <div class="grid nicdark_center clearfix d-block">
+                <div class="nicdark_space10"></div>
+                <a href="#" class="nicdark_btn btn_dark_red  medium white"><i class="fa fa-th"></i>&nbsp;&nbsp;&nbsp;View All</a>
+                
+            </div>
+		</div>
+    <div class="clear"></div>
+		<!----//End-events---->
+		<!---start-holiday-types---->
+			<div class="holiday-types">
+				<div class="wrap">
+					<div class="holiday-type-head">
+						<h3>Offers & Stickers</h3>
+					
+					</div>
+					<div class="holiday-type-grids">
+						<div class="holiday-type-grid" onClick="location.href='#';">
+							<span class="icon1"> </span>
+							<a href="#">Cruise</a>
+						</div>
+						<div class="holiday-type-grid" onClick="location.href='#';">
+							<span class="icon2"> </span>
+							<a href="#">City Breaks</a>
+						</div>
+						<div class="holiday-type-grid" onClick="location.href='#';">
+							<span class="icon3"> </span>
+							<a href="#">Honeymoon</a>
+						</div>
+						<div class="holiday-type-grid" onClick="location.href='#';">
+							<span class="icon4"> </span>
+							<a href="#">Adventure</a>
+						</div>
+						<div class="holiday-type-grid" onClick="location.href='#';">
+							<span class="icon5"> </span>
+							<a href="#">Safari</a>
+						</div>
+						<div class="holiday-type-grid" onClick="location.href='#';">
+							<span class="icon6"> </span>
+							<a href="#">Beach</a>
+						</div>
+						<div class="clear"> </div>
+					</div>
+				</div>
+				</div>
+		<!---//End-holiday-types---->
+		<!----//End-images-slider---->
+		<!----start-Testimonials---->
+		<div class="testimonal_block">
+        <div class="head-main">
+				<h3>Testimonials</h3>
+				
+			</div>
+	 <div class="container_testimon package_row clearfix">
+     <div class="grid grid_6 percentage ">
+			
+            
+            <!--blog preview-->
+            <div class="nicdark_focus nicdark_img_blog2 nicdark_bg_cover nicdark_bg_green nicdark_relative">
+
+				<a href="#" class="nicdark_displaynone_responsive nicdark_btn nicdark_bg_white medium grey nicdark_absolute">06<br><small>April</small></a>
+
+				<div class="nicdark_displaynone_responsive nicdark_width_percentage40 nicdark_focus">
+				    <div class="nicdark_space1"></div>
+				</div>
+
+				<div class="nicdark_width100_responsive nicdark_width_percentage60 nicdark_float_right nicdark_bg_white nicdark_border_grey nicdark_sizing">
+				    <div class="nicdark_textevidence nicdark_bg_grey nicdark_borderbottom_grey">
+				        <h4 class="grey nicdark_margin20">Orienteering Day</h4>
+				    </div>
+				    <div class="nicdark_margin20">
+				        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas sempe.</p>
+				  
+				        <div class="nicdark_space20"></div>
+					    <a class="nicdark_btn nicdark_press nicdark_bg_blue white small  " href="#">READ MORE</a>
+				    </div>
+				</div>
+
+			</div>
+            <!--end preview-->
+
+
+
+			<div class="nicdark_space20"></div>
+
+
+			<div class="nicdark_focus nicdark_img_blog3 nicdark_bg_cover nicdark_bg_green nicdark_relative">
+
+                <a href="#" class="nicdark_displaynone_responsive nicdark_btn nicdark_bg_white medium grey nicdark_absolute">21<br><small>April</small></a>
+
+				<div class="nicdark_displaynone_responsive nicdark_width_percentage40 nicdark_focus">
+				    <div class="nicdark_space1"></div>
+				</div>
+
+
+				<div class="nicdark_width100_responsive nicdark_width_percentage60 nicdark_float_right nicdark_bg_white nicdark_border_grey nicdark_sizing">
+				    <div class="nicdark_textevidence nicdark_bg_grey nicdark_borderbottom_grey">
+				        <h4 class="grey nicdark_margin20">Picnic With Activities</h4>
+				    </div>
+				    <div class="nicdark_margin20">
+				        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas sempe.</p>
+				  
+				        <div class="nicdark_space20"></div>
+					<a class="nicdark_btn nicdark_press nicdark_bg_green white small  " href="#">READ MORE</a>
+				  </div>
+				</div>
+
+			</div>
+
+
+
+
+		</div>
+     
+		 <div class="grid grid_6 percentage ">
+			
+            
+            <!--blog preview-->
+            <div class="nicdark_focus nicdark_img_blog2 nicdark_bg_cover nicdark_bg_green nicdark_relative">
+
+				<a href="#" class="nicdark_displaynone_responsive nicdark_btn nicdark_bg_white medium grey nicdark_absolute">06<br><small>April</small></a>
+
+				<div class="nicdark_displaynone_responsive nicdark_width_percentage40 nicdark_focus">
+				    <div class="nicdark_space1"></div>
+				</div>
+
+				<div class="nicdark_width100_responsive nicdark_width_percentage60 nicdark_float_right nicdark_bg_white nicdark_border_grey nicdark_sizing">
+				    <div class="nicdark_textevidence nicdark_bg_grey nicdark_borderbottom_grey">
+				        <h4 class="grey nicdark_margin20">Orienteering Day</h4>
+				    </div>
+				    <div class="nicdark_margin20">
+				        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas sempe.</p>
+				  
+				        <div class="nicdark_space20"></div>
+					    <a class="nicdark_btn nicdark_press nicdark_bg_blue white small  " href="#">READ MORE</a>
+				    </div>
+				</div>
+
+			</div>
+            <!--end preview-->
+
+
+
+			<div class="nicdark_space20"></div>
+
+
+			<div class="nicdark_focus nicdark_img_blog3 nicdark_bg_cover nicdark_bg_green nicdark_relative">
+
+                <a href="#" class="nicdark_displaynone_responsive nicdark_btn nicdark_bg_white medium grey nicdark_absolute">21<br><small>April</small></a>
+
+				<div class="nicdark_displaynone_responsive nicdark_width_percentage40 nicdark_focus">
+				    <div class="nicdark_space1"></div>
+				</div>
+
+
+				<div class="nicdark_width100_responsive nicdark_width_percentage60 nicdark_float_right nicdark_bg_white nicdark_border_grey nicdark_sizing">
+				    <div class="nicdark_textevidence nicdark_bg_grey nicdark_borderbottom_grey">
+				        <h4 class="grey nicdark_margin20">Picnic With Activities</h4>
+				    </div>
+				    <div class="nicdark_margin20">
+				        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas sempe.</p>
+				  
+				        <div class="nicdark_space20"></div>
+					<a class="nicdark_btn nicdark_press nicdark_bg_green white small  " href="#">READ MORE</a>
+				  </div>
+				</div>
+
+			</div>
+
+
+
+
+		</div>
+        
+		 <div class="grid_12 percentage grid nicdark_center padding_top20">
+                <div class="nicdark_space10"></div>
+                <a href="#" class="nicdark_btn btn_dark_red  medium white"><i class="fa fa-th"></i>&nbsp;&nbsp;&nbsp;View All</a>
+                <div class="nicdark_space20"></div>
+            </div>
+	 </div>
+</div>
+		<!----//End-Testimonials---->
+		<!----start-footer---->
+		<div class="footer" id="Contact" >
+			<div class="f-row"><div class="wrap">
+			<div class="footer-grids">
+		  <div class="footer-grid address">
+					<h3>Contact Us </h3>
+					<div class="address-info footer-grid-content">
+						<span class=""><i class="fa fa-phone"></i> 040 - 1234 5678</span>
+						<br>
+					  <span><i class="fa fa-envelope"></i><a href="#">support@offbeattourism.com</a></span>	<br>
+                      <span><i class="fa fa-pencil"></i><a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">Enquiry</a></span>
+   			</div>
+  
+				</div>
+                
+                <div class="footer-grid social">
+				
+					<h3>Connect With Us </h3>
+  <div class="footer-social-icons footer-grid-content">
+						<ul>
+							<li><a class="face1 simptip-position-bottom simptip-movable" data-tooltip="facebook" href="#"><span> </span></a></li>
+							<li><a class="twit1 simptip-position-bottom simptip-movable" data-tooltip="twitter" href="#"><span> </span></a></li>
+							<li><a class="tub1 simptip-position-bottom simptip-movable" data-tooltip="tumblr" href="#"><span> </span></a></li>
+							
+							<div class="clear"> </div>
+						</ul>
+					</div>
+				</div>
+                 <div class="footer-grid payments">
+                 <h3 align="center">We Accept</h3>
+                  <div class="footer-grid-content"><ul>
+							<li><a href="#"><img src="images/visa-card.png" alt="Visa Card"></a></li>
+							<li><a href="#"><img src="images/master-card.png" alt="Master Card"></a></li>
+							<li><a href="#"><img src="images/am-express.png" alt="American Express"></a></li>
+							
+							<div class="clear"> </div>
+						</ul></div>
+                 </div>
+                
+				<div class="clear"> </div>
+			</div>
+			</div></div>
+		</div>
+		<!----//End-footer---->
+		<!---start-subfooter---->
+		<div class="subfooter">
+			<div class="wrap">
+            <div class="copy-txt"><p>Copyright &copy; 2015 Offbeat Tourism.  All Rights Reserved.</p></div>
+				<ul class="ft-nav">
+					<li><a href="#Home">Home</a></li>
+					<li><a href="#Packages">Packages</a></li>
+					<li><a href="#Attractions">Attractions</a></li>
+					<li><a href="#Contact">Contact Us</a></li>
+					<div class="clear"> </div>
+				</ul>
+				
+				<a class="to-top" href="#Home"><span class="fa fa-arrow-circle-up"> </span> </a>
+			</div>
+		</div>
+        
+        <div class="cd-user-modal" style="z-index:999999;"> <!-- this is the entire modal form, including the background -->
+        
+		<div class="cd-user-modal-container"><a href="#" class="cd-user-modal-close">X</a> <!-- this is the container wrapper -->
+			<ul class="cd-switcher">
+				<li><a href="#0">Sign in</a></li>
+				<li><a href="#0">New account</a></li>
+			</ul>
+
+			<div id="cd-login"> <!-- log in form -->
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signin-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">Password</label>
+						<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="remember-me" checked>
+						<label for="remember-me">Remember me</label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width" type="submit" value="Login">
+					</p>
+				</form>
+				
+				<p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-login -->
+
+			<div id="cd-signup"> <!-- sign up form -->
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">Username</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Password</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms">
+						<label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Create account">
+					</p>
+				</form>
+
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-signup -->
+
+			<div id="cd-reset-password"> <!-- reset password form -->
+				<p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="reset-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Reset password">
+					</p>
+				</form>
+
+				<p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+			</div> <!-- cd-reset-password -->
+			<a href="#0" class="cd-close-form">Close</a>
+		</div> <!-- cd-user-modal-container -->
+	</div>
+		<!---//End-subfooter---->
+		<!----//End-wrap---->
+        <script >
+        function fade($ele) {
+    $ele.fadeIn(6000).delay(3000).fadeOut(6000, function() {
+        var $next = $(this).next('li');
+        fade($next.length > 0 ? $next : $(this).parent().children().first());
+   });
+};  
+
+fade($('#slider2 > li').first());
+        </script>
+         <script type="text/javascript" >
+		
+
+//credits http://css-tricks.com/snippets/jquery/move-cursor-to-end-of-textarea-or-input/
+jQuery.fn.putCursorAtEnd = function() {
+	return this.each(function() {
+    	// If this function exists...
+    	if (this.setSelectionRange) {
+      		// ... then use it (Doesn't work in IE)
+      		// Double the length because Opera is inconsistent about whether a carriage return is one character or two. Sigh.
+      		var len = $(this).val().length * 2;
+      		this.setSelectionRange(len, len);
+    	} else {
+    		// ... otherwise replace the contents with itself
+    		// (Doesn't work in Google Chrome)
+      		$(this).val($(this).val());
+    	}
+	});
+};
+         </script>
+
+           <script type="text/javascript" src="js/materialmenu.jquery.js"></script>
+    <script src="js/bootstrap.js"></script> 
+    <script>
+      $('.material-menu nav > ul').materialmenu({
+        /**
+         * Page title, showed on mobile devices.
+         * @type string
+         */
+        title: '',
+        /**
+         * Tells if title can be showed on mobile devices (only).
+         * @type boolean
+         */
+        showTitle: true
+      });
+	  
+	  $('#sandbox-container .input-group.date').datepicker({
+});
+
+(function ($) {
+  $('.spinner .btn:first-of-type').on('click', function() {
+    $('.spinner input').val( parseInt($('.spinner input').val(), 10) + 1);
+  });
+  $('.spinner .btn:last-of-type').on('click', function() {
+    $('.spinner input').val( parseInt($('.spinner input').val(), 10) - 1);
+  });
+   $('.spinner2 .btn:first-of-type').on('click', function() {
+    $('.spinner2 input').val( parseInt($('.spinner2 input').val(), 10) + 1);
+  });
+  $('.spinner2 .btn:last-of-type').on('click', function() {
+    $('.spinner2 input').val( parseInt($('.spinner2 input').val(), 10) - 1);
+  });
+  
+  $('.material-menu-wrapper ul li').on('click', function() {
+    $('.material-menu-wrapper ul li').removeClass("active");
+      $(this).addClass('active');
+  });
+  
+  $('.cd-user-modal-close').on('click', function() {
+      $(this).parent().parent().removeClass("is-visible");
+  });
+  
+})(jQuery);
+
+
+    </script>
+
+	
+        
+    <div id="cboxOverlay" style="display: none;"></div>
+<div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;">
+      <div id="cboxWrapper">
+    <div>
+          <div id="cboxTopLeft" style="float: left;"></div>
+          <div id="cboxTopCenter" style="float: left;"></div>
+          <div id="cboxTopRight" style="float: left;"></div>
+        </div>
+    <div style="clear: left;">
+          <div id="cboxMiddleLeft" style="float: left;"></div>
+          <div id="cboxContent" style="float: left;">
+        <div id="cboxTitle" style="float: left;"></div>
+        <div id="cboxCurrent" style="float: left;"></div>
+        <button type="button" id="cboxPrevious"></button>
+        <button type="button" id="cboxNext"></button>
+        <button id="cboxSlideshow"></button>
+        <div id="cboxLoadingOverlay" style="float: left;"></div>
+        <div id="cboxLoadingGraphic" style="float: left;"></div>
+      </div>
+          <div id="cboxMiddleRight" style="float: left;"></div>
+        </div>
+    <div style="clear: left;">
+          <div id="cboxBottomLeft" style="float: left;"></div>
+          <div id="cboxBottomCenter" style="float: left;"></div>
+          <div id="cboxBottomRight" style="float: left;"></div>
+        </div>
+  </div>
+      <div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div>
+    </div>
+<div class="datepicker datepicker-dropdown dropdown-menu" style="display: none; top: 152px; left: 1008px; z-index: 410;">
+      <div class="datepicker-days" style="display: block;">
+    <table class=" table-condensed">
+          <thead>
+        <tr>
+              <th class="prev" style="visibility: visible;"><i class="icon-chevron-left"></i></th>
+              <th colspan="5" class="date-switch">December 2015</th>
+              <th class="next" style="visibility: visible;"><i class="icon-chevron-right"></i></th>
+            </tr>
+        <tr>
+              <th class="dow">Su</th>
+              <th class="dow">Mo</th>
+              <th class="dow">Tu</th>
+              <th class="dow">We</th>
+              <th class="dow">Th</th>
+              <th class="dow">Fr</th>
+              <th class="dow">Sa</th>
+            </tr>
+      </thead>
+          <tbody>
+        <tr>
+              <td class="day disabled  old">29</td>
+              <td class="day disabled  old">30</td>
+              <td class="day disabled ">1</td>
+              <td class="day disabled ">2</td>
+              <td class="day disabled ">3</td>
+              <td class="day disabled ">4</td>
+              <td class="day disabled ">5</td>
+            </tr>
+        <tr>
+              <td class="day disabled ">6</td>
+              <td class="day disabled ">7</td>
+              <td class="day disabled ">8</td>
+              <td class="day disabled ">9</td>
+              <td class="day disabled ">10</td>
+              <td class="day disabled ">11</td>
+              <td class="day disabled ">12</td>
+            </tr>
+        <tr>
+              <td class="day disabled ">13</td>
+              <td class="day disabled ">14</td>
+              <td class="day disabled ">15</td>
+              <td class="day disabled ">16</td>
+              <td class="day  ">17</td>
+              <td class="day  ">18</td>
+              <td class="day  ">19</td>
+            </tr>
+        <tr>
+              <td class="day  ">20</td>
+              <td class="day  ">21</td>
+              <td class="day  ">22</td>
+              <td class="day   active">23</td>
+              <td class="day  ">24</td>
+              <td class="day  ">25</td>
+              <td class="day  ">26</td>
+            </tr>
+        <tr>
+              <td class="day  ">27</td>
+              <td class="day  ">28</td>
+              <td class="day  ">29</td>
+              <td class="day  ">30</td>
+              <td class="day  ">31</td>
+              <td class="day   new">1</td>
+              <td class="day   new">2</td>
+            </tr>
+        <tr>
+              <td class="day   new">3</td>
+              <td class="day   new">4</td>
+              <td class="day   new">5</td>
+              <td class="day   new">6</td>
+              <td class="day   new">7</td>
+              <td class="day   new">8</td>
+              <td class="day   new">9</td>
+            </tr>
+      </tbody>
+          <tfoot>
+        <tr>
+              <th colspan="7" class="today" style="display: none;">Today</th>
+            </tr>
+      </tfoot>
+        </table>
+  </div>
+      <div class="datepicker-months" style="display: none;">
+    <table class="table-condensed">
+          <thead>
+        <tr>
+              <th class="prev" style="visibility: visible;"><i class="icon-chevron-left"></i></th>
+              <th colspan="5" class="date-switch">2015</th>
+              <th class="next" style="visibility: visible;"><i class="icon-chevron-right"></i></th>
+            </tr>
+      </thead>
+          <tbody>
+        <tr>
+              <td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month active">Dec</span></td>
+            </tr>
+      </tbody>
+          <tfoot>
+        <tr>
+              <th colspan="7" class="today" style="display: none;">Today</th>
+            </tr>
+      </tfoot>
+        </table>
+  </div>
+      <div class="datepicker-years" style="display: none;">
+    <table class="table-condensed">
+          <thead>
+        <tr>
+              <th class="prev" style="visibility: visible;"><i class="icon-chevron-left"></i></th>
+              <th colspan="5" class="date-switch">2010-2019</th>
+              <th class="next" style="visibility: visible;"><i class="icon-chevron-right"></i></th>
+            </tr>
+      </thead>
+          <tbody>
+        <tr>
+              <td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year">2014</span><span class="year active">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year old">2020</span></td>
+            </tr>
+      </tbody>
+          <tfoot>
+        <tr>
+              <th colspan="7" class="today" style="display: none;">Today</th>
+            </tr>
+      </tfoot>
+        </table>
+  </div>
+      <a class="button datepicker-close small alert right" style="width:auto;"><i class="icon-remove"></i></a></div>
+<div class="datepicker datepicker-dropdown dropdown-menu" style="display: none; top: 152px; left: 1116.38px; z-index: 410;">
+      <div class="datepicker-days" style="display: block;">
+    <table class=" table-condensed">
+          <thead>
+        <tr>
+              <th class="prev" style="visibility: visible;"><i class="icon-chevron-left"></i></th>
+              <th colspan="5" class="date-switch">December 2015</th>
+              <th class="next" style="visibility: visible;"><i class="icon-chevron-right"></i></th>
+            </tr>
+        <tr>
+              <th class="dow">Su</th>
+              <th class="dow">Mo</th>
+              <th class="dow">Tu</th>
+              <th class="dow">We</th>
+              <th class="dow">Th</th>
+              <th class="dow">Fr</th>
+              <th class="dow">Sa</th>
+            </tr>
+      </thead>
+          <tbody>
+        <tr>
+              <td class="day disabled  old">29</td>
+              <td class="day disabled  old">30</td>
+              <td class="day disabled ">1</td>
+              <td class="day disabled ">2</td>
+              <td class="day disabled ">3</td>
+              <td class="day disabled ">4</td>
+              <td class="day disabled ">5</td>
+            </tr>
+        <tr>
+              <td class="day disabled ">6</td>
+              <td class="day disabled ">7</td>
+              <td class="day disabled ">8</td>
+              <td class="day disabled ">9</td>
+              <td class="day disabled ">10</td>
+              <td class="day disabled ">11</td>
+              <td class="day disabled ">12</td>
+            </tr>
+        <tr>
+              <td class="day disabled ">13</td>
+              <td class="day disabled ">14</td>
+              <td class="day disabled ">15</td>
+              <td class="day disabled ">16</td>
+              <td class="day disabled ">17</td>
+              <td class="day disabled ">18</td>
+              <td class="day disabled ">19</td>
+            </tr>
+        <tr>
+              <td class="day disabled ">20</td>
+              <td class="day disabled ">21</td>
+              <td class="day disabled ">22</td>
+              <td class="day  ">23</td>
+              <td class="day  ">24</td>
+              <td class="day  ">25</td>
+              <td class="day  ">26</td>
+            </tr>
+        <tr>
+              <td class="day  ">27</td>
+              <td class="day  ">28</td>
+              <td class="day  ">29</td>
+              <td class="day   active">30</td>
+              <td class="day  ">31</td>
+              <td class="day   new">1</td>
+              <td class="day   new">2</td>
+            </tr>
+        <tr>
+              <td class="day   new">3</td>
+              <td class="day   new">4</td>
+              <td class="day   new">5</td>
+              <td class="day   new">6</td>
+              <td class="day   new">7</td>
+              <td class="day disabled  new">8</td>
+              <td class="day disabled  new">9</td>
+            </tr>
+      </tbody>
+          <tfoot>
+        <tr>
+              <th colspan="7" class="today" style="display: none;">Today</th>
+            </tr>
+      </tfoot>
+        </table>
+  </div>
+      <div class="datepicker-months" style="display: none;">
+    <table class="table-condensed">
+          <thead>
+        <tr>
+              <th class="prev" style="visibility: visible;"><i class="icon-chevron-left"></i></th>
+              <th colspan="5" class="date-switch">2015</th>
+              <th class="next" style="visibility: visible;"><i class="icon-chevron-right"></i></th>
+            </tr>
+      </thead>
+          <tbody>
+        <tr>
+              <td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month">May</span><span class="month">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month active">Dec</span></td>
+            </tr>
+      </tbody>
+          <tfoot>
+        <tr>
+              <th colspan="7" class="today" style="display: none;">Today</th>
+            </tr>
+      </tfoot>
+        </table>
+  </div>
+      <div class="datepicker-years" style="display: none;">
+    <table class="table-condensed">
+          <thead>
+        <tr>
+              <th class="prev" style="visibility: visible;"><i class="icon-chevron-left"></i></th>
+              <th colspan="5" class="date-switch">2010-2019</th>
+              <th class="next" style="visibility: visible;"><i class="icon-chevron-right"></i></th>
+            </tr>
+      </thead>
+          <tbody>
+        <tr>
+              <td colspan="7"><span class="year old">2009</span><span class="year">2010</span><span class="year">2011</span><span class="year">2012</span><span class="year">2013</span><span class="year">2014</span><span class="year active">2015</span><span class="year">2016</span><span class="year">2017</span><span class="year">2018</span><span class="year">2019</span><span class="year old">2020</span></td>
+            </tr>
+      </tbody>
+          <tfoot>
+        <tr>
+              <th colspan="7" class="today" style="display: none;">Today</th>
+            </tr>
+      </tfoot>
+        </table>
+  </div>
+ </div>
+  <!-- Enquiry Popup-->
+  
+        <div id="light" class="white_content"><h2>Enquiry Form</h2> 
+        
+        <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'" class="close-pop">x</a>
+        <div id="cd-login" class="is-selected"> <!-- log in form -->
+				<form class="cd-form">
+					<p class="fieldset">
+						
+						<input class="full-width has-padding has-border" id="EnquryName" type="text" placeholder="Name">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						
+						<input class="full-width has-padding has-border" id="EnquryEmail" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+                    
+                    <p class="fieldset">
+						
+						<input class="full-width has-padding has-border" id="EnquryContact" type="text" placeholder="Contact Number">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+					
+
+					<p class="fieldset">
+						<input class="full-width" type="submit" value="Submit">
+					</p>
+				</form>
+				
+				
+			</div>
+        </div>
+    <div id="fade" class="black_overlay"></div> 
+
+</body>          
+    
+</html>
+

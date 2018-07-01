@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>iDeas Report</title>
+	<script type="text/javascript"  src="http://bbanathu-in/angular/angular.min.js"></script> 
+</head>
+<body>
+	<p>Select Product Family </p>
+	<div ng-app="myApp" ng-controller="myctr"> 
+	<select ng-repeat="productFamily in productFamilies">
+	<option value={{productFamily.PFID}}>{{productFamily.PFCode}}</option>
+	</select>
+	</div>    
+</body>
+<script>
+var app 	= angular.module('myApp',[]);
+
+app.controller('myctr', function($scope, $http) 
+{
+	$scope.restURI2			=   "http://127.0.0.1:7101/Rest_lab-RestServiceProject-context-root/jersey/prodfam"	
+	$scope.makeTodos2 = function() 
+	{
+		$http.get($scope.restURI).success(function (response) {$scope.productFamilies = response.productFamily;});
+	};
+	$scope.makeTodos2(); 
+
+});
+</script>
+</html>

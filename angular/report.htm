@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<script src		="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src		="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+<script data-require="angular.js@*" 	data-semver="1.3.15" 	src  ="https://code.angularjs.org/1.3.15/angular.js"></script>
+<script data-require="ui-bootstrap@*" 	data-semver="0.12.1" 	src  ="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+<link 	data-require="bootstrap-css@*" 	data-semver="3.3.1" 	href ="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" />
+
+<body>
+<font face="arial">
+<div ng-app="myApp" ng-controller="myctr"> <br>
+
+<table>
+<tr>
+<td>Select Product Family </td>
+<td>
+
+<select ng-model="productfamily" size="3" multiple style="width: 200px;" >
+<option ng-repeat="prod in prodfams" value={{prod.productFamilyID}}>{{prod.productFamilyCode}}</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Select Product Release </td>
+<td>
+<select ng-model="release"  ng-change="getBuilds(release)" style="width: 200px;" >
+<option ng-repeat="rl in releases" value={{rl.releaseID}}>{{rl.releaseName}}</option>
+</select>
+</td>
+</tr>
+<td>Select Build/Phase </td>
+<td>
+<select ng-model="build" size="3" multiple style="width: 200px;">
+<option ng-repeat="bd in builds" value={{bd.buildID}}>{{bd.buildName}}</option>
+</select>
+</td>
+</tr>
+
+<td><button ng-click="getTestCycles(productfamily,release,build)">View TestCycles</button></td>
+<td><button>Cancel</button></td>
+</tr>
+</table>
+</modal>
+<!--<pre> {{testcycles | json}}</pre> -->
+<table border="1" align="left">
+<th>Select</th>	
+<th>Test Cycle ID</th>	
+<th>Test Cycle Name</th>	
+<th>Status</th>
+<th>Start Date</th> 
+<th>End Date</th>
+<th>Test Case Count</th>
+<th>Passed</th>
+<th>Failed</th>
+<tr ng-repeat="tc in testcycles" >
+<td><input type="checkbox"></td>	
+<td>{{tc.tcID}}</td>	
+<td>{{tc.tcName}}</td>	
+<td>{{tc.tcStatus}}</td>
+<td>{{tc.tcStartDate}}</td> 
+<td>{{tc.tcEndDate}}</td>
+<td>{{tc.tcAllCount}}</td>
+<td>{{tc.tcPassed}}</td>
+<td>{{tc.tcFailed}}</td>
+<tr/>
+</table>
+</div>
+</font>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myctr', function($scope, $http) 
+{
+	
+	$scope.server = "http://adc2201480.us.oracle.com:7101/"; //[//http://127.0.0.1:7101/ , //http://adc2201480.us.oracle.com:7101/]
+	$scope.pr_uri = $scope.server+"services/ideas/report/pf";
+	$scope.rl_uri = $scope.server+"services/ideas/report/releases";
+	$scope.bd_uri = $scope.server+"services/ideas/report/builds";	
+	$scope.tc_uri = $scope.server+"services/ideas/report/tc";
+	
+	$scope.releases 	= [];
+	$scope.prodfams 	= []; 
+	$scope.builds 		= [];
+	$scope.testcycles 	= [];	
+	console.log('Recieving Product Family   Information');$http.get($scope.pr_uri).success(function (response){$scope.prodfams = response});
+	console.log('Recieving Product Releases Information');$http.get($scope.rl_uri).success(function (response){$scope.releases = response});
+
+			
+	$scope.getBuilds = function(releaseID) 
+	{
+		console.log('Calling POST Method Success');
+		console.log('Function Invoked Release ID : '+releaseID);	
+		$http.get($scope.bd_uri+"?releaseID="+releaseID).success(function (response){$scope.builds =  response});
+	};
+	$scope.getTestCycles = function(productfamily,release,build) 
+	{
+		console.log('Product Family : '+productfamily+' Release : '+release+' Build '+build);
+		$scope.tc_uri = $scope.tc_uri+"?productFamilyID="+productfamily+"&releaseID="+release+"&buildID="+build;
+		console.log('GET URI : '+$scope.tc_uri);
+		$http.get($scope.tc_uri).success(function (response){$scope.testcycles = response});
+	};
+});
+</script>
+
+</body>
+</html>

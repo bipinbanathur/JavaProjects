@@ -1,0 +1,153 @@
+<html lang="en" ng-app="StarterApp">
+<head>
+<title> Bipin Banathur</title>
+<link 	rel="stylesheet" href="css/angular-material.min.css">
+<link 	rel="stylesheet" href="css/custom.css">
+<script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
+<script src="js/angular-animate.min.js"></script>
+<script src="js/angular-aria.min.js"></script>
+<script src="js/angular-material.min.js"></script>
+<script src="js/angular-material-icons.min.js"></script> 	
+
+</head>
+<body layout="row" ng-controller="AppCtrl">  
+	<!-- Side Navigation -->
+<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+	<md-toolbar class="md-short md-hue-2">
+	<span flex></span>
+	<div layout="column" class="md-toolbar-tools-bottom inset">
+		<svg class="user-avatar" viewBox="0 0 128 128" height="80" width="80" pointer-events="none" display="block" >		
+		<image x="0%" y="0%" width="100%" height="100%" xlink:href="images/download.png"></image>			
+		</svg>    
+			<div>Bipin Banathur</div>
+			<div>bipin.banathur@oracle.com</div>
+        </div>
+	</md-toolbar>	  
+	<md-list>
+		<md-item ng-repeat="item in menu">
+			<a href={{item.link}}>
+			<md-item-content md-ink-ripple layout="row" layout-align="start center" >
+			<div class="inset"> <ng-md-icon icon="{{item.icon}}"  ></ng-md-icon>  </div>			
+			<div class="inset"  >	{{item.title}}</div> 
+			</md-item-content>
+			</a>
+			<md-divider></md-divider>
+		</md-item>
+    </md-list>	
+</md-sidenav>	
+<div ng-view></div>
+</div>
+</body>
+<script>
+var app = angular.module('StarterApp', ['ngMaterial', 'ngMdIcons','ngRoute']);
+
+app.controller('AppCtrl', ['$scope','$http','$mdBottomSheet','$mdSidenav', '$mdDialog', function($scope,$http,$mdBottomSheet,$mdSidenav,$mdDialog)
+{
+
+	$scope.toggleSidenav = function(menuId) 
+	{
+		$mdSidenav(menuId).toggle();
+	};
+	$scope.menuURI = "http://localhost:8080/material/json/menu.json";
+	$scope.tipsURI = "http://localhost:8080/material/json/ebsTips.json";	
+	$scope.getData = function()
+	{
+		$http.get($scope.menuURI).success(function(response)  {$scope.menu 		= response.menus;});
+		$http.get($scope.tipsURI).success(function(response)  {$scope.ebsTips 	= response.tips;});		
+		console.log("GET Request Executed");
+	};  
+	$scope.getData();
+  
+	$scope.showListBottomSheet = function($event) 
+	{
+		console.log("Clicked Settings");
+		$mdBottomSheet.show(
+		{
+			template: '<md-bottom-sheet class="md-list md-has-header"> <md-subheader>Settings</md-subheader> <md-list> <md-item ng-repeat="item in items"><md-item-content md-ink-ripple flex class="inset"> <a flex aria-label="{{item.name}}" ng-click="listItemClick($index)"> <span class="md-inline-list-icon-label">{{ item.name }}</span> </a></md-item-content> </md-item> </md-list></md-bottom-sheet>',
+			controller: 'ListBottomSheetCtrl',
+			targetEvent: $event
+		}).then(function(clickedItem)
+		{
+			console.log("Inside Settings");			
+		});
+	};
+    
+	$scope.showAdd = function($event) 
+	{
+		console.log("Clicked Addition");		
+		$mdDialog.show
+		({
+			templateUrl	: '/material/dialog.html',
+			controller	: 'DialogController',			
+			targetEvent	: $event,
+		}).then(function() 
+		{			
+			console.log("Opened Dianlog Control");		
+		}, 
+		function() 		
+		{
+			console.log("Clicked Add Button Again, Cancelled");
+		})
+	};
+}]);
+
+app.controller('ListBottomSheetCtrl', function($scope, $mdBottomSheet) 
+{
+  $scope.items = 
+  [
+    { name: 'Share', 	icon: 'share' 	},
+    { name: 'Upload', 	icon: 'upload' 	},
+    { name: 'Copy', 	icon: 'copy' 	},
+    { name: 'Print', 	icon: 'print' 	},
+  ];
+  
+  $scope.listItemClick = function($index)
+  {
+	console.log("Hiding Settings");
+    var clickedItem = $scope.items[$index];
+    $mdBottomSheet.hide(clickedItem);
+  };
+});
+
+app.controller('DialogController', function($scope, $mdDialog) 
+{
+	$scope.toDate = new Date();
+	$scope.fromDate = new Date();
+	console.log("Inside Dialog Control");
+	$scope.hide 	= function()		
+	{
+		console.log("Hiding Dialog Control");
+		$mdDialog.hide();	
+	};
+	$scope.cancel = function() 		
+	{
+		console.log("Cancelling Dialog Control");
+		$mdDialog.cancel();
+	};
+	$scope.save = function()		
+	{
+		console.log("Saving Dialog Control ");
+	};	
+	console.log("Exiting Dialog Control");
+});
+
+app.config(['$routeProvider',function($routeProvider) 
+{
+	$routeProvider
+	.when('/documents', {templateUrl: 'documents.html',	controller: 'AppCtrl'})
+	.when('/bugqa', 	{templateUrl: 'bugqa.html',		controller: 'AppCtrl'});	
+}]);
+
+app.config(function($mdThemingProvider) 
+{
+  var customBlueMap = $mdThemingProvider.extendPalette('light-blue', {'contrastDefaultColor': 'light','contrastDarkColors': ['50'],'50': 'ffffff'});
+  $mdThemingProvider.definePalette('customBlue', customBlueMap);
+  $mdThemingProvider.theme('default').primaryPalette('customBlue', {'default': '500','hue-1': '50'}).accentPalette('pink');
+  $mdThemingProvider.theme('input', 'default').primaryPalette('grey')
+});
+
+</script>
+  
+
+</html>

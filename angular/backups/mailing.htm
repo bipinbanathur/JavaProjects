@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript"  src="angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myctr"> <br>
+{{mail_url}}
+<br>
+{{$scope.result}}
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.config(function($httpProvider) 
+{
+	$httpProvider.defaults.useXDomain = true;
+	delete $httpProvider.defaults.headers.common['X-Requested-With'];
+});
+app.controller('myctr', function($scope, $http) 
+{
+	$scope.mail_url = "https://api.sendgrid.com/api/bounces.get.json?api_user=banathur&api_key=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&date=1";
+    $scope.get = function() 
+	{
+      $http.get($scope.mail_url).success(function(result) 
+	  {
+          console.log("Success", result);
+          $scope.result = result;
+      }).error(function() 
+	  {
+          console.log("error");
+      });
+    };
+});
+</script>
+</body>
+</html>

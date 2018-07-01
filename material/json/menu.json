@@ -1,0 +1,11 @@
+{"menus":
+[
+	{"link" : "#documents",					"title" : "Documents",		"icon" : "explore"		},
+    {"link" : "#bugqa",						"title" : "Bug QA",			"icon" : "work"		},
+	{"link" : "utilities",					"title" : "Utilities",		"icon" : "apps"		},
+	{"link" : "automation",					"title" : "API Automation",	"icon" : "dashboard"	},
+	{"link" : "downloads",					"title" : "Downloads",		"icon" : "get_app"		},
+	{"link" : "awards",					"title" : "Awards",			"icon" : "thumb_up"	},
+	{"link" : "showListBottomSheet($event)","title" : "Settings",		"icon" : "settings"	},
+	{"link" : "",							"title" : "Trash",			"icon" : "delete"		}
+]}

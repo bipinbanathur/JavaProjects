@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript"  src="angular.min.js"></script>
+<body>
+<font face="arial">
+<div ng-app="email" > <br>
+
+</div>
+</font>
+<script>
+angular.module('email', []).factory('$email', ['$http',
+    function($http) {
+        return {
+            $send: function() {
+                var method = 'GET';
+                var url = "https://api.sendgrid.com/api/mail.send.json?";
+                $http({
+                    method: method,
+                    url: url + "api_user=" + "banathur" +
+                        "&api_key=" + "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" +
+                        "&to=" + "bipin.banathur@gmail.com" +
+                        "&subject=" + "TestMail" +
+                        "&text=" + "Nothing New" +
+                        "&from=" + "Bipin@example.com"
+                }).
+                success(function(data, status) {}).
+                error(function(data, status) {});
+            }
+        };
+    }
+]);
+</script>
+
+</body>
+</html>

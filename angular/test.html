@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>AngularJS Test</title>
+<script src		="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src		="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script data-require="angular.js@*" 	data-semver="1.3.15" 	src  ="https://code.angularjs.org/1.3.15/angular.js"></script>
+<script data-require="ui-bootstrap@*" 	data-semver="0.12.1" 	src  ="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+<link 	data-require="bootstrap-css@*" 	data-semver="3.3.1" 	href ="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" />
+<link 	rel	="stylesheet" href="/angular/css/style.css"/>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myctr"> 
+		{{variable}}
+	</div>    
+</body>
+<script>
+var app 	= angular.module('myApp',[]);
+app.controller('myctr', function($scope, $http) 
+{
+	$scope.variable			=   "Hellow World"	;
+});
+</script>
+</html>

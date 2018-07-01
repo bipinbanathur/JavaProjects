@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+ <script type="text/javascript" src="/angular/js/angular.min.js"></script> 
+<body>
+<div ng-app="myApp" ng-controller="myctr"> <br>
+<br> Application Name : {{greeting}}
+<br> Calling Method   : {{callingMethod}}
+<br> Header Data      : <pre>{{headerData | json}}	</pre>
+<br> Mail Content     : <pre>{{sendData | json}}	</pre>
+<br> Mail Response    : <pre>{{responseData | json}}</pre>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myctr', function($scope, $http) 
+{
+	$scope.greeting 		= "Welcome to Email Application" ;
+	$scope.callingMethod 	= "POST",
+	$scope.mail_uri 		= "https://api.emailyak.com/v1/ssnsyrp3mg18acd/json/send/email"; //
+	$scope.headerData 		= 
+	{
+		"Access-Control-Allow-Origin" 		: "*",
+		"Access-Control-Allow-Credentials" 	: "true",
+		"Access-Control-Allow-Methods"  	: "POST, GET, OPTIONS, PUT",
+		"Access-Control-Allow-Headers"  	: "ssnsyrp3mg18acd",
+		"Content-Type"						: "application/json; charset=utf-8",
+		"Accept"							: "application/json; charset=utf-8",
+		"X-Emailyak-Post-Auth"				: "ssnsyrp3mg18acd, Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control",
+	};
+	$scope.sendData = 
+	{
+		"ToAddress"		: "bipinbanathur@gmail.com", 
+		"FromName"		: "Bipin", 
+		"CcAddress"		: "bipinbanathur@gmail.com", 
+		"HtmlBody"		: "Hello How Are you ??", 
+		"SenderAddress"	: "bipin@banathur.simpleyak.com", 
+		"BccAddress"	: "bipinbanathur@gmail.com", 
+		"ReplyToAddress": "bipinbanathur@gmail.com", 
+		"FromAddress"	: "bipin@banathur.simpleyak.com", 
+		"TextBody"		: "Hello How Are you ???", 
+		"Subject"		: "Test Mail"
+	};
+
+	
+	$scope.sendMail = function() 
+	{
+		return $http
+		({		
+			method	: $scope.callingMethod,
+			headers	: $scope.headerData,
+			url		: $scope.mail_uri,
+			data	: $scope.sendData
+	    }).success(function(result) 
+		{
+			console.log("POST Request Successful")
+			$scope.responseData = result;				
+	    }).error(function(data, status, headers, config) 
+		{
+			console.log("POST Request Failed")
+	        console.log("Data		:	"+data);
+	        console.log("Status		:	"+status);
+	        console.log("Headers	:	"+headers);
+	        console.log("Config		:	"+config);
+			$scope.responseData  = config;
+	    });
+	};
+	$scope.sendMail();	
+});
+</script>
+
+</body>
+</html>

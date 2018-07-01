@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>iDeas Reports</title>
+<link 	rel		="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<script src		="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src		="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src		="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<link 	data-require="bootstrap-css@*" 	data-semver="3.3.1" 	rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<script data-require="angular.js@*" 	data-semver="1.3.15" 	src="https://code.angularjs.org/1.3.15/angular.js"></script>
+<script data-require="ui-bootstrap@*" 	data-semver="0.12.1" 	src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+<link 	rel		="stylesheet" 	type	="text/css" href="css/tree-control.css"/>
+<link 	rel		="stylesheet" 	type	="text/css" href="css/tree-control-attribute.css"/>
+<link 	rel		="stylesheet" 						href="style.css" />
+</head>
+<body>
+	
+<div ng-app="iDeasApp" ng-controller="iDeasCtrl">
+{{appName}}
+
+	
+	 <table border="1">
+	<th>Bug No</th>
+	<th>Short Name</th>
+	<tr ng-repeat="bug in bugs">
+	<td>{{bug.bugNo}}</td>
+	<td>{{bug.shortName}}</td>
+	</tr>
+ </div>
+	
+</body>
+<script>
+var iDeasApp = angular.module('iDeasApp', [])
+
+iDeasApp.controller('iDeasCtrl', function($scope, $http) 
+{
+  $scope.appName 			= "iDeas Reports";
+ // $scope.productFamilies 	= [];
+  $scope.bugs				= [];
+ // $scope.pfURI 				= "http://adc2201480.us.oracle.com:7101/services/rest/prod_families/";
+  $scope.bugURI 			= "http://adc2201480.us.oracle.com:7101/services/rest/restbug?updatedBy=BBANATHU&fromDate01-JAN-2007&toDate=31-DEC-2015&bugType=INTERNAL";
+    
+ // $scope.getPFS = function() 
+  //{
+	//$http.get($scope.pfURI).success(function(response)   {$scope.productFamilies = response.productFamily;});
+  //};  
+  $scope.loadBugs = function() 
+  {
+	$http.get($scope.bugURI).success(function(response)   {$scope.bugs = response.bug;});
+  };
+ // $scope.getPFS(); 
+  $scope.loadBugs(); 
+});
+</script>
+</html>

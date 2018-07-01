@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html ng-app="bugs">
+<head>
+<link 	rel		="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+<script src		="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src		="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src		="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<link 	data-require="bootstrap-css@*" 	data-semver="3.3.1" 	rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+<script data-require="angular.js@*" 	data-semver="1.3.15" 	src="https://code.angularjs.org/1.3.15/angular.js"></script>
+<script data-require="ui-bootstrap@*" 	data-semver="0.12.1" 	src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+<link 	rel		="stylesheet" 	type	="text/css" href="css/tree-control.css"/>
+<link 	rel		="stylesheet" 	type	="text/css" href="css/tree-control-attribute.css"/>
+<link 	rel		="stylesheet" 						href="style.css" />
+<style type="text/css">
+table.imagetable 
+{
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #999999;
+	border-collapse: collapse;
+}
+table.imagetable th 
+{
+	background:#b5cfd2 url('cell-blue.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+table.imagetable td 
+{
+	background:#dcddc0 url('cell-grey.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+
+</style>
+</head>
+	<body ng-controller="BugsController">
+	<h1>Bug Report</h1>	
+<table>
+<tr><td>	
+<form role="form" name="form.BugQuery">
+<table>
+<div class="form-group">
+<!-- ----------------------------------------------------------------------------------- -->
+<tr>
+<td><label for="updatedBy">GUID</label></td>	
+<td><input type="id" class="form-control" id="updatedBy" placeholder="Global User ID" ng-model="bq.updatedBy"  ng-model-options="{ updateOn: 'blur' }"/></td>	
+<td><label for="fromDate">From Date</label></td>	
+<td><div style="display:inline-block; min-height:290px;"><datepicker ng-model="bq.fromDate" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker></div> 
+</td>
+</tr>
+<!-- ----------------------------------------------------------------------------------- -->
+<tr>
+<td><label for="bugType">Bug Type</label></td>	
+<td><select id="bugType" multiple="true" ng-model="bq.bugType" class="form-control" ><option value="INTERNAL">Internal</option><option value="CUSTOMER">Customer</option>		</select></td>	
+<td><label for="toDate">To Date</label></td>	
+<td><div style="display:inline-block; min-height:290px;"><datepicker ng-model="bq.toDate" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></datepicker></div>
+</tr>
+<!-- ----------------------------------------------------------------------------------- -->
+<tr>
+<td><label for="bugType">Bug Type</label></td>	
+<td><select id="bugType" multiple="true" ng-model="bq.bugType" class="form-control" ><option value="INTERNAL">Internal</option><option value="CUSTOMER">Customer</option></select></td>
+<td><label for="changedStatus">Bug Status</label></td>	
+<td><select id="changedStatus" multiple="true" ng-model="bq.changedStatus" class="form-control" ><option value="90">Closed Internal</option><option value="87">Closed Customer</option>	<option value="11">Re open</option><option value="92">Not a Bug</option>		<option value="81">Bug Merged</option>	<option value="75">Waiting</option>			</select></td>
+</tr>
+<!-- ----------------------------------------------------------------------------------- -->
+<tr>
+<td><button type="submit" class="btn btn-default" ng-click="queryBugs(bq)" >Query</button></td>	
+<td></td>
+<td><button type="submit" class="btn btn-default" ng-click="cancelBugs(bq)" >Cancel</button></td>	
+<td></td>
+</tr>
+</div>
+</table>
+</form>
+</td>
+<td>	
+    <table class="imagetable">
+	<th>Bug No</th>
+	<th>Short Name</th>	
+	<th>Customer</th>	
+	<th>Status</th>
+	<th>Version</th>
+	<tr ng-repeat="bug in filteredBugs">
+	<td><a href="https://bug.oraclecorp.com/pls/bug/webbug_print.show?c_rptno={{bug.bugNo}}">{{bug.bugNo}} </a></td>
+	<td>{{bug.shortName}}</td>
+	<td>{{bug.customer}}</td>
+	<td>{{bug.status}}</td>
+	<td>{{bug.version}}</td>
+	</tr>
+    </table>
+	  <pagination 
+      ng-model			=	"currentPage"
+      total-items		=	"bugs.length"
+      max-size			=	"maxSize"  
+      boundary-links	=	"true">
+    </pagination>
+</td>	
+</table>	
+</body>
+<script>
+	
+
+
+var bugapp = angular.module('bugs', ['ui.bootstrap']);
+
+bugapp.controller('BugsController', function($scope,$http,$filter) 
+{
+  $scope.bugURI			= "http://bbanathu-in/bugrepo/bugs/restbug/?updatedBy=BBANATHU&fromDate01-JAN-2007&toDate=31-DEC-2015";
+  
+  $scope.loadBugs = function() 
+  {
+	$http.get($scope.bugURI).success(function(response)   {$scope.bugs = response.bug;});
+  };
+ 
+  
+  
+  
+  $scope.queryBugs = function(form) 
+  {
+	var updatedBy 		= form.updatedBy;
+	var fromDate 		= $filter('date')( new Date(form.fromDate),'dd/MMM/yyyy'  );
+	var toDate 			= $filter('date')( new Date(form.toDate),'dd/MMM/yyyy'  );
+	var	changedStatus	= form.changedStatus;
+	var	bugType			= form.bugType;
+	
+	alert(updatedBy+" : "+fromDate+" : "+toDate+" : "+bugType+" : "+changedStatus);
+	
+	//$scope.bugURI			= "http://bbanathu-in/bugrepo/bugs/restbug/?updatedBy="+fromDate+"&fromDate="+fromDate+"&toDate="+toDate+"&changedStatus="+changedStatus+"&bugType="+bugType;
+	$scope.bugURI			= "http://bbanathu-in/bugrepo/bugs/restbug/?updatedBy="+updatedBy+"&fromDate="+fromDate+"&toDate="+toDate+"&changedStatus="+changedStatus+"&bugType="+bugType;
+	alert($scope.bugURI);
+	$scope.loadBugs(); 
+  }
+
+  
+  $scope.filteredBugs 	= [];
+  $scope.currentPage 	= 1
+  $scope.numPerPage 	= 10;
+  $scope.maxSize 		= 5;
+  
+  
+  
+  $scope.$watch('currentPage + numPerPage', function() 
+  {
+    var begin 	= ($scope.currentPage - 1) * $scope.numPerPage;
+	var end 	= begin + $scope.numPerPage;    
+    $scope.filteredBugs = $scope.bugs.slice(begin, end);
+  });
+  
+    $scope.today = function() 
+	{
+		$scope.dt = new Date();
+	};
+	$scope.today();
+
+  $scope.clear = function () 
+  {
+    $scope.dt = null;
+  };
+
+  //Disable weekend selection
+  $scope.disabled = function(date, mode) 
+  {
+    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+  };
+
+  $scope.toggleMin = function() 
+  {
+    $scope.minDate = $scope.minDate ? null : new Date()-5000;
+  };
+  //$scope.toggleMin();
+
+  $scope.open = function($event) 
+  {
+    $scope.status.opened = true;
+  };
+
+  $scope.dateOptions =
+  {
+    formatYear: 'yy',
+    startingDay: 1
+  };
+
+  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+  $scope.format = $scope.formats[0];
+
+  $scope.status = 
+  {
+    opened: false
+  };
+
+  var tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  var afterTomorrow = new Date();
+  afterTomorrow.setDate(tomorrow.getDate() + 2);
+  
+  $scope.events =
+    [
+      {
+        date: tomorrow,
+        status: 'full'
+      },
+      {
+        date: afterTomorrow,
+        status: 'partially'
+      }
+    ];
+
+  $scope.getDayClass = function(date, mode) 
+  {
+    if (mode === 'day') {
+      var dayToCheck = new Date(date).setHours(0,0,0,0);
+
+      for (var i=0;i<$scope.events.length;i++){
+        var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
+
+        if (dayToCheck === currentDay)
+		{
+          return $scope.events[i].status;
+        }
+      }
+    }
+
+    return '';
+  };
+
+});
+</script>
+</html>

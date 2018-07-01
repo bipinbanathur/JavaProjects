@@ -1,0 +1,4350 @@
+
+
+#holiday-name-container {
+	position:relative;
+	overflow:auto;
+	background:#f5f5f5;
+	position:relative
+}
+#holiday-name-container .holiday-title-holder {
+	line-height:1.5;
+	position:relative;
+	overflow:auto;
+	margin:30px 0
+}
+.holiday-title-holder h1.holiday-title {
+	float:left;
+	font-size:22px;
+	color:#333;
+	cursor:pointer;
+	padding:0 30px 0 14px;
+	display:inline-block;
+	max-width:80%;
+	height:100%
+}
+.holiday-title-holder button.title-change {
+	float:left;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/right-arrow.33bc1cdf357d.png") 2px 2px no-repeat #399;
+	padding-left:20px;
+	padding-right:6px;
+	margin-top:10px
+}
+.holiday-title-holder button.changed {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/down-arrow.29bc1707061b.png") 2px 2px no-repeat;
+	padding-left:20px;
+	padding-right:6px
+}
+.holiday-title-holder .places-to-visit {
+	word-break:break-word
+}
+.filter-bar-wrapper {
+	background-color:#333;
+	padding:10px 13px 10px 0
+}
+.filter-list {
+	margin-right:60px
+}
+.filter-list span.left {
+	margin-right:10px;
+	color:#fff;
+	font-weight:600;
+	font-size:13px;
+	line-height:21px
+}
+.list-view-container>.center-block {
+	width:80%
+}
+.cross {
+	cursor:pointer;
+	z-index:9;
+	background-color:#cd1625;
+	right:-72px;
+	color:#fff;
+	top:0;
+	font-size:27px;
+	padding:6px 9px;
+	font-weight:900;
+	font-family:monospace
+}
+.list-view-container .flight {
+	background-position:-96px 5px!important
+}
+.list-view-container .places {
+	background-position:-52px -8px!important
+}
+.list-view-container .train {
+	background-position:-245px -1px!important
+}
+.list-view-container .bus {
+	background-position:-148px 2px!important
+}
+.list-view-container .car, .list-view-container .cab {
+	background-position:-198px 1px!important
+}
+.last-destination {
+	margin-bottom:20px
+}
+.palce-detail-container>p {
+	margin-left:50px;
+	color:#444
+}
+.palce-detail-container>p:first-child {
+	margin-top:15px;
+	margin-bottom:7px
+}
+.palce-detail-container>p:nth-child(2) {
+margin-bottom:10px
+}
+.head_info {
+	border-bottom:1px solid #d1837b
+}
+.result-list-view>li>.head_info>p:first-child {
+	padding:10px 0 5px;
+	font-size:17px;
+	color:#7f7f7f
+}
+.end-place-info, .palce-detail-container div.place-info-container, .hotel-detail-container {
+	float:left;
+	width:88%
+}
+.palce-detail-container div.place-info-container>p:first-child, .hotal-info>div.hotel-detail-container>p:first-child {
+	color:#444;
+	font-size:17px;
+	font-weight:600;
+	padding-bottom:5px
+}
+.palce-detail-container div.place-info-container>p:nth-child(2), .hotal-info>div.hotel-detail-container>p:nth-child(2) {
+color:#7f7f7f;
+font-size:13px;
+padding:3px 0
+}
+.route-detail, .hotal-info, .palce-detail-container div.full-width {
+	float:left;
+	width:100%;
+	padding:15px 0;
+	border-bottom:1px solid #7f7f7f
+}
+.hotal-info {
+	margin-bottom:20px
+}
+.route-detail>.list-info-content>p:nth-child(1), .end-place-info>p:nth-child(1) {
+color:#7f7f7f;
+font-size:17px;
+padding:3px 0
+}
+.route-detail>.list-info-content>p:nth-child(2), .end-place-info>p:nth-child(2) {
+font-size:17px;
+color:#444;
+font-weight:600;
+padding:3px 0
+}
+.route-detail>.list-info-content>p:nth-child(3), .end-place-info>p:nth-child(3) {
+color:#7f7f7f;
+font-size:13px;
+padding:3px 0
+}
+.result-list-view>li>.head_info>p:nth-child(2) {
+padding:5px 0 4px;
+font-size:16px;
+color:#7f7f7f
+}
+.result-list-view>li>.head_info>p:nth-child(3) {
+font-size:12px;
+color:#7f7f7f
+}
+.result-list-view>li>.head_info>p:nth-child(4) {
+padding:10px 0 15px;
+font-size:21px;
+color:#444
+}
+.list-view-container {
+	display:none;
+	border:0!important;
+	background-color:#fff;
+	width:640px!important;
+	top:21%!important;
+	left:20%!important;
+	height:50%;
+	overflow:auto;
+	position:fixed;
+	z-index:1201
+}
+.list-view-container::-webkit-scrollbar {
+width:7px
+}
+.list-view-container::-webkit-scrollbar-thumb {
+-webkit-border-radius:10px;
+border-radius:10px;
+background:rgba(111, 161, 201, 0.7)
+}
+.list-view-backset {
+	float:left;
+	width:50px;
+	height:40px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/sprite1.14b8e090f14c.png") 2px -8px no-repeat
+}
+.list-info-content {
+	float:left;
+	width:88%
+}
+.result-list-view {
+	margin-top:70px;
+	margin-bottom:20px
+}
+.ressult-list-header {
+	border-bottom:1px solid #d1837b;
+	padding:25px 0 20px;
+	font-size:20px;
+	font-size:22px;
+	color:#444;
+	position:fixed;
+	width:505px;
+	background-color:#fff;
+	text-transform:uppercase;
+	font-family:"Lato", sans-serif!important
+}
+a.experience-rating {
+	font-weight:600;
+	padding:2px 6px 5px 2px;
+	font-size:13px;
+	color:#FFF;
+	position:absolute;
+	top:-30px;
+	left:11px;
+	cursor:pointer
+}
+a.experience-rating>span.question-mark {
+	background-color:#6da0cb;
+	color:#FFF;
+	border-radius:50%;
+	padding:1px 5px;
+	margin-right:5px
+}
+#search-results {
+	position:relative;
+	min-height:470px
+}
+.full-width-results {
+	width:80%!important
+}
+#results-container {
+	display:inline-block;
+	width:100%;
+	padding:5px 12px;
+	background:#f5f5f5
+}
+#results-container .variant-holder {
+	padding:1px;
+	background:white;
+	margin:0 auto 20px auto;
+	border:1px solid #f6f6f6;
+	border:1px solid #666
+}
+#results-container .selected-variant {
+	border:2px solid #c33!important;
+	padding:0;
+	cursor:default
+}
+.variant-holder .images-strip-holder {
+	position:relative;
+	border-bottom:1px solid #cfcfce;
+	margin:0 0 20px 0
+}
+.variant-holder .images-strip-holder .rate-holder {
+	margin:0 -0px 0 0;
+	vertical-align:top;
+	display:inline-block;
+	text-align:center;
+	padding:25px 0 0;
+	background:#fff;
+	height:90px;
+	width:90px
+}
+.variant-holder .images-strip-holder p.rated-number {
+	color:#333;
+	text-transform:uppercase;
+	font-weight:700;
+	font-size:12px;
+	margin:0 0 4px 0
+}
+.images-strip-holder span.number {
+	color:#333;
+	font-size:20px;
+	display:block;
+	text-align:center
+}
+.variant-holder .images-strip-holder .search-place-image-holder {
+	display:inline-block;
+	margin:0 0 -3px 0;
+	width:90px;
+	height:90px;
+	overflow:hidden;
+	-webkit-transition-timing-function:ease-out;
+	-webkit-transition-duration:100ms;
+	-moz-transform:scale(1, 1);
+	-moz-transition-timing-function:ease-out;
+	-moz-transition-duration:100ms
+}
+.variant-holder .images-strip-holder .search-place-image-holder:hover {
+	-webkit-transform:scale(1.05, 1.07);
+	-webkit-transition-timing-function:ease-out;
+	-webkit-transition-duration:100ms;
+	-moz-transform:scale(1.05, 1.07);
+	-moz-transition-timing-function:ease-out;
+	-moz-transition-duration:100ms;
+	position:relative;
+	z-index:99
+}
+.variant-holder .images-strip-holder .search-place-image-holder img {
+	width:100%
+}
+.variant-holder .images-strip-holder button.shortlisted {
+	width:auto;
+	display:none;
+	position:absolute;
+	right:10px;
+	margin-bottom:50px
+}
+.shortlist, .shortlisted {
+	background-position:1px -25331px;
+	padding-left:22px;
+	padding-right:6px
+}
+.full-trip-holder {
+	display:inline-block;
+	vertical-align:top;
+	position:relative;
+	width:82%;
+	margin:-5px 10px 60px;
+	padding:0 40px 0 112px
+}
+.full-trip-holder>div {
+	display:inline-block;
+	vertical-align:top;
+	position:relative;
+	margin-bottom:20px
+}
+.full-trip-holder .point-title {
+	font-size:15px;
+	font-weight:500;
+	color:#262626;
+	text-transform:uppercase
+}
+.full-trip-holder .add-this {
+	position:absolute;
+	right:-4px;
+	top:10px;
+	color:#b21516;
+	font-size:15px;
+	font-weight:600
+}
+.full-trip-holder .start-point {
+	position:absolute;
+	left:0;
+	background-position:0 -27160px;
+	width:113px
+}
+.full-trip-holder .start-point .point-title {
+	padding:58px 0 0 0
+}
+.full-trip-holder .end-point {
+	background-position:0 -10328px;
+	width:113px
+}
+.full-trip-holder .end-point .point-title {
+	padding:58px 0 0 0;
+	text-align:right
+}
+.full-trip-holder .red-point {
+	line-height:18px;
+	overflow:hidden;
+	text-align:center;
+	background-position:0 -21653px;
+	width:128px
+}
+.full-trip-holder .red-point .point-title {
+	height:50px;
+	position:relative;
+	top:-1px
+}
+.full-trip-holder .point-about, .days_count {
+	width:99%;
+	padding:0;
+	text-decoration:underline;
+	color:#666;
+	font-size:13px;
+	display:block
+}
+.full-trip-holder .point-about:hover {
+	font-weight:600;
+	color:#444
+}
+.loader {
+	position:absolute;
+	z-index:100;
+	top:30px;
+	left:0;
+	height:114px!important;
+	width:100%;
+	background:rgba(255, 255, 255, .8) url("/web/20150606094404/https://www.tripigator.com/static/css/images/small-loder.6d1e35df91db.gif") 50% 50% no-repeat
+}
+.loading-text {
+	text-align:center;
+	position:absolute;
+	width:100%;
+	height:auto!important;
+	color:#333;
+	z-index:101;
+	top:108px
+}
+.full-trip-holder .red-point p:nth-child(2) {
+width:99%;
+padding:0;
+color:#262626;
+font-size:13px;
+display:block
+}
+.full-trip-holder .days_count {
+	text-decoration:none
+}
+.full-trip-holder .gray-point {
+	text-align:center;
+	background-position:0 -11657px;
+	width:128px
+}
+.full-trip-holder .gray-point .point-title {
+	height:50px
+}
+.variant-holder .summary_btn {
+	bottom:21px;
+	left:47%;
+	color:#444;
+	font-size:15px;
+	border-bottom:2px solid #999;
+	font-weight:600;
+	cursor:pointer;
+	padding-bottom:3px
+}
+.summary_btn:hover {
+	border-bottom-color:#444
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+.full-trip-holder .gray-point .point-title {
+padding-top:1px
+}
+}
+.full-trip-holder .route-point {
+	text-align:center;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/route-point.2c4a0bb8487d.png") no-repeat center 22px;
+	width:128px
+}
+.full-trip-holder .route-point .point-title {
+	padding:0 0 26px 0
+}
+.full-trip-holder .train {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/train.1a82234d2f85.png") no-repeat center center;
+	width:27px;
+	height:70px
+}
+.full-trip-holder .plane {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/plain.7c10e1b46f66.png") no-repeat center center;
+	width:34px;
+	height:70px
+}
+.full-trip-holder .plane .add-this {
+	right:-8px
+}
+.full-trip-holder .bus {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/bus.f44e44cb7e43.png") no-repeat center center;
+	width:28px;
+	height:70px
+}
+.full-trip-holder .cab {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/car.3c28c25e3e31.png") no-repeat center center;
+	width:35px;
+	height:70px
+}
+.full-trip-holder .qmark {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/icons/qmark_grey.50e780429266.png") no-repeat center center;
+	width:35px;
+	height:70px
+}
+.full-trip-holder .next-line {
+	position:absolute;
+	right:30px;
+	top:1px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/next-page.f19331702758.png") no-repeat center center;
+	width:29px;
+	height:70px
+}
+.full-trip-holder .next {
+	left:80px;
+	bottom:3px;
+	position:absolute;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/next.1aa351b63a5e.png") no-repeat right center;
+	width:10px;
+	height:70px
+}
+@media(max-width:1280px) {
+.full-trip-holder {
+width:80%
+}
+}
+@media(max-width:1100px) {
+.full-trip-holder {
+width:78%
+}
+}
+#map-container {
+	position:relative;
+	vertical-align:top;
+	display:inline-block;
+	max-width:100%;
+	min-width:200px
+}
+#map-container .expand {
+	z-index:200;
+	position:absolute;
+	left:0;
+	top:8px
+}
+#search-option {
+	display:none;
+	padding:0 10px 15px;
+	margin:0
+}
+#search-option .travel-date {
+	cursor:pointer;
+	padding:6px 39px 6px 8px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/pickup.0779fa43bb99.png") no-repeat right #fff;
+	border:0;
+	font-size:15px;
+	font-weight:500;
+	color:#2a2a2a;
+	width:170px;
+	height:45px
+}
+#search-option .end-travel-date {
+	cursor:pointer;
+	padding:6px 39px 6px 8px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/pickup.0779fa43bb99.png") no-repeat right #fff;
+	border:0;
+	font-size:15px;
+	font-weight:500;
+	color:#2a2a2a;
+	width:170px;
+	height:45px
+}
+#search-option .travel-adult-holder .jqTransformSelectWrapper {
+	width:75px!important
+}
+#search-option .travel-adult-holder .jqTransformSelectWrapper span {
+	width:75px!important
+}
+#search-option .travel-adult-holder ul {
+	width:75px!important
+}
+#search-option .travel-children-holder .jqTransformSelectWrapper {
+	width:75px!important
+}
+#search-option .travel-children-holder .jqTransformSelectWrapper span {
+	width:75px!important
+}
+#search-option .travel-children-holder ul {
+	width:75px!important
+}
+.travel-budget-holder .travel-budget {
+	padding:6px 39px 6px 8px;
+	border:0;
+	font-size:15px;
+	font-weight:500;
+	color:#2a2a2a;
+	width:140px;
+	height:45px
+}
+#search-option .add-interest {
+	display:inline-block;
+	width:47px;
+	height:97px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/add-interest.ef3d9a3089ef.png") no-repeat bottom;
+	padding:10px 0 0 0;
+	cursor:pointer
+}
+#search-option .interest-type {
+	display:inline-block;
+	position:relative;
+	padding:0 0 0 38px;
+	margin:0 0 0 15px;
+	bottom:16px
+}
+#search-option .interest-type span {
+	cursor:pointer;
+	display:inline-block;
+	float:right;
+	right:0;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/remove.bb72473c5e29.png") no-repeat;
+	width:27px;
+	height:27px
+}
+#search-option .interest-type p {
+	cursor:default;
+	color:#262626;
+	font-size:15px;
+	display:inline-block;
+	height:27px;
+	line-height:27px;
+	padding:0 10px 0 8px
+}
+#search-option .Romantic-interest {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/icons/romantic.f5ad81030c23.png") no-repeat
+}
+#search-option .Spiritual-interest {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/icons/spiritual.57ad9ecf6f45.png") no-repeat
+}
+#search-option .Wildlife-interest {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/icons/wildlife.5d5261546dbf.png") no-repeat
+}
+#search-option .Family-interest {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/icons/family.234f4c7d7f44.png") no-repeat
+}
+#search-option .Adventure-interest {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/icons/adventure.191bcc19d5be.png") no-repeat
+}
+#search-option .Friends-interest {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/icons/friends.6fac5f199a41.png") no-repeat
+}
+#search-option .Culture-interest {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/icons/culture.d4b5ee458f20.png") no-repeat
+}
+#search-option .Nature-interest {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/icons/nature.91df8e9b3697.png") no-repeat
+}
+#search-option .Hideaway-interest {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/icons/hideaway.e927dbc14b35.png") no-repeat
+}
+#search-option .Lifestyle-interest {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/icons/lifestyle.9ac5f99d2f73.png") no-repeat
+}
+.current-location input {
+	border:1px solid #d63438;
+	height:45px;
+	width:250px;
+	padding:0 0 0 40px;
+	font-size:18px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/input-bg.a9dbcbe75ea2.png") no-repeat 8px center #fff;
+	text-transform:uppercase
+}
+.current-location span.search-destination-go {
+	display:inline-block;
+	position:relative;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/search-big.7aa04f2cebd8.png") no-repeat;
+	height:45px;
+	width:45px;
+	cursor:pointer;
+	top:16px;
+	right:4px
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+.destination-search span.search-destination-go {
+top:17px
+}
+}
+.current-location label {
+	margin:20px 0 -10px 0
+}
+#search-option .interests-apply {
+	position:absolute;
+	bottom:18px;
+	right:250px
+}
+.travel-options-holder {
+	position:relative
+}
+.experience-holder {
+	display:none;
+	height:50px;
+	background:#f5f5f5;
+	position:relative
+}
+.experience-holder a.experience-rating {
+	background-position:0 -20803px;
+	font-size:13px;
+	font-weight:600;
+	padding:0 0 4px 18px;
+	font-size:13px;
+	color:#399;
+	position:absolute;
+	bottom:5px;
+	left:13px
+}
+.show-tooltip {
+	display:inline-block;
+	background:#333;
+	text-align:center;
+	padding:4px 10px
+}
+.show-tooltip hr {
+	background:#fff
+}
+.show-tooltip p {
+	font-size:13px;
+	color:white
+}
+.show-tooltip .duratation {
+	font-weight:700
+}
+.shortlisted-message {
+	display:none;
+	position:fixed;
+	top:30px;
+	right:60px;
+	z-index:1000
+}
+.shortlisted-message p {
+	cursor:pointer;
+	background:#fff;
+	color:#333;
+	border:1px solid #c63;
+	padding:30px 60px
+}
+.shortlist-message {
+	display:none;
+	position:fixed;
+	top:30px;
+	right:60px;
+	z-index:1000
+}
+.shortlist-message p {
+	cursor:pointer;
+	background:#fff;
+	color:#333;
+	border:1px solid #c63;
+	padding:30px 60px
+}
+.loading-steps {
+	text-align:center
+}
+.loading-steps img {
+	display:inline-block;
+	margin:30px 0 0
+}
+.loading-steps {
+	margin-top:140px
+}
+.loading-steps p {
+	color:#399;
+	font-size:20px;
+	margin:40px 0 0 0
+}
+.loading-steps p.activate {
+	color:#c33
+}
+#destination-underheader {
+	height:80px;
+	background:rgba(0, 0, 0, 0.4)
+}
+#destination-underheader h1 {
+	font-size:22px;
+	color:rgba(245, 245, 245, 1);
+	cursor:pointer;
+	padding:30px 30px 0 14px;
+	display:inline-block
+}
+#destination-underheader a {
+	display:inline-block;
+	margin:0 10px 0 0;
+	position:relative
+}
+#destination-underheader a.destination-add-wishlist {
+	display:inline-block;
+	width:160px;
+	height:30px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/wishlist-large.f15528dafabb.png") no-repeat left center;
+	font-weight:600;
+	padding:10px 00px 10px 33px;
+	line-height:8px
+}
+#destination-underheader a.destination-add-trip {
+	display:inline-block;
+	width:140px;
+	height:30px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/add-bag.5355c728817f.png") no-repeat;
+	font-weight:600;
+	padding:10px 00px 10px 38px;
+	line-height:8px;
+	font-size:16px
+}
+#destination-information-holder {
+	position:relative;
+	text-align:right
+}
+#destination-information-holder .image-arrow {
+	color:white;
+	max-width:100px;
+	width:auto;
+	position:absolute;
+	bottom:50px;
+	right:10px
+}
+#destination-information-holder .left-arrow {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/left-arrow.08ba7ee52524.png") rgba(245, 245, 245, 0.2) no-repeat;
+	background-size:30px 40px;
+	width:30px;
+	height:40px;
+	display:inline-block;
+	cursor:pointer
+}
+#destination-information-holder .right-arrow {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/right-arrow2.8ab71a2fd196.png") rgba(245, 245, 245, 0.2) no-repeat;
+	background-size:30px 40px;
+	width:30px;
+	height:40px;
+	display:inline-block;
+	cursor:pointer
+}
+#destination-information-holder .right-arrow:hover {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/right-arrow2.8ab71a2fd196.png") rgba(245, 245, 245, 0.4) no-repeat;
+	background-size:30px 40px
+}
+#destination-information-holder .left-arrow:hover {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/left-arrow.08ba7ee52524.png") rgba(245, 245, 245, 0.4) no-repeat;
+	background-size:30px 40px
+}
+#destination-information-holder .destination-background {
+	position:absolute;
+	top:0;
+	left:0;
+	min-width:100%;
+	height:100%
+}
+#destination-information-holder .photo-detail {
+	color:white!important;
+	text-shadow:0 0 10px rgba(0, 0, 0, 1);
+	padding:5px;
+	text-align:center;
+	position:absolute;
+	bottom:50px;
+	right:80px;
+	font-weight:300
+}
+#destination-information-holder .photo-detail a {
+	color:white
+}
+#destination-information-holder .photo-detail a:hover {
+	text-decoration:underline
+}
+#destination-information-holder {
+	background-position:50% 50%;
+	background-attachment:fixed;
+	width:100%;
+	background-size:cover;
+	position:relative;
+	top:50px;
+	height:620px
+}
+.destination-information-container {
+	max-width:400px;
+	display:inline-block;
+	position:absolute;
+	background:rgba(0, 0, 0, 0.4);
+	text-align:left;
+	padding:5px 10px 5px 10px;
+	top:130px;
+	right:10px;
+	z-index:2
+}
+.arrow-destination-page {
+	z-index:2;
+	right:50%;
+	cursor:pointer;
+	display:none;
+	top:55px;
+	height:22px;
+	width:35px;
+	background-image:url("/web/20150606094404/https://www.tripigator.com/static/css/images/dropdown-gray.e058db5e1163.png");
+	background-position:-1px -14px
+}
+@media(max-width:1050px) {
+}
+.arrow-destination-page, .arrow-plan-page {
+	z-index:2;
+	right:5px;
+	cursor:pointer;
+	display:none;
+	top:55px;
+	height:22px;
+	width:35px;
+	background-image:url("/web/20150606094404/https://www.tripigator.com/static/css/images/arrow_white.98460c06b66b.png");
+	background-position:0 0;
+transition:all .3s ease-in-out
+}
+.arrow-plan-page {
+	top:14px
+}
+.rotate-90 {
+	transform:rotate(180deg)
+}
+.destination-information-container .container {
+	display:inline-block;
+	width:100%;
+	margin:5px 0 5px 0;
+	background:#fff;
+	padding:10px 9px 10px
+}
+.destination-weather ul.point-date-info-holder {
+	margin:10px 0
+}
+.destination-weather ul.point-date-info-holder li.point-date {
+	display:inline-block;
+	width:25%;
+	padding-left:5px
+}
+.destination-weather li.point-date p.point-date-title {
+	color:#333;
+	font-size:11px;
+	margin:0 0 4px 0;
+	font-weight:600
+}
+.destination-weather li.point-date p.weather-info {
+	display:inline-block;
+	margin:0 2px 10px 0;
+	color:#333
+}
+.destination-weather li.point-date p.weather-info:after {
+	display:inline-block;
+	position:relative;
+	content:"";
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/degree.907fac427283.png") no-repeat;
+	width:6px;
+	height:6px;
+	position:relative;
+	top:-11px;
+	left:2px
+}
+.destination-infromation-container .destination-frineds-strip {
+	display:none
+}
+.destination-rating img {
+	display:block
+}
+.destination-rating span {
+	margin:0 5px -2px 0
+}
+.destination-rating .category-name {
+	display:inline-block;
+	font-size:15px;
+	color:#262626;
+	text-transform:capitalize
+}
+#destination-tabs {
+	position:relative;
+	background:#fff;
+	min-height:300px
+}
+ul.destination-tabs {
+	position:relative;
+	width:100%;
+	padding:0 0 0 15px;
+	background:#f5f5f5;
+	margin:0 auto;
+	float:left
+}
+.destination-tabs li {
+	display:inline-block;
+	text-align:center;
+	background:#399;
+	padding:10px;
+	cursor:pointer;
+	float:left;
+	border-right:1px solid #4db2b2;
+	border-left:1px solid #1e5c5c
+}
+.destination-tabs li:first-child {
+	border-left:0
+}
+.destination-tabs li:last-child {
+	border-right:0
+}
+.destination-tabs li:hover {
+	background:#366
+}
+.destination-tabs li.active {
+	background:#fff;
+	border:0
+}
+.destination-tabs li.active a {
+	color:#399!important
+}
+.destination-tabs li a {
+transition:background .3s;
+	font-weight:bold;
+	color:white;
+	font-size:15px
+}
+#destination-tabs .destination-tab-content {
+	float:left;
+	width:100%
+}
+.hotels-holder .hotels-options-holder, .hotels-holder .hotels-sorting {
+	display:none!important
+}
+#destination-tabs .inside-holder {
+	padding:25px 25px 15px
+}
+#destination-tabs .destination-tab-content h2.head-margin {
+	margin-left:20px;
+	margin-top:20px
+}
+#destination-tabs .destination-tab-content h2 a {
+	color:#366
+}
+#dest-overview p {
+	display:inline-block;
+	width:48%;
+	font-size:15px;
+	color:#262626;
+	vertical-align:top;
+	line-height:22px
+}
+.hotels-options-holder {
+	vertical-align:top;
+	padding:25px 25px
+}
+#dest-hotels p.min-price, #dest-hotels p.max-price {
+	display:inline-block;
+	font-size:14px;
+	font-weight:600;
+	color:#2a2a2a;
+	margin:10px 0 0 0
+}
+#dest-hotels p.max-price {
+	float:right
+}
+#dest-hotels p.range-label {
+	font-size:17px;
+	color:#2a2a2a;
+	display:inline-block!important;
+	vertical-align:top;
+	margin:0 40px 0 0
+}
+#dest-hotels .price-range-holder {
+	padding:5px 0 0 0;
+	display:inline-block!important;
+	width:170px;
+	margin:0 20px 0 0
+}
+#dest-hotels .price-range-holder div {
+	display:block!important
+}
+#dest-hotels .selectbox {
+	display:inline-block;
+	position:relative;
+	top:-25px;
+	margin:0 0 0 20px
+}
+#dest-hotels .hotels-sorting {
+	display:inline-block;
+	position:absolute;
+	right:20px;
+	top:46px
+}
+#dest-hotels .hotels-sorting p {
+	display:inline-block;
+	font-size:14px;
+	color:#aaa
+}
+#dest-hotels .hotels-sorting .jqTransformSelectWrapper {
+	display:inline-block!important;
+	float:none!important;
+	clear:both!important;
+	height:22px;
+	background:#fff;
+	width:148px!important
+}
+#dest-hotels .hotels-sorting .jqTransformSelectWrapper span {
+	height:27px;
+	font-size:18px!important;
+	color:#c63;
+	width:140px!important
+}
+#dest-hotels .hotels-sorting a.jqTransformSelectOpen {
+	display:block;
+	position:absolute;
+	right:0!important;
+	width:13px!important;
+	height:31px!important;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/dropdown-small.d001815531eb.png") no-repeat center center!important
+}
+#dest-hotels .hotels-sorting .jqTransformSelectWrapper ul {
+	padding-left:4px;
+	width:160px!important;
+	height:auto!important;
+	background:transparent
+}
+#dest-hotels .inside-holder {
+	padding:25px 25px 15px
+}
+.hotel-elements-holder {
+	padding:15px 25px
+}
+.destination-hotel-element {
+	width:22%;
+	height:auto;
+	display:inline-block;
+	background:#eee;
+	padding:0;
+	margin:12px 15px 10px 1px;
+	cursor:pointer
+}
+.destination-hotel-element h2.point-hotel-title {
+	font-size:18px;
+	font-weight:600;
+	color:#6290b3;
+	padding:5px 0;
+	margin:10px
+}
+.destination-hotel-element .point-hotel-pic-holder {
+	display:block;
+	width:100%;
+	height:200px;
+	overflow:hidden
+}
+.destination-hotel-element .point-hotel-pic-holder img.point-hotel-pic {
+	display:block;
+	width:100%;
+	height:200px;
+	border:1px solid #eee
+}
+.destination-hotel-element a.add-to-trip {
+	display:inline-block!important;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/add-bag.5355c728817f.png") no-repeat;
+	padding:6px 0 4px 32px;
+	font-size:14px;
+	font-weight:600;
+	width:120px;
+	height:25px;
+	cursor:pointer;
+	margin-top:10px;
+	float:right
+}
+.destination-hotel-element a.add-wishlist {
+	display:inline-block!important;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/wishlist-small.46200b8c33a4.png") no-repeat left 2px;
+	width:140px;
+	height:25px;
+	cursor:pointer;
+	margin-top:10px;
+	padding:6px 0 4px 28px;
+	font-size:14px;
+	font-weight:600
+}
+.destination-hotel-element a.added-wishlist {
+	display:inline-block!important;
+	width:140px;
+	height:25px;
+	cursor:pointer;
+	margin-top:10px
+}
+.destination-hotel-element .point-hotel-information {
+	display:block!important;
+	vertical-align:top;
+	padding:0 0 0 8px
+}
+.destination-hotel-element .point-hotel-information .point-hotel-price {
+	display:inline-block;
+	margin:0 0 8px 0;
+	border-radius:0;
+	background:#333;
+	color:white;
+	padding:12px
+}
+.destination-hotel-element .point-hotel-information .social-element {
+	display:inline-block;
+	color:#262626;
+	font-size:12px;
+	padding:4px 14px;
+	vertical-align:middle;
+	float:right
+}
+.destination-hotel-element .point-hotel-information .tripadvisor img {
+	display:none!important
+}
+.destination-hotel-element .point-hotel-information .tripadvisor p {
+	position:relative;
+	top:3px;
+	display:none!important
+}
+.destination-hotel-element p.point-hotel-NA-tag {
+	padding-left:0;
+	display:block
+}
+.getaway-page-container .hotel-container .hotel-tab-content .trust-score, .destination-hotel-element .trust-score, .point-hotel-element .trust-score {
+	display:inline-block;
+	float:right;
+	margin-right:3px;
+	width:110px;
+	height:55px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/images/icons/trust-you-mini-group.4c20f2d7a4c2.png");
+	background-repeat:no-repeat;
+	background-position:42px 0
+}
+.trustgreenbig {
+	background-image:url("/web/20150606094404/https://www.tripigator.com/static/images/icons/trustyou-green-big.afe1a45dad69.png")!important;
+	background-position:0 0
+}
+.trustgreenmini {
+	background-image:url("/web/20150606094404/https://www.tripigator.com/static/images/icons/trustyou-green-mini.a669183810ba.png")!important;
+	background-position:0 0
+}
+.trustyellowbig {
+	background-image:url("/web/20150606094404/https://www.tripigator.com/static/images/icons/trustyou-yellow-big.76f4f8016c84.png")!important;
+	background-position:0 0
+}
+.trustyellowmini {
+	background-image:url("/web/20150606094404/https://www.tripigator.com/static/images/icons/trustyou-yellow-mini.a669183810ba.png")!important;
+	background-position:0 0
+}
+.trustorangebig {
+	background-image:url("/web/20150606094404/https://www.tripigator.com/static/images/icons/trustyou-orange-big.d0665bf778dc.png")!important;
+	background-position:0 0
+}
+.trustorangemini {
+	background-image:url("/web/20150606094404/https://www.tripigator.com/static/images/icons/trustyou-orange-mini.a669183810ba.png")!important;
+	background-position:0 0
+}
+.point-hotel-element .trust-score {
+	float:left;
+	margin-left:10px
+}
+.destination-hotel-element .trust-score .score, .point-hotel-element .trust-score .score {
+	padding:8px;
+	font-size:.9em;
+	margin-left:-5px;
+	color:white;
+	width:40px;
+	display:inline-block;
+	vertical-align:bottom;
+	text-align:center;
+	background:no-repeat 0 -10px;
+	height:45px
+}
+.destination-hotel-element .trust-score .desc, .point-hotel-element .trust-score .desc {
+	padding:0 5px 2px 5px;
+	font-size:12px;
+	background-color:#eee;
+	display:inline-block;
+	margin-left:0;
+	position:relative;
+	top:-10px
+}
+.point-hotel-element .trust-score .desc {
+	background-color:transparent
+}
+.hotel-container.set-margin {
+	display:none;
+	position:fixed;
+	top:50%;
+	left:48%;
+	bottom:50%;
+	width:930px;
+	margin-left:-450px;
+	padding:20px 15px;
+	background:#fff;
+	z-index:2000;
+	margin-top:-285px;
+	min-height:565px
+}
+.hotel-container .planning-close {
+	display:block;
+	position:absolute;
+	right:0;
+	top:0;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/close-trip.071cbb92f513.png") no-repeat;
+	width:46px;
+	height:45px;
+	cursor:pointer
+}
+.hotel-container h1 {
+	font-size:24px;
+	color:#222;
+	text-transform:uppercase;
+	margin:0 0 10px
+}
+.hotel-container .visual-information-holder {
+	display:inline-block
+}
+.visual-information-holder .hotel-info {
+	display:block;
+	width:100%;
+	margin:0 0 10px 0
+}
+.hotel-info ul li {
+	display:inline-block;
+	text-align:left;
+	padding:0 8px 0 4px;
+	letter-spacing:.2px
+}
+.hotel-info ul li span {
+	display:block;
+	color:#262626;
+	font-size:13px;
+	font-weight:400;
+	margin:0 0 5px 0
+}
+.hotel-info ul li p {
+	color:#262626;
+	font-size:14px;
+	font-weight:600
+}
+.hotel-container .photo-slider-holder {
+	display:block
+}
+.hotel-container #carousel .flex-prev, .place-container #carousel .flex-next {
+	display:none!important
+}
+.hotel-container #slider {
+	width:425px;
+	height:240px!important
+}
+.hotel-container #carousel {
+	width:425px;
+	margin:2px 0 10px 0
+}
+.hotel-container #carousel li {
+	margin-right:2px;
+	cursor:pointer
+}
+.hotel-container #photo-hotel-carousel .flex-prev, .hotel-container #photo-hotel-carousel .flex-next {
+	display:none!important
+}
+.hotel-container #photo-hotel-slider {
+	width:425px;
+	height:240px!important
+}
+.hotel-container #photo-hotel-carousel {
+	width:100%;
+	margin:2px 0 10px 0
+}
+.hotel-container #photo-hotel-carousel li {
+	margin-right:2px;
+	cursor:pointer
+}
+.hotel-container #photo-hotel-carousel .slides li {
+	height:70px;
+	width:100px;
+	overflow:hidden
+}
+.hotel-container #photo-hotel-slider .slides li {
+	height:240px;
+	width:425px;
+	overflow:hidden
+}
+.hotel-container .hotel-information-holder {
+	display:inline-block;
+	width:425px;
+	vertical-align:top
+}
+.hotel-tabs-holder {
+	padding:42px 0 0 10px
+}
+ul.map-hotel-tabs {
+	position:relative;
+	z-index:6;
+	vertica-align:bottom;
+	height:26px;
+	border-bottom:1px solid #aaa
+}
+.map-hotel-tabs li {
+	display:inline-block;
+	width:24%;
+	margin:0 0 10px 0;
+	text-align:center;
+	background:#399;
+	padding:5px 1px;
+	cursor:pointer
+}
+.map-hotel-tabs li:hover {
+	background:#366
+}
+.stars img.5star {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/5star.b11b5b5d874f.png") no-repeat
+}
+.stars img.4star {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/4star.7bf6c17253c1.png") no-repeat
+}
+.stars img.3star {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/3star.8fac534f7626.png") no-repeat
+}
+.stars img.2star {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/2star.854b66cf40e6.png") no-repeat
+}
+.stars img.1star {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/1star.b6330385e958.png") no-repeat
+}
+.stars .star-count {
+	line-height:2
+}
+.map-hotel-tabs li.active {
+	background:#aaa
+}
+.map-hotel-tabs li.active a {
+	color:#fff!important
+}
+.map-hotel-tabs li a {
+transition:background .3s;
+	font-weight:bold;
+	color:white;
+	font-size:13px
+}
+.hotel-tab-content {
+	display:none;
+	padding:10px 0 7px 0
+}
+.hotel-container .more-holder {
+	display:inline-block;
+	position:relative
+}
+.hotel-container .more-holder a {
+	display:inline-block;
+	font-size:13px;
+	font-weight:600;
+	color:#399;
+	margin:0 0 0 3px
+}
+.hotel-container .more-holder span {
+	position:relative;
+	top:3px
+}
+.hotel-container .button-holder {
+	text-align:center;
+	left:30%;
+	bottom:20px
+}
+.hotel-container .button-holder a.place-add-wishlist {
+	display:none;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/wishlist-large.f15528dafabb.png") no-repeat left 1px;
+	width:180px;
+	height:45px;
+	margin:0 0 0 -10px;
+	padding:15px 0 15px 14px;
+	font-weight:600;
+	cursor:pointer
+}
+.hotel-container .button-holder a.place-add-trip {
+	vertical-align:top;
+	display:inline-block;
+	position:relative;
+	top:-20px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/add-bag-big.b746ea40e9c2.png") no-repeat;
+	width:150px;
+	height:45px;
+	margin:20px 0 0 10px;
+	padding:15px 0 15px 25px;
+	font-weight:600;
+	cursor:pointer
+}
+.hotel-container .button-holder a.place-book-trip {
+	vertical-align:top;
+	display:inline-block;
+	position:relative;
+	top:-20px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/book-arrow-big.480ebec89be4.png") no-repeat;
+	width:150px;
+	height:45px;
+	margin:20px 0 0 10px;
+	padding:15px 0 15px 25px;
+	font-weight:600;
+	cursor:pointer
+}
+.hotel-container .button-holder a.place-remove-wishlist {
+	display:inline-block;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/wishlist-large.f15528dafabb.png") no-repeat left 1px;
+	width:180px;
+	height:45px;
+	margin:0 0 0 -10px;
+	padding:15px 0 15px 14px;
+	font-weight:600;
+	cursor:pointer
+}
+.hotel-container .button-holder a.place-remove-trip {
+	vertical-align:top;
+	display:inline-block;
+	position:relative;
+	top:-20px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/add-bag-big.b746ea40e9c2.png") no-repeat;
+	width:150px;
+	height:45px;
+	margin:20px 0 0 10px;
+	padding:15px 0 15px 25px;
+	font-weight:600;
+	cursor:pointer
+}
+#hotel-hightlights .hotel-rating {
+	display:block;
+	width:100%;
+	border-top:1px solid #cfcfce;
+	border-bottom:1px solid #cfcfce;
+	margin:2px 0 5px;
+	padding:10px 5px
+}
+.hotel-rating .rating-element {
+	display:inline-block!important;
+	color:#262626;
+	font-size:13px;
+	padding:10px 10px;
+	width:22%;
+	vertical-align:top
+}
+.hotel-rating .stars {
+	width:25%
+}
+.hotel-rating .rating-element img {
+	display:block
+}
+.hotel-rating .rating-element p {
+	position:relative;
+	top:4px
+}
+.hotel-rating .tripadvisor {
+	display:none!important
+}
+.hotel-rating .col2 {
+	width:74%;
+	display:inline-block;
+	font-size:14px;
+	line-height:1.2
+}
+#hotel-hightlights .hotel-amenities {
+	border-bottom:1px solid #cfcfce;
+	padding:10px 10px 0;
+	width:100%
+}
+.hotel-amenities p {
+	display:inline-block;
+	width:49%;
+	padding:0 0 0 30px;
+	font-size:16px;
+	font-weight:600;
+	color:#262626;
+	margin:0 0 20px 0
+}
+#hotel-hightlights .current-hotel-info {
+	display:block;
+	width:100%;
+	margin:10px 0
+}
+.current-hotel-info>div {
+	display:inline-block;
+	margin:0 10px 0 0
+}
+.current-hotel-info p {
+	display:inline-block;
+	color:#fff;
+	font-weight:700;
+	background:#bbb;
+	font-size:20px;
+	padding:3px 5px
+}
+.current-hotel-info span {
+	display:block;
+	text-transform:uppercase;
+	color:#262626;
+	letter-spacing:1px;
+	font-size:12px;
+	font-weight:600;
+	margin:3px 0 0 0
+}
+.current-hotel-info .room {
+	margin:0 0 0 15px
+}
+#hotel-hightlights .trust-rating .scorewrapper {
+	width:23%;
+	vertical-align:top;
+	display:inline-block;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/images/icons/trust-you-mini-group.4c20f2d7a4c2.png");
+	background-position:45px 0;
+	background-repeat:no-repeat
+}
+#hotel-hightlights .trust-rating .score {
+	height:55px;
+	display:inline-block;
+	vertical-align:top;
+	background-position:-5px;
+	color:white
+}
+#hotel-hightlights .trust-rating .scoredetail {
+	font-size:10px;
+	position:relative;
+	top:20px;
+	left:5px
+}
+#hotel-hightlights .trust-rating .detail {
+	display:inline-block;
+	width:74%;
+	font-size:14px;
+	line-height:1.3
+}
+.detail-review-count {
+	color:#aeaeae;
+	font-style:italic
+}
+#hotel-amenities .hotel-current-amenities {
+	padding:10px 10px 0;
+	width:100%
+}
+.hotel-current-amenities p {
+	display:inline-block;
+	width:49%;
+	padding:0 0 0 30px;
+	font-size:16px;
+	font-weight:600;
+	color:#262626;
+	margin:0 0 20px 0
+}
+#hotel-amenities .other-amenities {
+	padding:10px 10px 0;
+	width:100%
+}
+.other-amenities h2 {
+	padding:0 0 2px 0;
+	font-size:17px;
+	font-weight:600;
+	color:#2a2a2a;
+	margin:0 0 10px 0;
+	border-bottom:1px solid #cfcfce
+}
+.other-amenities p {
+	width:100%;
+	display:block;
+	padding:0 0 0 30px;
+	font-size:16px;
+	font-weight:600;
+	color:#262626;
+	margin:0 0 20px 0
+}
+#hotel-rooms .avaliable-rooms {
+	color:#2a2a2a
+}
+.avaliable-rooms .room-type-message {
+	text-align:center;
+	color:#c33;
+	line-height:2;
+	font-weight:600
+}
+#hotel-rooms .room-title {
+	display:block;
+	width:100%;
+	border-bottom:1px solid #cfcfce
+}
+.room-title p {
+	display:inline-block;
+	font-size:15px;
+	margin:0 0 5px 0
+}
+.room-title span.nights {
+	font-weight:semibold
+}
+.room-title p.about-price {
+	float:right;
+	letter-spacing:-0.7px
+}
+.room-variant {
+	position:relative;
+	margin:10px 0 10px 0
+}
+.room-variant .jqTransformRadioWrapper {
+	position:relative;
+	bottom:5px
+}
+.room-variant p {
+	font-size:14px;
+	font-weight:500
+}
+.room-variant p.room-type {
+	font-size:14px!important;
+	font-weight:300;
+	margin:2px 0 4px 0;
+	display:inline-block;
+	width:75%
+}
+.room-variant p.room-price {
+	position:absolute;
+	font-size:18px;
+	font-weight:600;
+	right:0;
+	top:0
+}
+#hotel-reviews .review-list {
+	font-size:14px
+}
+#hotel-reviews .review-list .category_review {
+	margin:10px 0
+}
+#hotel-reviews .review-list .categorynamelist {
+	display:inline-block;
+	width:25%;
+	font-family:"Lato", sans-serif!important
+}
+#hotel-reviews .review-list .categorynamelist>div {
+	min-height:30px;
+	text-align:center;
+	padding:5px 0 5px 0;
+	cursor:pointer
+}
+#hotel-reviews .review-list .categorynamelist .current {
+	border:1px solid #ccc;
+	background:#efefef;
+	font-size:15px
+}
+#hotel-reviews .review-list .categorydetaillist {
+	display:inline-block;
+	width:70%;
+	vertical-align:top;
+	padding-left:30px
+}
+#hotel-reviews .review-list .categorydetaillist>div {
+	display:none
+}
+#hotel-reviews .review-list .categorydetaillist .current {
+	display:block;
+	min-height:30px;
+	font-size:15px
+}
+#hotel-reviews .review-list .categoryname {
+	width:30%;
+	padding:0 15px 6px;
+	display:inline-block;
+	vertical-align:top
+}
+#hotel-reviews .review-list .categorydetail {
+	vertical-align:top
+}
+#hotel-reviews .review-list .categorydetail .heading {
+	padding:5px 2px;
+	margin-bottom:10px;
+	font-style:italic;
+	font-size:16px
+}
+#hotel-reviews .review-list .categorydetail .bar {
+	vertical-align:middle;
+	width:20%;
+	display:inline-block;
+	background:#eee
+}
+#hotel-reviews .review-list .categorydetail .subbar {
+	display:inline-block;
+	background:green;
+	color:green
+}
+#hotel-reviews .review-list .categorydetail .text {
+	padding:0 5px 6px 6px;
+	display:inline-block;
+	vertical-align:top;
+	width:80%;
+	line-height:1.4
+}
+#dest-activities {
+	position:relative
+}
+#dest-activities .inside-holder {
+	padding:25px 25px 15px
+}
+#dest-activities .interests-selectbox {
+	position:relative;
+	bottom:10px
+}
+#dest-activities .activities-sorting {
+	display:inline-block;
+	position:absolute;
+	right:20px;
+	top:18px;
+	z-index:1000
+}
+#dest-activities .activities-sorting p {
+	display:inline-block;
+	font-size:14px;
+	color:#aaa
+}
+#dest-activities .activities-sorting .jqTransformSelectWrapper {
+	display:inline-block!important;
+	float:none!important;
+	clear:both!important;
+	height:22px;
+	background:#fff;
+	width:148px!important
+}
+#dest-activities .activities-sorting .jqTransformSelectWrapper span {
+	height:27px;
+	font-size:18px!important;
+	color:#c63;
+	width:140px!important
+}
+#dest-activities .activities-sorting a.jqTransformSelectOpen {
+	display:block;
+	position:absolute;
+	right:0!important;
+	width:13px!important;
+	height:31px!important;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/dropdown-small.d001815531eb.png") no-repeat center center!important
+}
+#dest-activities .activities-sorting .jqTransformSelectWrapper ul {
+	padding-left:4px;
+	width:160px!important;
+	height:auto!important;
+	background:transparent
+}
+#dest-activities .destination-activities-holder {
+	padding:25px 0;
+	margin:0 -18px
+}
+.activity-container {
+	display:inline-block;
+	background:#eee;
+	width:23%;
+	overflow:hidden;
+	margin:0 10px 25px;
+	cursor:pointer
+}
+.search-page-activity-container {
+	display:none;
+	position:fixed;
+	top:50%;
+	left:50%;
+	width:900px;
+	margin-left:-450px;
+	padding:20px 15px;
+	background:#fff;
+	z-index:10000;
+	margin-top:-285px;
+	overflow:hidden
+}
+.activity-modal-wraper {
+	width:1745px
+}
+.activity-modal-wraper>.left {
+	width:885px
+}
+.activity-tab-content {
+	height:250px;
+	overflow:auto
+}
+.nextt, .previous {
+	cursor:pointer;
+	background-color:#00a885;
+	color:#fff;
+	padding:7px 0;
+	width:100px;
+	display:inline-block
+}
+.disp {
+	display:none
+}
+.activity-tab-content::-webkit-scrollbar {
+width:7px
+}
+.activity-tab-content::-webkit-scrollbar-thumb {
+-webkit-border-radius:10px;
+border-radius:10px;
+background:rgba(111, 161, 201, 0.7)
+}
+.activity-container h3, .activity-container h2 {
+	font-size:18px;
+	font-weight:600;
+	color:#262626;
+	margin:15px 0 4px 10px;
+	cursor:default
+}
+.activity-container .point-place-pic-holder {
+	display:block;
+	min-width:100%;
+	height:280px;
+	overflow:hidden
+}
+.activity-container .point-place-pic-holder img.point-place-pic {
+	display:block;
+	min-width:100%;
+	height:280px
+}
+.activity-container .activity-type {
+	display:block;
+	font-size:15px;
+	font-style:italic;
+	color:#262626;
+	margin:5px 0 15px 10px;
+	cursor:default
+}
+ul.point-place-information {
+	padding:0 5px 0 0
+}
+.point-place-information li.point-place-element {
+	display:block;
+	margin:0 0 5px
+}
+.point-place-element p {
+	display:inline-block!important;
+	font-size:13px;
+	color:#262626
+}
+.point-place-element p.info-title {
+	width:95px;
+	padding:0 0 0 10px
+}
+.place-type, .place-time-spend, .place-closed-on, .place-timings {
+	font-weight:600
+}
+.social-information-holder {
+	display:block!important;
+	margin:12px 0 5px 0;
+	clear:both
+}
+.social-information-holder .social-element {
+	display:inline-block;
+	color:#262626;
+	font-size:12px;
+	padding:14px;
+	vertical-align:middle
+}
+.social-information-holder .tripadvisor img {
+	display:none!important
+}
+.social-information-holder * {
+	cursor:default
+}
+.social-information-holder .tripadvisor p {
+	position:relative;
+	top:3px;
+	display:none!important
+}
+.social-information-holder .facebook span {
+	font-weight:600;
+	font-size:16px
+}
+.social-information-holder .facebook p {
+	position:relative;
+	top:4px
+}
+.social-information-holder .foursquare span {
+	font-weight:600;
+	font-size:16px;
+	position:relative;
+	bottom:5px;
+	margin-left:5px
+}
+.activity-container a.add-to-trip {
+	display:block!important;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/add-bag.5355c728817f.png") no-repeat;
+	width:120px;
+	padding:6px 0 4px 32px;
+	font-size:14px;
+	font-weight:600;
+	height:25px;
+	cursor:pointer;
+	float:right
+}
+.activity-container a.add-to-wishlist {
+	display:block!important;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/wishlist-small.46200b8c33a4.png") no-repeat;
+	width:140px;
+	height:25px;
+	cursor:pointer;
+	float:left;
+	padding:6px 0 4px 26px;
+	font-size:14px;
+	font-weight:600
+}
+.activity-container a.added-wishlist {
+	display:block!important;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/added-wishlist.f15528dafabb.png") no-repeat;
+	width:140px;
+	height:25px;
+	cursor:pointer;
+	float:left
+}
+.activity-modal-container {
+	display:none;
+	position:fixed;
+	top:50%;
+	left:50%;
+	width:900px;
+	margin-left:-450px;
+	padding:20px 15px;
+	background:#fff;
+	z-index:10000;
+	margin-top:-285px
+}
+.planner-map-body .activity-modal-container, .activity-modal-container-responsive {
+	width:60%;
+	left:20%;
+	margin-left:0
+}
+.activity-modal-container .planning-close {
+	display:block;
+	position:absolute;
+	right:0;
+	top:0;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/close-trip.071cbb92f513.png") no-repeat;
+	width:46px;
+	height:45px;
+	cursor:pointer
+}
+.activity-modal-container h3 {
+	font-size:24px;
+	color:#222;
+	text-transform:uppercase;
+	margin:0 0 10px
+}
+.activity-modal-container .visual-information-holder {
+	display:inline-block;
+	width:41%
+}
+.activity-modal-container .activity-type {
+	display:block;
+	font-size:15px;
+	font-style:italic;
+	color:#262626;
+	margin:5px 0 15px 10px
+}
+.activity-modal-container .photo-slider-holder {
+	display:block
+}
+.activity-modal-container #carousel .flex-prev, .place-container #carousel .flex-next {
+	display:none!important
+}
+.activity-modal-container #slider {
+	width:425px;
+	height:240px!important
+}
+.activity-modal-container #carousel {
+	width:425px;
+	margin:2px 0 10px 0
+}
+.activity-modal-container #carousel li {
+	margin-right:2px;
+	cursor:pointer
+}
+.activity-modal-container #photo-activity-carousel .flex-prev, .place-container #carousel .flex-next {
+	display:none!important
+}
+.activity-modal-container #photo-activity-slider {
+	width:100%;
+	height:240px!important
+}
+.hotel-page-container #photo-activity-slider {
+	height:240px!important;
+	overflow:hidden;
+	width:100%
+}
+.activity-modal-container #photo-activity-slider ul.slides li, .hotel-page-container ul.slides li {
+	width:425px;
+	height:240px!important;
+	overflow:hidden;
+	position:relative
+}
+.activity-modal-container #photo-activity-carousel {
+	width:100%;
+	margin:2px 0 10px 0
+}
+.hotel-page-container #photo-activity-carousel {
+	width:100%;
+	margin:2px 0 10px 0;
+	overflow-x:hidden
+}
+.activity-modal-container #photo-activity-carousel li, .hotel-page-container #photo-activity-carousel ul.slides li {
+	margin-right:2px;
+	cursor:pointer;
+	height:70px!important
+}
+.planner-map-activity.activity-modal-container #photo-activity-slider, .planner-map-activity.activity-modal-container #photo-activity-carousel, .activity-modal-container-responsive #photo-activity-slider, .activity-modal-container-responsive #photo-activity-carousel {
+	width:100%
+}
+.planner-map-activity.activity-modal-container .flexslider .slides img {
+	margin:0!important
+}
+.search-page-activity-container #photo-activity-slider {
+	overflow:hidden
+}
+.search-page-activity-container #photo-activity-slider ul.slides li {
+	float:left
+}
+.search-page-activity-container #photo-activity-slider ul.slides li img, .hotel-page-container #photo-activity-slider ul.slides li img {
+	float:left;
+	width:100%;
+	height:100%
+}
+.search-page-activity-container #photo-activity-carousel {
+	position:relative;
+	overflow:hidden
+}
+.search-page-activity-container #photo-activity-carousel>a.prev, .hotel-page-container #photo-activity-carousel>a.prev {
+	left:0;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/place-prev.b81515939597.png") no-repeat;
+	width:20px;
+	height:70px;
+	z-index:999
+}
+.search-page-activity-container #photo-activity-carousel>a.nxt, .hotel-page-container #photo-activity-carousel>a.nxt {
+	right:0;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/place-next.71e4f861935f.png") no-repeat;
+	width:20px;
+	height:70px;
+	z-index:999
+}
+.search-page-activity-container #photo-activity-carousel li, .hotel-page-container #photo-activity-carousel li {
+	float:left;
+	width:100px
+}
+.search-page-activity-container #photo-activity-carousel li img, .hotel-page-container #photo-activity-carousel li img {
+	float:left;
+	width:100%;
+	height:100%
+}
+.search-page-activity-container .current, .hotel-page-container .current {
+	opacity:1!important
+}
+.search-page-button-holder {
+	margin-top:20px
+}
+.activity-modal-container .activity-information-holder {
+	display:inline-block;
+	width:58%;
+	vertical-align:top;
+	padding:0 0 0 20px
+}
+ul.modal-activity-tabs {
+	position:relative;
+	z-index:6;
+	vertica-align:bottom;
+	height:26px;
+	border-top:1px solid #aaa
+}
+.modal-activity-tabs li {
+	display:inline-block;
+	width:24.2%;
+	margin:0 0 10px 0;
+	text-align:center;
+	background:#aaa;
+	padding:5px 1px;
+	cursor:pointer
+}
+.modal-activity-tabs li p {
+transition:background .3s;
+	font-weight:bold;
+	color:white;
+	font-size:14px
+}
+.activity-modal-container .button-holder {
+	text-align:center
+}
+.activity-modal-container .button-holder a.place-add-wishlist {
+	display:none;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/wishlist-large.f15528dafabb.png") no-repeat left 1px;
+	width:180px;
+	height:45px;
+	margin:0 0 0 -10px;
+	padding:15px 0 15px 10px;
+	font-weight:600;
+	cursor:pointer
+}
+.activity-modal-container .button-holder a.place-add-trip {
+	display:inline-block;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/add-bag-big.b746ea40e9c2.png") no-repeat;
+	padding:15px 0 15px 25px;
+	font-weight:600;
+	width:150px;
+	height:45px;
+	margin:20px 0 0 10px;
+	cursor:pointer
+}
+.activity-modal-container .button-holder a.place-remove-wishlist {
+	display:inline-block;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/wishlist-large.f15528dafabb.png") no-repeat left 1px;
+	width:180px;
+	height:45px;
+	margin:0 0 0 -10px;
+	padding:15px 0 15px 10px;
+	font-weight:600;
+	cursor:pointer
+}
+.activity-modal-container .button-holder a.place-remove-trip {
+	display:inline-block;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/add-bag-big.b746ea40e9c2.png") no-repeat;
+	padding:15px 0 15px 25px;
+	font-weight:600;
+	width:150px;
+	height:45px;
+	margin:20px 0 0 10px;
+	cursor:pointer
+}
+#activity-description p {
+	color:#262626;
+	font-size:15px;
+	line-height:25px;
+	padding-right:5px
+}
+#dest-near .place-blocks-holder {
+	display:block;
+	padding:25px 0;
+	margin:0 -18px
+}
+#dest-near .place-block {
+	margin:0 10px 25px!important
+}
+@media(max-width:1050px) {
+#dest-near .place-block {
+margin:0 10px 25px!important
+}
+}
+@media(min-width:1200px) {
+#dest-near .place-block {
+margin:0 5px 25px 3px!important
+}
+}
+@media(min-width:1300px) {
+#dest-near .place-block {
+margin:0 10px 25px!important
+}
+}
+@media(min-width:1900px) {
+#dest-near .place-block {
+margin:0 5px 25px!important
+}
+}
+#dest-near .places-sorting {
+	top:2px;
+	right:5px
+}
+#dest-getting-here #map-canvas {
+	min-height:480px
+}
+#dest-getting-here .inside-holder {
+	padding:10px 10px 0;
+	position:relative
+}
+#dest-getting-here .routes-holder {
+	display:block;
+	position:absolute;
+	padding:25px 20px 15px;
+	width:480px;
+	top:25px;
+	left:70px;
+	background:#ccc
+}
+#dest-getting-here .place-route-holder {
+	position:relative;
+	width:100%;
+	height:118px;
+	background:#fff;
+	margin:0 0 10px;
+	padding:5px 10px
+}
+.place-route-price {
+	position:absolute;
+	right:0;
+	top:0;
+	background:#333;
+	color:white;
+	font-size:15px;
+	display:inline-block;
+	padding:8px
+}
+.all-route {
+	display:block;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/line.54ce5206d123.png") no-repeat center center;
+	width:100%;
+	margin:29px auto;
+	position:relative;
+	min-height:30px
+}
+.route-point {
+	position:absolute;
+	font-weight:600;
+	font-size:14px;
+	display:inline-block;
+	padding:10px 6px;
+	color:#262626;
+	text-transform:uppercase;
+	top:30px
+}
+.place-point-start {
+	bottom:0;
+	left:0;
+	margin-left:-5px
+}
+.place-point-end {
+	bottom:0;
+	right:0;
+	margin-right:-5px
+}
+.place-route-variant {
+	font-size:15px;
+	color:#333;
+	font-weight:600
+}
+#dest-getting-here button {
+	width:120px;
+	font-size:14px;
+	margin:10px 0 0 0;
+	padding:2px 5px
+}
+#account-overview {
+	display:block;
+	width:100%;
+	height:205px;
+	padding:30px
+}
+#account-overview h2 {
+	font-size:25px;
+	color:#222;
+	margin:0 0 25px 0
+}
+#account-overview img {
+	display:inline-block;
+	height:100px;
+	width:100px
+}
+#account-overview .user-about {
+	display:inline-block;
+	vertical-align:top;
+	margin:0 0 0 20px
+}
+.user-about .username {
+	font-size:25px;
+	color:#222;
+	font-weight:600
+}
+.user-about p {
+	font-size:18px;
+	color:#262626;
+	text-transform:uppercase;
+	margin:5px 0 1px
+}
+.user-about .user-city {
+	display:inline-block;
+	font-size:18px;
+	font-weight:600;
+	text-transform:none;
+	color:#986d8c;
+	margin:0 0 0 10px
+}
+.user-about div {
+	display:inline-block
+}
+.user-about div p {
+	display:inline-block;
+	color:#fff;
+	font-weight:700;
+	background:#bbb;
+	font-size:25px;
+	padding:4px 12px
+}
+.user-about div span {
+	display:block;
+	text-transform:uppercase;
+	color:#262626;
+	letter-spacing:1px;
+	font-size:12px;
+	font-weight:600;
+	margin:3px 0 0 0
+}
+.user-about .places {
+	margin:0 0 0 15px
+}
+#account-tabs {
+	position:relative;
+	background:#fff;
+	background:#f5f5f5
+}
+.account-tabs {
+	position:relative;
+	width:99%;
+	padding:0 0 0 30px;
+	background:#f5f5f5;
+	margin:0 auto
+}
+.account-tabs li {
+	display:inline-block;
+	margin:0;
+	text-align:center;
+	background:#399;
+	padding:6px 24px;
+	cursor:pointer
+}
+.account-tabs li:hover {
+	background:#366
+}
+.account-tabs li.active {
+	background:#fff
+}
+.account-tabs li.active a {
+	color:#399!important
+}
+.account-tabs li a {
+transition:background .3s;
+	font-weight:bold;
+	color:white;
+	font-size:15px
+}
+#account-tabs .account-tab-content {
+	display:none;
+	padding:15px 35px 75px;
+	margin:0 10px;
+	background:#fff
+}
+.user-profile-settings {
+	display:inline-block;
+	position:relative
+}
+#account-profile .about-holder {
+	width:500px;
+	display:inline-block;
+	margin:10px 20px 0 0
+}
+.about-holder .textfield-holder {
+	position:relative;
+	display:inline-block;
+	width:500px;
+	margin:0 20px 20px 0
+}
+.textfield-holder p.title-block {
+	display:inline-block;
+	padding:5px 12px;
+	font-weight:600;
+	font-size:15px
+}
+.textfield-holder .text-block {
+	display:block;
+	background:#f5f5f5;
+	padding:15px 10px 40px 11px;
+	color:#262626;
+	font-size:15px;
+	line-height:25px;
+	border-top:1px solid #cfcfce;
+	width:500px
+}
+.textfield-holder textarea.text-block {
+	display:none;
+	border:0;
+	resize:none;
+	font-family:"Lato", sans-serif;
+	min-height:120px;
+	padding:15px 00px 00px 10px
+}
+.textfield-holder p.text-block {
+	background:#fff;
+	min-height:120px;
+	margin-bottom:2px;
+	width:500px
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+p.text-block {
+padding:16px 10px 40px 10px!important;
+margin-bottom:4px!important
+}
+}
+.textfield-holder button {
+	position:absolute;
+	right:0;
+	bottom:0
+}
+.have-been-to-holder .de {
+	background-position:0 -25995px;
+	background-color:#fff;
+	margin:0 0 5px 0;
+	padding-right:45px;
+	width:100%;
+	height:40px;
+	border:1px solid #a6a4a2;
+	padding:4px 10px 6px 35px;
+	font-size:14px;
+	color:#333
+}
+.have-been-to-holder .ade {
+	position:absolute;
+	right:2px;
+	top:2px;
+	background-position:-5px -1117px;
+	height:37px;
+	width:36px;
+	display:block;
+	cursor:pointer
+}
+.have-been-to-holder .destination-block {
+	display:block;
+	float:left;
+	font-size:20px;
+	color:#000;
+	vertical-align:top;
+	margin:1px 5px 7px;
+	background:#f0f3f5;
+	position:relative;
+	overflow:auto;
+	min-height:40px
+}
+.have-been-to-holder .destination-block div {
+	max-width:86%;
+	float:left;
+	margin:3px
+}
+.have-been-to-holder .destination-block p {
+	margin:0 5px 0 0;
+	color:#343333;
+	font-size:15px;
+	float:left;
+	clear:left
+}
+.have-been-to-holder .destination-block span {
+	background:#d4353c;
+	color:#fff;
+	font-size:20px;
+	font-weight:700;
+	height:100%;
+	line-height:0;
+	padding:4px 5px 9px;
+	cursor:pointer;
+	position:relative;
+	top:1px;
+	float:left;
+	margin:10px
+}
+.have-been-to-holder {
+	background:gainsboro;
+	min-height:130px;
+	position:relative;
+	top:0;
+	padding:10px;
+	overflow:hidden;
+	height:auto
+}
+.have-been-to-holder div.destination-to-holder {
+	width:350px;
+	position:relative;
+	overflow:auto
+}
+.been-to {
+	float:left;
+	margin:5px 10px 5px 5px;
+	font-family:"Lato", sans-serif!important;
+	background:#f0f3f5;
+	padding:3px
+}
+#account-profile .account-select-items {
+	position:relative;
+	display:inline-block;
+	vertical-align:top;
+	padding:15px 0 45px;
+	display:none
+}
+.account-select-items label {
+	display:inline-block;
+	color:#399;
+	font-size:15px;
+	margin:0 0 5px 0
+}
+.account-select-items .jqTransformSelectWrapper {
+	width:220px!important;
+	margin:0 0 20px
+}
+.account-select-items .jqTransformSelectWrapper ul {
+	width:220px!important
+}
+.account-select-items .jqTransformSelectWrapper span {
+	width:200px!important;
+	font-size:15px!important
+}
+.travel-block {
+	width:200px;
+	background:#f5f5f5;
+	font-size:15px;
+	height:31px;
+	line-height:15px;
+	padding:8px 0 0 10px;
+	color:#333;
+	margin:0 0 20px 0
+}
+.account-select-items .selectbox .add-interest {
+	display:none;
+	width:31px;
+	height:31px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/add-interest.ef3d9a3089ef.png") no-repeat center center;
+	padding:10px 0 0 0;
+	cursor:pointer;
+	margin:0 0 0 10px
+}
+.account-interest .interest-box {
+	clear:both;
+	display:block;
+	position:relative;
+	margin:0 0 15px 0;
+	width:220px
+}
+.account-interest .interest-box span {
+	cursor:pointer;
+	display:none;
+	float:right;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/remove.bb72473c5e29.png") no-repeat;
+	width:27px;
+	height:27px
+}
+.account-interest .interest-box p {
+	cursor:default;
+	color:#2a2a2a;
+	font-size:18px;
+	display:inline-block;
+	height:27px;
+	line-height:27px;
+	padding:0 10px 0 0
+}
+.account-buttons-holder {
+	position:relative
+}
+.account-buttons-holder .send-profile-data {
+	position:absolute;
+	width:160px;
+	left:510px;
+	border:0;
+	display:none
+}
+.account-buttons-holder .edit-profile-data {
+	position:absolute;
+	width:160px;
+	left:510px;
+	border:0
+}
+#profile .notification-holder {
+	display:inline-block;
+	margin:3px 20px 0 0;
+	line-height:50px
+}
+.notification-holder span {
+	display:inline-block;
+	height:19px;
+	width:16px
+}
+.notification-holder a {
+	position:absolute;
+	display:inline-block;
+	font-size:15px;
+	color:#da2e2a;
+	top:-10px;
+	left:10px
+}
+#profile .username-holder {
+	display:inline-block;
+	line-height:50px;
+	cursor:pointer
+}
+.username-holder span {
+	display:inline-block;
+	height:19px;
+	width:16px
+}
+.username-holder a {
+	position:relative;
+	display:none;
+	font-size:15px;
+	color:#da2e2a;
+	top:-4px
+}
+@media(max-width:1100px) {
+.search {
+display:none
+}
+}
+#profile .dropdown-profile {
+	display:none;
+	width:300px;
+	position:absolute;
+	top:44px;
+	z-index:500;
+	right:-20px
+}
+.dropdown-profile .arrow {
+	display:block;
+	position:relative;
+	width:22px;
+	height:9px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/triangle.f041f676cfde.png") no-repeat;
+	margin:0 0 -1px 0;
+	z-index:8000;
+	right:-262px
+}
+.dropdown-profile .general-holder {
+	background:white;
+	border:1px solid #e5e4e3;
+	padding:8px 0 0 0;
+	box-shadow:0 1px 6px 0
+}
+.general-holder img {
+	display:inline-block;
+	margin:0 0 0 10px
+}
+.general-holder .general-information {
+	display:inline-block;
+	vertical-align:top;
+	margin:0 0 0 12px
+}
+.general-information h3 {
+	margin:-17px 0 -20px 0;
+	font-weight:600;
+	font-size:20px;
+	padding:0!important
+}
+.general-information p {
+	display:inline-block;
+	text-transform:uppercase;
+	font-size:10px;
+	color:#2a2a2a;
+	font-weight:600;
+	text-shadow:1px 1px 0 #fff;
+	margin:0 11px 0 0
+}
+.general-information span {
+	font-size:17px;
+	color:#2a2a2a;
+	font-weight:700;
+	text-shadow:none
+}
+.dropdown-profile ul {
+	display:block;
+	width:100%;
+	margin:-9px 0 -19px 0;
+	border-top:1px solid #d9d9d7
+}
+.dropdown-profile ul li {
+	display:inline-block;
+	width:47px;
+	height:39px;
+	background-color:white;
+	margin-left:10px;
+transition:all .4s;
+	cursor:pointer
+}
+.dropdown-profile ul li:hover {
+	position:relative;
+	top:-3px;
+	border-top:1px solid #d9d9d7
+}
+.dropdown-profile ul li:last-child {
+	margin-left:1px
+}
+.dropdown-profile a {
+	display:block;
+	height:26px;
+	line-height:26px;
+	width:100%;
+	text-align:center;
+	text-transform:uppercase;
+	color:#fff;
+	font-size:16px;
+	font-weight:500
+}
+#profile .dropdown-notification {
+	display:none;
+	width:350px;
+	position:absolute;
+	top:44px;
+	z-index:500;
+	right:18px
+}
+.dropdown-notification .arrow {
+	display:block;
+	position:relative;
+	width:22px;
+	height:9px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/triangle.f041f676cfde.png") no-repeat;
+	margin:0 0 -1px 0;
+	z-index:8000;
+	right:-310px
+}
+.dropdown-notification .general-holder {
+	background:#edebf2;
+	box-shadow:0 1px 6px 0
+}
+.dropdown-notification ul {
+	display:block;
+	width:100%;
+	line-height:1
+}
+.dropdown-notification ul li {
+	background-color:#edebf2;
+	border-bottom:1px solid #d9d9d7;
+transition:all .4s;
+	cursor:pointer
+}
+.dropdown-notification ul li:last-child {
+	border:0
+}
+.dropdown-notification ul li p {
+	width:100%;
+	padding:10px 10px 10px 20px
+}
+.notif-timestamp {
+	color:#999;
+	padding-top:5px!important
+}
+.notif-message {
+	color:#333
+}
+.notif-header {
+	text-align:center;
+	background:white;
+	font-size:22px;
+	color:#333;
+	height:50px;
+	border-bottom:1px solid #d9d9d7
+}
+.invite-friends {
+	background:#4c66a4
+}
+.invite-friends:hover {
+	background:#465c8f
+}
+.added-wishlist {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/added-wishlist.f15528dafabb.png") no-repeat!important
+}
+#account-wishlist h3 {
+	font-size:20px;
+	color:#2a2a2a;
+	border-bottom:1px solid #cfcfce;
+	padding:0 0 7px 0;
+	margin:15px 0 0 0
+}
+#account-wishlist .account-place-blocks {
+	margin:0
+}
+@media(max-width:1050px) {
+.account-place-blocks .place-block {
+margin:15px 10px 12px 0
+}
+}
+@media(min-width:1200px) {
+.account-place-blocks .place-block {
+margin:15px 11px 12px 0
+}
+}
+@media(min-width:1300px) {
+.account-place-blocks .place-block {
+margin:15px 28px 12px 0
+}
+}
+#account-wishlist .account-hotels-holder {
+	margin:0
+}
+@media(max-width:1050px) {
+.account-hotels-holder .destination-hotel-element {
+margin:15px 5px 12px 0
+}
+}
+@media(min-width:1200px) {
+.account-hotels-holder .destination-hotel-element {
+margin:15px 80px 12px 0
+}
+}
+@media(min-width:1300px) {
+.account-hotels-holder .destination-hotel-element {
+margin:15px 11px 12px 0
+}
+}
+@media(max-width:1050px) {
+.account-activity-holder .activity-container {
+margin:15px 8px 12px 0
+}
+}
+@media(min-width:1200px) {
+.account-activity-holder .activity-container {
+margin:15px 80px 12px 0
+}
+}
+@media(min-width:1300px) {
+.account-activity-holder .activity-container {
+margin:15px 10px 12px 0
+}
+}
+#account-settings form {
+	display:inline-block;
+	position:relative;
+	padding:0 0 30px
+}
+.account-general-settings .column {
+	display:inline-block;
+	vertical-align:top;
+	margin:0 34px 0 0
+}
+.account-general-settings .column-last {
+	margin:0!important
+}
+.account-general-settings .account-settings-save {
+	position:absolute;
+	bottom:0;
+	right:0;
+	border:0
+}
+.column label {
+	font-size:15px;
+	color:#222;
+	display:inline-block;
+	margin:20px 0 5px 0
+}
+.column input {
+	display:block;
+	border:0;
+	background:#f5f5f5;
+	width:220px;
+	height:30px;
+	padding:4px
+}
+.column p {
+	height:27px;
+	line-height:27px;
+	color:#222;
+	margin:12px 0 0 0;
+	cursor:pointer!important
+}
+.column p.settings-title {
+	font-size:15px;
+	font-weight:600;
+	margin:17px 0 4px 0!important
+}
+.column p.settings-option {
+	padding:0 0 0 38px;
+	font-size:15px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/unchecked.07b2038df775.png") center left no-repeat
+}
+.column .selected {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/checked-cross.0e34f44b0620.png") no-repeat center left!important
+}
+.column .disabled {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/disabled.b7206d2268e9.png") no-repeat!important;
+	color:#bbb!important
+}
+.column .account-delete-request {
+	margin:20px 0 10px;
+	width:210px;
+	padding-left:5px
+}
+.column .google-remove {
+	margin:20px 0 0 0;
+	cursor:pointer
+}
+#account-trips .trip-container {
+	padding:10px 0 15px 40px;
+	background:#f5f5f5
+}
+#account-trips .full-trip-holder {
+	width:100%;
+	background:#f5f5f5
+}
+.place-container .trips-switch {
+	vertical-align:top;
+	margin:0 0 8px 3px
+}
+.trips-switch p {
+	cursor:pointer
+}
+.trips-switch .planned-show {
+	display:inline-block;
+	color:#888;
+	font-size:20px;
+	font-weight:600;
+	margin:0 8px 0 0
+}
+.trips-switch .planned-active {
+	color:#000!important;
+	font-weight:600
+}
+.trips-switch .shortlist-show {
+	display:inline-block;
+	color:#888;
+	font-size:20px;
+	font-weight:600;
+	margin:0 0 0 8px
+}
+.trips-switch .shortlist-active {
+	color:#000!important;
+	font-weight:600
+}
+.trips-switch .switcher {
+	display:inline-block;
+	width:70px;
+	height:24px;
+	border:1px solid #da2e2a;
+	vertical-align:top;
+	margin:0;
+	position:relative;
+	top:-1px
+}
+.switcher .planned-select {
+	display:inline-block;
+	float:left;
+	padding:11px 12px;
+	cursor:pointer
+}
+.switcher .shortlist-select {
+	display:inline-block;
+	float:right;
+	padding:11px 12px;
+	cursor:pointer
+}
+.switcher .active {
+	background:#da2e2a;
+	display:inline-block
+}
+#account-trips .trip-information {
+	display:block;
+	width:100%;
+	position:relative;
+	margin:28px 0 40px
+}
+.trip-information .about-trip {
+	display:block;
+	width:100%;
+	position:relative;
+	margin:0 0 8px
+}
+.about-trip * {
+	display:inline-block
+}
+.about-trip h3 {
+	font-size:20px;
+	color:#222
+}
+.about-trip button {
+	margin:0 0 0 10px
+}
+.about-trip .trip-edition-holder {
+	position:absolute;
+	right:0;
+	top:4px
+}
+.trip-edition-holder p {
+	font-size:15px;
+	color:#222
+}
+.trip-edition-holder a {
+	font-weight:600;
+	color:inherit
+}
+.trip-edition-holder p.show-more {
+	color:#6da0cb;
+	font-weight:600;
+	margin:0 0 0 5px;
+	cursor:pointer
+}
+.trip-edition-holder p.last-edit {
+	margin:0 0 0 12px
+}
+@media(max-width:1170px) {
+.last-section {
+display:block;
+text-align:right;
+margin:5px 0
+}
+.trip-information .about-trip {
+margin:0 0 19px
+}
+}
+.trip-edition-holder .remove-trip {
+	cursor:pointer;
+	margin:0 0 0 15px
+}
+#shortlisted-trips {
+	display:none
+}
+.remove-from-list {
+	display:block!important;
+	width:125px;
+	height:16px;
+	cursor:pointer;
+	float:left;
+	margin:6px 0 0 5px
+}
+#getting-here-search {
+	height:130px;
+	padding:10px
+}
+#getting-here-search .row-holder {
+	background:#ddd;
+	height:110px;
+	margin:0;
+	padding:6px 0 0 20px
+}
+#getting-here-search .row-holder .row-element {
+	display:inline-block;
+	vertical-align:bottom;
+	margin:0 20px 0 0
+}
+.start-from input {
+	border:1px solid #d63438;
+	height:45px;
+	width:250px;
+	padding:5px 5px 5px 40px;
+	font-size:18px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/input-bg.a9dbcbe75ea2.png") no-repeat 8px center #fff;
+	text-transform:uppercase
+}
+.start-to input {
+	border:1px solid #d63438;
+	height:45px;
+	width:250px;
+	padding:5px 10px;
+	font-size:18px;
+	background:#fff;
+	text-transform:uppercase
+}
+#getting-here-search .travel-date {
+	cursor:pointer;
+	padding:6px 39px 6px 8px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/pickup.0779fa43bb99.png") no-repeat right #fff;
+	border:0;
+	font-size:15px;
+	font-weight:500;
+	color:#2a2a2a;
+	width:170px;
+	height:45px
+}
+#getting-here-search .search-to-get {
+	height:45px
+}
+#map {
+	position:relative
+}
+#map .get-here-route {
+	display:inline-block;
+	position:absolute;
+	top:10px;
+	left:10px;
+	z-index:1000
+}
+.transparent-holder {
+	display:inline-block;
+	background:rgba(102, 102, 102, 0.5);
+	padding:15px;
+	width:395px
+}
+.main-route-holder {
+	position:relative;
+	display:inline-block;
+	background:#fff;
+	padding:10px 5px 15px 5px;
+	width:100%;
+	margin:0 0 5px 0
+}
+.main-route-holder .place-route-price {
+	position:absolute;
+	right:0;
+	top:4px;
+	background:#666;
+	color:white;
+	font-size:15px;
+	display:inline-block;
+	padding:8px
+}
+.route-buttons a.add-to-trip {
+	display:block!important;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/add-bag.5355c728817f.png") no-repeat;
+	padding:6px 0 4px 32px;
+	font-size:14px;
+	font-weight:600;
+	width:120px;
+	height:25px;
+	cursor:pointer;
+	float:left;
+	margin-top:12px
+}
+.route-buttons a.shortlist-icon {
+	display:none;
+	padding:5px 14px 4px 25px;
+	font-size:14px;
+	font-weight:600;
+	height:25px;
+	cursor:pointer;
+	float:left;
+	margin-top:12px
+}
+.route-buttons a.book-trip, a.book-now-trip {
+	display:block;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/book-arrow.125dc593bfe6.png") no-repeat;
+	padding:6px 0 4px 0;
+	font-size:14px;
+	font-weight:600;
+	width:120px;
+	height:25px;
+	cursor:pointer;
+	float:right;
+	margin-top:12px;
+	text-align:center
+}
+.route-buttons a.remove-trip {
+	display:block!important;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/add-bag.5355c728817f.png") no-repeat;
+	width:100px;
+	height:25px;
+	cursor:pointer;
+	float:left;
+	padding:6px 0 4px 32px;
+	font-size:14px;
+	font-weight:600;
+	margin-top:12px
+}
+.main-route-holder .route-transport-title {
+	font-size:18px;
+	font-weight:600;
+	color:#333
+}
+.active-route-holder {
+	display:none;
+	width:100%;
+	margin:20px 0 0
+}
+.active-route-holder>div {
+	display:block;
+	width:100%;
+	position:relative
+}
+.active-route-holder .vertical-start-point {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/start.8c3e901b5981.png") no-repeat center left;
+	height:29px;
+	line-height:29px;
+	margin:0 0 5px 0
+}
+.vertical-start-point .start-point-title {
+	font-size:14px;
+	font-weight:600;
+	text-transform:uppercase;
+	color:#262626;
+	margin:0 0 0 35px
+}
+.active-route-holder .vertical-end-point {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/end.b6b44a48bdad.png") no-repeat center left;
+	height:29px;
+	line-height:29px;
+	margin:5px 0 0 0
+}
+.vertical-end-point .end-point-title {
+	font-size:14px;
+	font-weight:600;
+	text-transform:uppercase;
+	color:#262626;
+	margin:0 0 0 35px
+}
+.active-route-holder .vertical-route {
+	position:relative;
+	overflow:hidden;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/route.403f70b91477.png") no-repeat 9px;
+	min-height:65px;
+	line-height:46px;
+	padding:5px 0 0 15px;
+	height:auto
+}
+.vertical-route .current-route-price {
+	position:absolute;
+	right:0;
+	top:-18px;
+	color:#666;
+	font-size:15px;
+	display:inline-block!important;
+	padding:0 8px;
+	height:25px
+}
+.vertical-route p {
+	width:220px;
+	height:38px;
+	line-height:23px;
+	font-size:15px
+}
+.vertical-route a {
+	cursor:pointer;
+	right:0;
+	position:absolute;
+	top:15px;
+	font-weight:600;
+	padding:0 15px 0 30px;
+	line-height:25px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/book-arrow.125dc593bfe6.png") no-repeat
+}
+.vertical-route span.clear-cab-rental {
+	font-size:10px!important;
+	position:absolute;
+	top:42px;
+	right:2px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/icons/ccr-logo.5d31952da7f3.png") no-repeat;
+	background-size:75px 24px;
+	width:75px;
+	height:24px
+}
+.vertical-route span.via-text {
+	font-size:10px!important;
+	position:absolute;
+	top:24px;
+	right:5px;
+	z-index:-1
+}
+.vertical-route .vertical-transport {
+	padding:5px 5px 5px 40px;
+	color:#da2e2a;
+	margin:0 0 0 10px
+}
+.vertical-route .travel-time {
+	font-size:18px;
+	font-weight:600;
+	font-style:italic
+}
+.vertical-route .vertical-train {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/train-red.92928887b730.png") no-repeat center left 10px!important
+}
+.vertical-route .vertical-bus {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/bus-red.15345ec19d05.png") no-repeat center left 10px!important
+}
+.vertical-route .vertical-plain {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/plain-red.4d78783f90cf.png") no-repeat center left 10px!important
+}
+.vertical-route .vertical-cab {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/car-red.f2233eb5034f.png") no-repeat center left 10px!important
+}
+.route-selected .vertical-cab {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/car-purple.04140daaf056.png") no-repeat center left 10px!important
+}
+.route-selected .vertical-transport {
+	padding:5px 5px 5px 40px;
+	border:2px solid #986f8c!important;
+	color:#986f8c!important
+}
+.route-selected .vertical-train {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/train-purple.31c74d067bd4.png") no-repeat center left 10px!important
+}
+.route-selected .vertical-bus {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/bus-purple.0ae09fd86c1b.png") no-repeat center left 10px!important
+}
+.route-selected .vertical-plain {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/plain-purple.5e4a849dd277.png") no-repeat center left 10px!important
+}
+.show-more-results {
+	width:120px!important;
+	font-size:14px!important;
+	margin:2px 0 0 0;
+	padding:2px 8px!important
+}
+.active-route-holder .vertical-point {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/gray-dot.b642a34f3114.png") no-repeat;
+	height:20px;
+	line-height:20px;
+	margin:4px 0
+}
+.vertical-point .vertical-point-title {
+	font-size:14px;
+	font-weight:600;
+	color:#262626;
+	margin:0 0 0 36px
+}
+.transport-variants {
+	display:inline-block;
+	position:absolute;
+	right:0;
+	bottom:10px
+}
+.route-details-container {
+	display:inline-block;
+	width:480px;
+	vertical-align:top;
+	background:#fff;
+	margin:130px 0 0 10px
+}
+.route-details-container .details-header {
+	background:#eee;
+	width:100%;
+	height:36px;
+	line-height:36px
+}
+.details-header span:first-child {
+	position:relative;
+	top:6px
+}
+.details-header h2 span {
+	top:0!important
+}
+.details-header h2 {
+	display:inline-block;
+	font-size:18px;
+	font-weight:600;
+	color:#000;
+	position:relative;
+	top:-3px
+}
+.route-details-container p {
+	font-size:15px;
+	font-weight:600;
+	vertical-align:top;
+	width:100%;
+	color:#333
+}
+.agency-name, .transport-start, .transport-end, .transport-frequency, .transport-time {
+	color:#000!important
+}
+.route-main-infromation {
+	padding:5px 0 0 8px
+}
+.route-details-container .agency {
+	display:inline-block;
+	width:130px;
+	vertical-align:top;
+	margin:0 0 9px 0
+}
+.agency p {
+	margin:0 0 10px 0
+}
+.route-details-container .current-route {
+	display:inline-block;
+	width:330px;
+	position:relative;
+	height:100%
+}
+.current-route .from {
+	display:inline-block;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/line.0210ebbfb405.png") no-repeat left 7px;
+	width:190px;
+	margin:0 0 10px 0
+}
+.current-route .to {
+	width:30px;
+	display:inline-block;
+	text-transform:uppercase
+}
+.current-route .transport-point {
+	display:inline-block;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/circle-red.bbb6235a0f49.png") no-repeat;
+	padding:0 0 0 20px
+}
+.current-route .transport-end {
+	position:absolute;
+	right:5px;
+	width:130px
+}
+.route-details-container .line-holder {
+	display:block;
+	width:100%;
+	margin:0 0 15px 0
+}
+.line-holder>* {
+	vertical-align:top
+}
+.line-holder .title {
+	display:inline-block;
+	width:130px
+}
+.line-holder .transport-data {
+	display:inline-block;
+	width:330px
+}
+.line-holder a {
+	color:#da2e2a
+}
+.line-holder .transport-price {
+	display:inline-block;
+	background:#333;
+	color:white;
+	font-weight:600;
+	font-size:15px;
+	display:inline-block;
+	padding:5px;
+	width:auto
+}
+.signup-name, .password, .facebook-signup, .gplus-signup, .remeber-user, .close-login, .email-name, .close-app-popup {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/login-sprite.a658184c2778.jpg") no-repeat
+}
+#sign-modal {
+	display:none;
+	position:fixed;
+	top:25%;
+	left:25%;
+	width:718px;
+	border:8px solid #b0b0b0;
+	z-index:1201
+}
+.close-login, .close-app-popup {
+	position:absolute;
+	top:0;
+	right:0;
+	width:40px;
+	height:40px;
+	display:block;
+	background-position:0 -105px;
+	cursor:pointer
+}
+ul.tab-selector {
+	display:block;
+	width:100%;
+	background:#b0b0b0!important
+}
+.tab-selector li.sign-tab {
+	display:inline-block;
+	text-transform:uppercase;
+	background:#399;
+	color:#fff;
+	padding:0 20px;
+	height:40px;
+	line-height:40px;
+	cursor:pointer
+}
+.tab-selector li.tab-selected {
+	background:#fff!important;
+	color:#399!important
+}
+#login-tab {
+	background:#fff;
+	height:308px
+}
+.inside-tab-container {
+	display:inline-block;
+	vertical-align:top;
+	position:relative;
+	height:100%;
+	background:#fff
+}
+.separate {
+	display:block;
+	position:absolute;
+	width:35px;
+	height:35px;
+	line-height:35px;
+	text-transform:uppercase;
+	background:#ccc;
+	color:#fff;
+	border-radius:50%;
+	text-align:center;
+	right:-18px;
+	z-index:30;
+	top:83px
+}
+.buttons-login {
+	position:relative;
+	width:350px;
+	height:200px;
+	padding:0 40px;
+	border-right:2px solid #ccc;
+	margin:54px 0 0 0
+}
+.buttons-login .facebook-signup {
+	display:block;
+	width:257px;
+	height:48px;
+	background-position:0 -175px;
+	margin:23px 0 50px 0;
+	cursor:pointer
+}
+.buttons-login .gplus-signup {
+	display:block;
+	width:244px;
+	height:48px;
+	background-position:0 -253px;
+	cursor:pointer
+}
+.fields-login {
+	width:348px
+}
+.fields-login .login-form {
+	margin:75px 0 0;
+	padding:0 50px
+}
+#sign-modal span {
+	display:inline-block;
+	font-size:11px;
+	color:#9f9f9f
+}
+#sign-modal input {
+	border:1px solid #ccc;
+	height:36px;
+	display:block;
+	width:250px;
+	margin:10px 0;
+	font-size:15px
+}
+#sign-modal .email-name {
+	background-position:0 -330px;
+	padding:0 0 0 40px;
+	margin:0 0 25px 0;
+	cursor:pointer
+}
+#sign-modal .password {
+	background-position:0 -393px;
+	padding:0 0 0 40px;
+	margin:0 0 15px 0;
+	cursor:pointer
+}
+.login-form .remeber-user {
+	float:left;
+	padding:0 0 0 16px!important;
+	background-position:0 -63px;
+	height:20px;
+	cursor:pointer
+}
+.login-form .remeber-selected {
+	background-position:0 -85px
+}
+.login-form .forget-password {
+	float:right;
+	display:inline-block;
+	font-size:11px;
+	color:#9f9f9f
+}
+.login-form .action-login {
+	clear:both;
+	display:block;
+	text-transform:uppercase;
+	margin:60px 0 0 75px
+}
+p.error-message {
+	display:none;
+	color:#c33;
+	position:absolute;
+	left:60px;
+	top:40px
+}
+ul.error-message {
+	display:inline-block;
+	color:#c33;
+	padding-left:60px;
+	text-align:center;
+	font-family:"Lato", sans-serif!important;
+	line-height:2
+}
+ul.error-message li {
+	color:#000
+}
+ul.error-message li.error-note {
+	color:#366
+}
+#signup-tab {
+	display:none;
+	background:#fff;
+	height:328px;
+	position:relative
+}
+.signup-form {
+	margin:53px 0 0;
+	padding:0 50px
+}
+#signup-tab .email-name {
+	margin:0
+}
+#signup-tab .password {
+	margin:0
+}
+#signup-tab input {
+	margin-bottom:9px!important
+}
+#signup-tab input:focus {
+	border:2px solid #ccc!important
+}
+#signup-tab .button-title {
+	position:absolute;
+	font-size:11px;
+	color:#999;
+	font-weight:bold;
+	top:-5px
+}
+#signup-tab .signup-title {
+	position:absolute;
+	font-size:16px;
+	font-weight:bold;
+	color:#399;
+	left:256px;
+	z-index:300;
+	top:16px
+}
+.terms-signup {
+	font-size:9px!important;
+	color:#a5a5a5;
+	position:absolute;
+	margin-left:-14px
+}
+.terms-signup span {
+	font-size:9px!important
+}
+.signup-red {
+	color:#c33!important
+}
+.signup-blue {
+	color:#399!important
+}
+.signup-blueterms {
+	font-weight:bold;
+	color:#399!important
+}
+.signup-name {
+	background-position:0 0;
+	padding:0 0 0 40px
+}
+.signup-name:focus {
+	background-position:-1px -1px;
+	padding:0 0 0 39px
+}
+.signup-form .action-signup {
+	clear:both;
+	display:block;
+	text-transform:uppercase;
+	margin:30px 0 0 75px
+}
+#recovery-modal {
+	display:none;
+	position:fixed;
+	top:25%;
+	left:25%;
+	width:718px;
+	border:8px solid #b0b0b0;
+	z-index:1201
+}
+#recovery-modal #recovery-tab {
+	background:#fff;
+	height:308px;
+	text-align:center;
+	padding:34px 0 0 0
+}
+#recovery-modal #recovery-tab-done {
+	display:none;
+	background:#fff;
+	height:308px;
+	text-align:center;
+	padding:74px 0 0 0
+}
+.recovery-title {
+	font-size:16px;
+	font-weight:bold;
+	color:#399;
+	left:256px;
+	z-index:300
+}
+#recovery-modal .email-name {
+	background-position:0 -330px;
+	padding:0 0 0 40px;
+	margin:35px
+}
+#recovery-modal input {
+	border:1px solid #ccc;
+	height:36px;
+	display:inline-block;
+	width:250px;
+	margin:10px 0;
+	font-size:15px
+}
+#recovery-modal .done-title {
+	color:#999;
+	font-size:15px;
+	font-weight:bold;
+	margin:0 0 35px
+}
+.option-elements-holder .dropdown-options-holder .jqTransformSelectWrapper ul {
+	top:0
+}
+.option-elements-holder input, .option-elements-holder .select-interest, .option-elements-holder .date-holder, .option-elements-holder .count-container, .option-elements-holder .jqTransformSelectWrapper {
+	border-radius:0
+}
+.invite-text .main-invite-text, .invite-text .secondary-invite-text {
+	border-radius:2px;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(54, 34, 75, 0.4)), color-stop(100%, rgba(54, 34, 75, 0.5)))
+}
+.planner-holder .title {
+	font-size:20px
+}
+.option-elements-holder button.start-plan {
+	border-radius:0
+}
+.option-elements-holder button.reset {
+	border-radius:0
+}
+#getting-here .enable-filter-holder {
+	display:block
+}
+#getting-here .enable-filter-holder ul {
+	width:auto;
+	float:left
+}
+#getting-here .enable-filter-holder ul li {
+	position:relative;
+	width:50px;
+	height:50px;
+	background:none repeat scroll 0 0 #f6f6f6;
+	border:1px solid #fff;
+	cursor:pointer;
+	display:inline-block;
+	margin:0 0 4px 9px;
+	text-align:center;
+	vertical-align:bottom
+}
+#getting-here .enable-filter-holder ul li:hover {
+	border:1px solid #bababa
+}
+#getting-here .enable-filter-holder ul li a {
+	display:block;
+	width:50px;
+	height:50px
+}
+#getting-here .enable-filter-holder ul li a.car_grey {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/car-gray.04140daaf056.png") no-repeat center center
+}
+#getting-here .enable-filter-holder ul li a.bus_grey {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/bus-gray.c55b6a4a31d6.png") no-repeat center center
+}
+#getting-here .enable-filter-holder ul li a.train_grey {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/train-gray.40df14b1147e.png") no-repeat center center
+}
+#getting-here .enable-filter-holder ul li a.plane_grey {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/plain-gray.01de34e75c66.png") no-repeat center center
+}
+#getting-here .enable-filter-holder ul li input[type=checkbox] {
+	position:absolute;
+	top:0;
+	left:0
+}
+.input_holder {
+	padding-left:10px
+}
+.input_holder input[type=checkbox] {
+	height:12px
+}
+.input_holder input[type=checkbox]:checked {
+	border-color:1px solid #f00
+}
+#footer.home {
+	position:fixed;
+	bottom:0;
+	height:20px;
+	background:none repeat scroll 0 0 rgba(0, 0, 0, .6);
+	z-index:9999;
+	width:690px
+}
+#footer.inner {
+	position:fixed;
+	bottom:0;
+	height:20px;
+	background:none repeat scroll 0 0 rgba(0, 0, 0, .6);
+	z-index:9999;
+	width:690px
+}
+#footer p.copy {
+	float:left;
+	color:#b6b6b6;
+	font-size:10px;
+	float:left;
+	padding:4px 0 0 30px
+}
+#footer p.copy:after {
+	content:"|";
+	padding-left:15px
+}
+#footer ul {
+	display:inline;
+	float:left
+}
+#footer ul li {
+	display:inline;
+	padding:0 0 0 15px
+}
+#footer ul li a {
+	color:#b6b6b6;
+	font-size:10px;
+	text-transform:capitalize;
+transition:.2s color
+}
+#footer ul li a:hover {
+	color:#fff
+}
+footer.page-footer {
+	background-color:#282423;
+	color:#fff
+}
+.service-list {
+	width:50%;
+	text-align:center
+}
+.footer-container {
+	width:90%
+}
+.service-list>span.left {
+	margin:3px;
+	width:100%
+}
+.social-media-wrpr ul li {
+	width:20%
+}
+.social-media-wrpr ul li a.social-link-container {
+	height:50px;
+	color:#aaa;
+	background:#333;
+	width:50px;
+	font-size:30px;
+	text-align:center;
+	line-height:50px;
+	border-radius:50%
+}
+footer.page-footer a {
+	color:#c8c8c8
+}
+footer.page-footer a:hover {
+	text-decoration:underline
+}
+.social-media-wrpr ul li a.social-link-container:hover {
+	color:#eee
+}
+.footer-site-link-container {
+	width:25%
+}
+.footer-site-link-container div.footer-site-link {
+	font-size:13px;
+	line-height:19px
+}
+.footer-site-link-container div.footer-site-link:first-child {
+	font-size:20px;
+	margin-bottom:15px
+}
+.copyright-text {
+	font-size:12px;
+	color:#666
+}
+.visit-links-container .service-list a {
+	font-size:12px;
+	margin-bottom:5px;
+	text-align:left
+}
+.social-media-container {
+	border-bottom:1px dotted #cdcdcd;
+	border-top:1px dotted #cdcdcd;
+	padding-top:20px
+}
+.social-media-container .social-media-wrpr {
+	width:80%;
+	margin:30px auto
+}
+.footer-image-container {
+	padding:30px 0
+}
+.footer-site-link-block {
+	padding:30px 0;
+	border-bottom:1px dotted #cdcdcd
+}
+.footer-container .visit-links-container {
+	margin:20px 0
+}
+#search-option .add-destination {
+	display:inline-block;
+	width:47px;
+	height:97px;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/add-interest.ef3d9a3089ef.png") no-repeat bottom;
+	padding:10px 0 0 0;
+	cursor:pointer
+}
+#search-option input.destination-to.ui-autocomplete-input {
+	padding:6px 39px 6px 8px;
+	border:0;
+	font-size:15px;
+	font-weight:500;
+	color:#2a2a2a;
+	width:301px;
+	height:45px
+}
+#search-option .destination-to-type p {
+	cursor:default;
+	color:#262626;
+	font-size:15px;
+	display:inline-block;
+	height:27px;
+	line-height:27px;
+	padding:0 10px 0 8px
+}
+#search-option .destination-to-type {
+	display:inline-block;
+	position:relative;
+	padding:0 0 0 38px;
+	margin:20px 0 0 0;
+	bottom:16px
+}
+#search-option .destination-to-type span {
+	cursor:pointer;
+	display:inline-block;
+	float:right;
+	right:0;
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/remove.bb72473c5e29.png") no-repeat;
+	width:27px;
+	height:27px
+}
+#search-option .starting-row {
+	margin-top:-8px
+}
+.modal-popup-wyh {
+	display:none;
+	position:fixed;
+	top:25%;
+	left:25%;
+	width:718px;
+	border:0;
+	z-index:1201;
+	background:white
+}
+div.popupContentContainer {
+	background:white;
+	background:white;
+	position:relative;
+	overflow:auto;
+	min-height:300px
+}
+div.popupContent {
+	float:left;
+	position:relative;
+	width:100%;
+	overflow-y:hidden
+}
+.modal-popup-title {
+	text-align:center;
+	padding:15px 0
+}
+div.invite-co-traveler-block {
+	margin:10px 0;
+	max-height:170px;
+	overflow:auto
+}
+.invite-co-traveler {
+	position:relative;
+	overflow:hidden
+}
+.removeInviteeDisabled {
+	opacity:.5;
+	cursor:auto!important
+}
+.removeInvitee {
+	display:inline-block!important;
+	background:#d4353c;
+	color:#fff;
+	font-size:15px!important;
+	cursor:pointer;
+	position:relative;
+	width:16px!important;
+	height:16px!important;
+	position:absolute;
+	right:10px;
+	top:0;
+	bottom:0;
+	margin:auto!important
+}
+.modal-popup-wyh input {
+	border:1px solid #ccc;
+	height:36px;
+	width:400px;
+	font-size:15px
+}
+.inline-display {
+	display:inline
+}
+.margin15 {
+	margin:15px 15px 0 15px!important
+}
+div.add-more-travelers span {
+	margin-left:58px;
+	font-size:14px
+}
+button.action-button {
+	margin-top:22px;
+	float:right;
+	position:relative
+}
+.first-window p {
+	padding:10px 30px;
+	font-weight:300;
+	line-height:1.3;
+	font-size:18px
+}
+.quote-field-block {
+	margin:25px 0;
+	max-height:200px;
+	overflow:auto
+}
+.quote-field {
+	position:relative;
+	overflow:hidden
+}
+.quote-action-button {
+	float:right;
+	margin-bottom:10px
+}
+.quote-field .phone-number {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/phone-icon.4be664f80287.png") no-repeat;
+	padding:0 0 0 30px
+}
+.quote-field .error {
+	border-color:red
+}
+.quote-field label {
+	margin-bottom:15px;
+	line-height:1.3
+}
+.quote-field span {
+	font-size:12px;
+	display:block;
+	margin-left:auto!important;
+	color:#868686;
+	font-weight:300
+}
+.welcome-video-modal-popup {
+	display:none;
+	left:0;
+	right:0;
+	top:0;
+	margin:5% auto;
+	width:1024px!important
+}
+.first-tag {
+	width:15%;
+	height:47px;
+	text-align:center;
+	position:relative
+}
+.modal-tab-list-span {
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	margin:auto;
+	height:18px
+}
+.email-name {
+	background-position:0 -330px;
+	padding:0 0 0 40px;
+	margin:0 0 25px 0;
+	cursor:pointer
+}
+div.second-window {
+	margin-top:34px;
+	color:grey;
+	font-weight:bold;
+	font-size:14px
+}
+button.big.red.continue-button {
+	margin-top:36px
+}
+.first-window span {
+	font-size:12px;
+	margin-left:84px
+}
+.slides-container div.ResultsCopyrightContainer {
+	position:absolute;
+	bottom:45px;
+	left:26px;
+	border-radius:3px;
+	background:0;
+	padding:5px
+}
+.slides-container img.copyRightCameraImg {
+	height:20px!important;
+	width:30px!important;
+	float:left;
+	cursor:pointer;
+	position:relative!important;
+	z-index:1!important
+}
+.slides-container span.ResultsImgAuthorName {
+	float:left;
+	margin-top:1px;
+	margin-left:15px;
+	color:white;
+	display:none
+}
+.slideImage {
+	top:0!important
+}
+.car_grey.transportSelected {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/car-red.f2233eb5034f.png") no-repeat center center!important
+}
+.bus_grey.transportSelected {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/bus-red.15345ec19d05.png") no-repeat center center!important
+}
+.plane_grey.transportSelected {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/plain-red.4d78783f90cf.png") no-repeat center center!important
+}
+.train_grey.transportSelected {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/route/train-red.92928887b730.png") no-repeat center center!important
+}
+#staticContentContainer {
+	margin:0 auto;
+	width:998px
+}
+#staticContentContainer .content_container {
+	float:left;
+	width:100%;
+	border:1px solid #ccc;
+	background:#fff;
+	padding:20px 20px 10px 20px;
+	margin-bottom:20px
+}
+.content_container .left_container {
+	float:left;
+	width:50%
+}
+.content_container p {
+	padding-top:20px;
+	font-size:13px;
+	line-height:19px
+}
+.left_container .about_travmad {
+	padding-bottom:20px;
+	float:left
+}
+.left_container p {
+	font-size:13px;
+	padding-top:10px;
+	line-height:1.3
+}
+.left_container p.tagline {
+	font-weight:600
+}
+.content_container h3 {
+	padding-top:10px;
+	font-weight:bold
+}
+.content_container ol {
+	margin:0 0 0 20px
+}
+.content_container ol li {
+	font-size:13px;
+	padding-top:10px;
+	line-height:20px
+}
+.left_container ul.team {
+	float:left;
+	width:100%;
+	padding:0 0 20px 0
+}
+.left_container ul.team li {
+	float:left;
+	width:100%;
+	padding:10px 0
+}
+.left_container ul.team li img {
+	float:left;
+	margin-right:20px;
+	border-radius:50%
+}
+.left_container ul.team li h3 {
+	float:left;
+	width:80%;
+	color:#c33;
+	font-size:18px
+}
+.left_container ul.team li p {
+	float:left;
+	width:100%;
+	text-align:justify
+}
+.left_container ul.principles {
+	float:left;
+	width:100%
+}
+.left_container ul.principles li {
+	background:url("/web/20150606094404/https://www.tripigator.com/static/css/images/icons/pointer.3f1f9f42adf3.gif") 20px 10px no-repeat;
+	padding:10px 0 0 40px;
+	font-size:14px
+}
+.content_container .press_container {
+	width:100%!important
+}
+.left_container ul.press {
+	float:left;
+	width:100%;
+	padding:0 0 20px 0
+}
+.left_container ul.press li {
+	float:left;
+	width:100%;
+	padding:10px 0;
+	cursor:pointer;
+	margin-bottom:5px;
+	margin-top:5px
+}
+.left_container ul.press li h3 {
+	float:left;
+	color:#333;
+	font-size:18px;
+	margin-left:20px
+}
+.left_container ul.press li p {
+	float:left;
+	width:70%;
+	margin-left:20px
+}
+.left_container ul.press li p.media-text {
+	font-size:13px!important;
+	text-align:justify
+}
+.press .media-img-holder {
+	width:200px;
+	height:150px;
+	float:left
+}
+.press .media-img-holder img {
+	margin:auto;
+	display:block
+}
+.media-date {
+	display:none!important
+}
+.content_container .right_container {
+	float:right;
+	width:50%
+}
+.content_container .right_container input {
+	display:block;
+	width:100%;
+	height:45px;
+	background:#f5f5f5;
+	border:0;
+	padding:5px 10px;
+	font-size:16px;
+	color:#333;
+	margin-top:10px
+}
+.content_container .right_container textarea {
+	width:100%;
+	height:100px;
+	background:#f5f5f5;
+	border:0;
+	padding:5px 10px;
+	font-size:16px;
+	color:#333;
+	margin:10px 0 0 0;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal
+}
+.content_container .right_container .contact-selectbox {
+	width:100%;
+	margin-top:10px;
+	margin-bottom:10px
+}
+.content_container .right_container select {
+	font-size:16px;
+	color:#333;
+	width:272px;
+	height:45px
+}
+.content_container .right_container .jqTransformSelectWrapper span {
+	font-size:16px;
+	color:#333
+}
+.content_container .right_container button {
+	float:right;
+	margin:10px 0 0 0
+}
+.content_container .right_container img {
+	width:100%
+}
+.error {
+	border:#f00 solid 1px!important
+}
+#start-date.datepicker-input {
+	position:absolute;
+	left:0
+}
+#end-date.datepicker-input {
+	position:absolute;
+	left:0
+}
+
+

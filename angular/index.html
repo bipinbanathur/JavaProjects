@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> AJS Employee Application</title> 
+<script src		="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src		="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script data-require="angular.js@*" 	data-semver="1.3.15" 	src  ="https://code.angularjs.org/1.3.15/angular.js"></script>
+<script data-require="ui-bootstrap@*" 	data-semver="0.12.1" 	src  ="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
+<link 	data-require="bootstrap-css@*" 	data-semver="3.3.1" 	href ="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" />
+<link 	rel	="stylesheet" href="/angular/css/style.css"/>
+</head>
+<body> 
+
+<div ng-app="myApp" ng-controller="myctr"> 
+
+	<font 	face	="garamond" 	color	="white">
+	<h1 	align 	="center"> AJS Example Applications</h1>
+	<button ng-click="viewCreateModal()"  style="line-height: 6rem;  min-width: 0;  width: 6rem; height: 6rem; border-radius: 100%; padding: 10px 10px 10px 10px;"	class="btn btn-success"></button>
+	<button ng-click="viewEmployee()" 	  style="line-height: 6rem;  min-width: 0;  width: 6rem; height: 6rem; border-radius: 100%; padding: 10px 10px 10px 10px;"	class="btn btn-danger"></button>
+	<button ng-click="viewEmployeeTree()" style="line-height: 6rem;  min-width: 0;  width: 6rem; height: 6rem; border-radius: 100%; padding: 10px 10px 10px 10px;"	class="btn btn-warning"></button>
+	<button ng-click="viewBugs()" 		  style="line-height: 6rem;  min-width: 0;  width: 6rem; height: 6rem; border-radius: 100%; padding: 10px 10px 10px 10px;"	class="btn btn-info"></button>
+	<button ng-click="viewData()" 		  style="line-height: 6rem;  min-width: 0;  width: 6rem; height: 6rem; border-radius: 100%; padding: 10px 10px 10px 10px;"	class="btn btn-primary"></button>
+
+	<modal title="Create Employee" visible="showCreateModal">
+    <form role="form" name="form.createEmpForm">
+      <div class="form-group">
+        <label for="id">Employee ID</label>
+        <input type="id" class="form-control" id="id" placeholder={{idMessage}} ng-model="cEmp.cid"  ng-model-options="{ updateOn: 'blur' }"/>
+      </div>
+      <div class="form-group">
+        <label for="name">Employee Name</label>
+        <input type="id" class="form-control" id="name" placeholder={{nameMessage}} ng-model="cEmp.cname" ng-model-options="{ updateOn: 'blur' }" />
+      </div>
+	  <div class="form-group">
+        <label for="experience">Experience</label>
+        <input type="id" class="form-control" id="experience" placeholder={{expMessage}} ng-model="cEmp.cexperience" ng-model-options="{ updateOn: 'blur' }" />
+      </div>
+	  <div class="form-group">
+        <label for="salary">Salary</label>
+        <input type="id" class="form-control" id="salary" placeholder={{salMessage}} ng-model="cEmp.csalary" ng-model-options="{ updateOn: 'blur' }" />
+      </div>
+      <button type="submit" class="btn btn-default" ng-click="createEmployee(cEmp)" >Submit</button>
+    </form>
+	</modal>
+	
+	<modal title="View Employees" visible="showTableModal">
+	<table border=1 class="imagetable">
+	<th>Employee ID</th>
+	<th>Experience</th>
+	<th>Employee Name</th>
+	<th>Salary</th>
+	<th>Update</th>
+	<th>Delete</th>
+	<tr ng-repeat ="uEmp in employees">
+	<td>{{uEmp.id}}</td>
+	<td>{{uEmp.experience}}</td>
+	<td>{{uEmp.name}}</td>
+	<td>{{uEmp.salary}}</td>
+	<td><button ng-click="viewUpdateEmployee(uEmp)" style="line-height: 6rem;  min-width: 0;  width: 6rem; height: 6rem; border-radius: 50%;" class="btn btn-success" ></button></td>
+	<td><button ng-click="deleteEmp(uEmp.id)" 		style="line-height: 6rem;  min-width: 0;  width: 6rem; height: 6rem; border-radius: 50%;" class="btn btn-danger" ></button></td>
+	</tr>
+	</table>
+	</modal>
+	
+	<modal title="View Bugs" visible="showBugModal">
+	<div>
+	<h1>Bug Report</h1>
+	<h4>Total Bugs : {{bugs.length}}</h4>
+    <table class="imagetable">
+	<th>Bug No</th>
+	<th>Short Name</th>	
+	<th>Customer</th>	
+	<th>Status</th>
+	<th>Version</th>
+	<tr ng-repeat="bug in bugs">
+	<td><a href="https://bug.oraclecorp.com/pls/bug/webbug_print.show?c_rptno={{bug.bugNo}}">{{bug.bugNo}} </a></td>
+	<td>{{bug.shortName}}</td>
+	<td>{{bug.customer}}</td>
+	<td>{{bug.status}}</td>
+	<td>{{bug.version}}</td>
+	</tr>
+    </table>
+	  <pagination 
+      ng-model			=	"currentPage"
+      total-items		=	"bugs.length"
+      max-size			=	"maxSize"  
+      boundary-links	=	"true">
+    </pagination>
+	</div>
+	</modal>
+	
+	<modal title="Update Employee" visible="showUpdateModal">
+    <form role="form" name="form.updateEmpForm">
+      <div class="form-group"> 
+        <label for="id">Employee ID</label>
+        <input type="id" class="form-control" id="id" placeholder={{idMessage}} ng-model="uemp.uid" />
+      </div>
+      <div class="form-group">
+        <label for="name">Employee Name</label>
+        <input type="id" class="form-control" id="name" placeholder={{nameMessage}} ng-model="uemp.uname"  />
+      </div>
+	  <div class="form-group">
+        <label for="experience">Experience</label>
+        <input type="id" class="form-control" id="experience" placeholder={{expMessage}} ng-model="uemp.uexperience" />
+      </div>
+	  <div class="form-group">
+        <label for="salary">Salary</label>
+        <input type="id" class="form-control" id="salary" placeholder={{salMessage}} ng-model="uemp.usalary" />
+      </div>
+      <button type="submit" class="btn btn-default" ng-click="updateEmployee(uemp)" >Submit</button>
+    </form>
+	</modal>
+	
+	<modal title="Employee Tree" visible="showEmpTree">
+	<div class="container">
+	<h3>City Map</h3>
+	<div class="css-treeview">
+	<ul>
+				<li ng-repeat="record in geonames">
+				<input type="checkbox" id="item"{{$index}} /> <label for="item"{{$index}>{{record.toponymName}}</label>
+				</li>
+				<li><input type="checkbox" id="item"{{$index}}/><label for="item"{{$index} ng-click="treeSelect(record.countrycode)" 	ng-model="countrycode"{{$index}  	>	{{record.countrycode}}	</label></li>
+				<li><input type="checkbox" id="item"{{$index}}/><label for="item"{{$index} ng-click="treeSelect(record.name)" 			ng-model="name"{{$index}					>	{{record.name}}			</label></li>
+				<li><input type="checkbox" id="item"{{$index}}/><label for="item"{{$index} ng-click="treeSelect(record.population)" 	ng-model="population"{{$index}		>	{{record.population}}	</label></li>				
+	</ul>
+	<div
+      data-angular-treeview	="true"
+      data-tree-id			="mytree"
+      data-tree-model		="geonames"
+      data-node-id			="toponymName"
+      data-node-label		="countrycode"
+      data-node-children	="">
+    </div>
+	</div>
+	</div>
+	</modal>
+</div>
+</font>
+</body>
+<script>
+var app 	= angular.module('myApp',[]);
+app.controller('myctr', function($scope, $http) 
+{
+	
+	$scope.restURI			=   "http://bbanathu-in/employee/emp/restex/"	
+	$scope.jsonURI			=   "http://localhost:8080/angular/json/geonames.json";
+	$scope.bugURI			= 	"http://bbanathu-in/bugrepo/bugs/restbug/?updatedBy=SHATHAKU&fromDate=01-JAN-2007&toDate=31-DEC-2015";
+	
+	$scope.idMessage		=	"Employee ID";
+	$scope.nameMessage		=	"Employee Name";
+	$scope.expMessage		=	"Experience";
+	$scope.salMessage		=	"Salary";
+	
+	$scope.showCreateModal 	= 	false;
+	$scope.showUpdateModal 	= 	false;
+	$scope.showTableModal 	= 	false;
+	$scope.showEmpTree 		= 	false;
+	$scope.showBugModal		=   false;
+
+	$scope.pfs				=	[];
+	$scope.filteredTodos 	= 	[]
+	$scope.currentPage 		= 	1
+	$scope.numPerPage 		= 	10
+	$scope.maxSize 			= 	10;
+	
+	$scope.employees 		= 	[];
+	$scope.bugs				=   [];	
+	$scope.makeTodos = function() 
+	{
+		$scope.todos = [];
+		for (i=1;i<=1000;i++) 
+		{
+			$scope.todos.push({ text:'Item '+i, done:false});
+		}
+	};
+	$scope.makeTodos(); 	
+	$scope.$watch('currentPage + numPerPage', function() 
+	{
+		var begin = (($scope.currentPage - 1) * $scope.numPerPage), end = begin + $scope.numPerPage;    
+		$scope.filteredTodos = $scope.todos.slice(begin, end);
+	});	
+	$http.get($scope.restURI).success(function (response) {$scope.employees = response.employee;});
+	$http.get($scope.jsonURI).success(function(response)  {$scope.geonames 	= response.geonames;});
+	$http.get($scope.bugURI).success(function(response)   {$scope.bugs 		= response.bug;});	
+    $scope.viewCreateModal = function()
+	{
+		$scope.showCreateModal = !$scope.showModal;
+	};   	
+	$scope.createEmployee = function(emp)
+	{	
+		$scope.showCreateModal  = false;	
+		$scope.showTableModal   = false;
+		var emp_id				= emp.cid;
+		var emp_name 			= emp.cname;
+		var emp_exp 			= emp.cexperience;
+		var emp_sal 			= emp.csalary;	
+		var emp_obj 			= {name:emp_name,id:emp_id,experience:emp_exp,salary:emp_sal};	
+		
+		$http.post($scope.restURI+"create/",emp_obj).success(function(data,status,header,config){$scope.message=data;});			
+		alert("Employee "+emp_name+" got Added Succesfully");				
+	};
+	$scope.deleteEmp=function(id,name)
+	{
+		$scope.showTableModal = false;			
+		$http.delete($scope.restURI+"?id="+id).success(function(data,status,header,config){$scope.message=data;})  
+		alert('Employee '+name+' Deleted Succesfully');	
+	}
+	$scope.updateEmployee = function(uemp)
+	{	
+			$scope.showUpdateModal 	= false;	
+			$scope.showTableModal   = false;				
+			var emp_id				= uemp.uid;
+			var emp_name 			= uemp.uname;
+			var emp_exp 			= uemp.uexperience;
+			var emp_sal 			= uemp.usalary;
+						
+			$http.post($scope.restURI+"?id="+emp_id+"&name="+emp_name+"&experience="+emp_exp+"&salary="+emp_sal).success(function(data,status,header,config){$scope.message=data;});				
+			alert("Employee "+emp_name+" got Updated Succesfully");			
+	};	
+	$scope.viewEmployeeTree = function()
+	{		
+		$http.get($scope.jsonURI).success(function(response)  {$scope.geonames 	= response.geonames;});
+		$scope.showEmpTree = true;			
+	};	
+	$scope.viewEmployee = function()
+	{	
+		$http.get($scope.restURI).success(function (response) {$scope.employees = response.employee;});
+		$scope.showTableModal = true;			
+	};
+	
+	$scope.viewBugs = function()
+	{	
+		$http.get($scope.bugURI).success(function (response) {$scope.bugs = response.bug;});
+		$scope.showBugModal = true;			
+	};
+	
+	$scope.viewUpdateEmployee = function(uEmp)
+	{			
+		$scope.uemp 				= 	uEmp;
+		$scope.uemp.uid				=	uEmp.id;
+		$scope.uemp.uname			=	uEmp.name;
+		$scope.uemp.uexperience		=	uEmp.experience;
+		$scope.uemp.usalary			=	uEmp.salary;	
+		$scope.showUpdateModal 		= 	true;			
+	};	
+	
+	$scope.viewData = function()
+	{			
+		window.open('table.html', 'Tree');
+	};
+
+	$scope.treeSelect = function(value)
+	{			
+		alert('Hi Tree Item Selected  : '+value);
+	};
+	
+});
+  
+app.directive('modal', function () 
+{
+    return {
+      template		: 	'<div class="modal fade">' + '<div class="modal-dialog">' + '<div class="modal-content">' + '<div class="modal-header">' + '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' + '<h4 class="modal-title">{{ title }}</h4>' + '</div>' + '<div class="modal-body" ng-transclude></div>' + '</div>' + '</div>' + '</div>',
+      restrict		: 	'E',
+      transclude	: 	true,
+      replace		:	true,
+      scope			:	true,
+      link			: 
+	  function postLink(scope, element, attrs) 
+	  {
+        scope.title = attrs.title;
+
+        scope.$watch(attrs.visible, function(value)
+		{
+          if(value == true)
+            $(element).modal('show');
+          else
+            $(element).modal('hide');
+        });
+
+        $(element).on('shown.bs.modal', function()
+		{
+          scope.$apply(function()
+		  {
+            scope.$parent[attrs.visible] = true;
+          });
+        });
+
+        $(element).on('hidden.bs.modal', function()
+		{
+			scope.$apply(function()
+			{
+				scope.$parent[attrs.visible] = false;
+			});
+        });
+      }
+    };
+});
+
+app.directive("tree", function($compile) 
+{
+    return {
+        restrict	: "E",
+        scope		: {employs: '='},
+        template	: '<ul><li ng-repeat="employee in employees">{{employee.name}}</li></ul>',
+		compile		: 
+		function(tElement, tAttr)
+		{
+				var contents = tElement.contents().remove();
+				var compiledContents;
+				return function(scope, iElement, iAttr) 
+				{
+					if(!compiledContents)
+					{
+						compiledContents = $compile(contents);
+					}
+					compiledContents(scope, function(clone, scope) 
+					{
+                         iElement.append(clone); 
+					});
+				};
+        }
+    };
+});
+
+</script>
+</html>

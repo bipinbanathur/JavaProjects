@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title> AJS Employee Application</title> 
+<link 	rel	="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src	="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src	="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src	="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<font face	="garamond">
+<h1 align 	="center"> AJS Employee Application </h1>
+</font>
+</head>
+
+<body> 
+<font face="verdana">
+<div ng-app="myApp" ng-controller="myctr"> 
+<button ng-click="viewCreateModal()" class="btn btn-default">Create Employee</button>
+<button ng-click="viewEmployee()" class="btn btn-default">View Employees</button>
+
+    <div ng-controller="myctr" style="margin:10px 0 30px 0; padding:10px; background-color:#EEEEEE; border-radius:5px; font:12px Tahoma;">
+        <tree family="treeFamily"></tree>
+    </div>
+
+	<modal title="createEmployee" visible="showCreateModal">
+    <form role="form" name="form.createEmpForm">
+      <div class="form-group">
+        <label for="id">Employee ID</label>
+
+        <input type="id" class="form-control" id="id" placeholder={{idMessage}} ng-model="cEmp.cid"  ng-model-options="{ updateOn: 'blur' }"/>
+      </div>
+      <div class="form-group">
+        <label for="name">Employee Name</label>
+        <input type="id" class="form-control" id="name" placeholder={{nameMessage}} ng-model="cEmp.cname" ng-model-options="{ updateOn: 'blur' }" />
+      </div>
+	  <div class="form-group">
+        <label for="experience">Experience</label>
+        <input type="id" class="form-control" id="experience" placeholder={{expMessage}} ng-model="cEmp.cexperience" ng-model-options="{ updateOn: 'blur' }" />
+      </div>
+	  <div class="form-group">
+        <label for="salary">Salary</label>
+        <input type="id" class="form-control" id="salary" placeholder={{salMessage}} ng-model="cEmp.csalary" ng-model-options="{ updateOn: 'blur' }" />
+      </div>
+      <button type="submit" class="btn btn-default" ng-click="createEmployee(cEmp)" >Submit</button>
+    </form>
+	</modal>
+	
+	<table border=1 style="background-color:yellow">
+	<th>Employee ID</th>
+	<th>Experience</th>
+	<th>Employee Name</th>
+	<th>Salary</th>
+	<th>Update</th>
+	<th>Delete</th>
+	<tr ng-repeat ="uEmp in employees | filter:find">
+	<td>{{uEmp.id}}</td>
+	<td>{{uEmp.experience}}</td>
+	<td>{{uEmp.name}}</td>
+	<td>{{uEmp.salary}}</td>
+	<td><button ng-click="viewUpdateEmployee(uEmp)" class="btn btn-default" >Update</button></td>
+	<td><button ng-click="deleteEmp(uEmp.id)" class="btn btn-default" >Delete</button></td>
+	<tr>
+	</table>
+
+	<modal title="viewEmployees" visible="showTableModal">
+	<table border=1 style="background-color:yellow">
+	<th>Employee ID</th>
+	<th>Experience</th>
+	<th>Employee Name</th>
+	<th>Salary</th>
+	<th>Update</th>
+	<th>Delete</th>
+	<tr ng-repeat ="uEmp in employees | filter:find">
+	<td>{{uEmp.id}}</td>
+	<td>{{uEmp.experience}}</td>
+	<td>{{uEmp.name}}</td>
+	<td>{{uEmp.salary}}</td>
+	<td><button ng-click="viewUpdateEmployee(uEmp)" class="btn btn-default" >Update</button></td>
+	<td><button ng-click="deleteEmp(uEmp.id)" class="btn btn-default" >Delete</button></td>
+	<tr>
+	</table>
+	</modal>
+
+	<modal title="updateEmployee" visible="showUpdateModal">
+    <form role="form" name="form.updateEmpForm">
+      <div class="form-group"> 
+        <label for="id">Employee ID</label>
+        <input type="id" class="form-control" id="id" placeholder={{idMessage}} ng-model="uemp.uid" />
+      </div>
+      <div class="form-group">
+        <label for="name">Employee Name</label>
+        <input type="id" class="form-control" id="name" placeholder={{nameMessage}} ng-model="uemp.uname"  />
+      </div>
+	  <div class="form-group">
+        <label for="experience">Experience</label>
+        <input type="id" class="form-control" id="experience" placeholder={{expMessage}} ng-model="uemp.uexperience" />
+      </div>
+	  <div class="form-group">
+        <label for="salary">Salary</label>
+        <input type="id" class="form-control" id="salary" placeholder={{salMessage}} ng-model="uemp.usalary" />
+      </div>
+      <button type="submit" class="btn btn-default" ng-click="updateEmployee(uemp)" >Submit</button>
+    </form>
+	</modal>
+
+</div>
+</font>
+
+<script>
+
+var app = angular.module('myApp', []);
+
+app.controller('myctr', function($scope, $http) 
+{
+	$scope.restURI			=   "http://bbanathu-in/employee/emp/restex/"
+	$scope.idMessage		=	"Employee ID";
+	$scope.nameMessage		=	"Employee Name";
+	$scope.expMessage		=	"Experience";
+	$scope.salMessage		=	"Salary";
+	$scope.showCreateModal 	= 	false;
+	$scope.showUpdateModal 	= 	false;
+	$scope.showTableModal 	= 	false;
+	
+    $scope.treeFamily 		= 
+	{
+        name : "Parent",
+        children: [
+		{	name : "Child 1",children: [{ 	name : "Grand Child 1", children: []},
+										{	name : "Grand Child 2", children: []},
+										{	name : "Grand Child 3", children: []}]
+        }, 
+		{	name: "Child 2",children: []}]
+    };
+
+	$http.get($scope.restURI).success(function (response) {$scope.employees = response.employee;});
+	
+    $scope.viewCreateModal = function()
+	{
+     $scope.showCreateModal = !$scope.showModal;
+	};
+    
+	$scope.createEmployee = function(emp)
+	{	
+		$scope.showCreateModal = false;	
+		var emp_id				= emp.cid;
+		var emp_name 			= emp.cname;
+		var emp_exp 			= emp.cexperience;
+		var emp_sal 			= emp.csalary;	
+		var emp_obj 			= {name:emp_name,id:emp_id,experience:emp_exp,salary:emp_sal};	
+		
+		$http.post($scope.restURI+"create/",emp_obj).success(function(data,status,header,config){$scope.message=data;});
+			
+		alert("Employee "+emp_name+" got Added Succesfully");	
+		$http.get($scope.restURI).success(function (response) {$scope.employees = response.employee;});				
+	};
+	$scope.deleteEmp=function(id,name)
+	{
+		$http.delete($scope.restURI+"?id="+id).success(function(data,status,header,config){$scope.message=data;})  
+		alert('Employee '+name+' Deleted Succesfully');	
+		$http.get($scope.restURI).success(function (response) {$scope.employees = response.employee;});
+	}
+	$scope.updateEmployee = function(emp)
+	{	
+			$scope.showUpdateModal 	= false;		
+			var emp_id				= emp.uid;
+			var emp_name 			= emp.uname;
+			var emp_exp 			= emp.uexperience;
+			var emp_sal 			= emp.usalary;
+			alert(emp_id+emp_name_emp_exp_emp+emp_sal);
+				
+			$http.post($scope.restURI+"?id="+emp_id+"&name="+emp_name+"&experience="+emp_exp+"&salary="+emp_sal).success(function(data,status,header,config){$scope.message=data;});	
+			
+			alert("Employee "+emp_name+" got Updated Succesfully");	
+			
+			$http.get($scope.restURI).success(function (response) {$scope.employees = response.employee;});
+		
+	};
+	$scope.viewEmployee = function()
+	{		
+			$scope.showTableModal = true;
+			$http.get($scope.restURI).success(function (response) {$scope.employees = response.employee;});
+	};
+	$scope.viewUpdateEmployee = function(uEmp)
+	{		
+		$scope.idMessage		=	uEmp.id;
+		$scope.nameMessage		=	uEmp.name;
+		$scope.expMessage		=	uEmp.experience;
+		$scope.salMessage		=	uEmp.salary;		
+		$scope.showUpdateModal 	= 	true;
+	};
+
+
+
+}
+
+);
+app.directive('modal', function () {
+    return {
+      template		: 	'<div class="modal fade">' + '<div class="modal-dialog">' + '<div class="modal-content">' + '<div class="modal-header">' + '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' + '<h4 class="modal-title">{{ title }}</h4>' + '</div>' + '<div class="modal-body" ng-transclude></div>' + '</div>' + '</div>' + '</div>',
+      restrict		: 	'E',
+      transclude	: 	true,
+      replace		:	true,
+      scope			:	true,
+      link			: 
+	  function postLink(scope, element, attrs) 
+	  {
+        scope.title = attrs.title;
+
+        scope.$watch(attrs.visible, function(value)
+		{
+          if(value == true)
+            $(element).modal('show');
+          else
+            $(element).modal('hide');
+        });
+
+        $(element).on('shown.bs.modal', function()
+		{
+          scope.$apply(function()
+		  {
+            scope.$parent[attrs.visible] = true;
+          });
+        });
+
+        $(element).on('hidden.bs.modal', function()
+		{
+			scope.$apply(function()
+			{
+				scope.$parent[attrs.visible] = false;
+			});
+        });
+      }
+    };
+  }
+  
+  );
+app.directive("tree", function($compile) 
+{
+    return {
+        restrict	: "E",
+        scope		: {family: '='},
+        template	: '<p>{{ family.name }}</p>'+'<ul>' + '<li ng-repeat="child in family.children">' + '<tree family="child"></tree>' +'</li>' +'</ul>',
+		compile		: 
+		function(tElement, tAttr)
+		{
+				var contents = tElement.contents().remove();
+				var compiledContents;
+				return function(scope, iElement, iAttr) 
+				{
+					if(!compiledContents)
+					{
+						compiledContents = $compile(contents);
+					}
+					compiledContents(scope, function(clone, scope) 
+					{
+                         iElement.append(clone); 
+					});
+				};
+        }
+    };
+});
+
+</script>
+</body>
+</html>

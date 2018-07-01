@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript"  src="angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myctr"> <br>
+Find: <input type="text" ng-model="find">
+
+<br>
+<table border=1 style="background-color:yellow">
+<thead>Employee Details</thead>
+<th>Employee ID</th><th>Experience</th><th>Employee Name</th><th>Salary</th><th>Update</th><th>Delete</th>
+<tr ng-repeat ="x in names | filter:find">
+<td>{{x.id}}</td>
+<td>{{x.experience}}</td>
+<td>{{x.name}}</td>
+<td>{{x.salary}}</td>
+<td><input type="button" ng-model="Update"  ng-click="addNewEmp()" ></td>
+<td><input type="button" ng-model="Delete"  ng-click="deleteEmp(x.id)" ></td>
+<tr>
+</table>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myctr', function($scope, $http) 
+{
+  $http.get("http://127.0.0.1/employee/emp/restex/").success(function (response) {$scope.names = response.employee;});
+  
+  $scope.addNewEmp = function()
+  {  
+  var empobj = { name:$scope.empName,id:$scope.empId,experience:$scope.empExp,salary:$scope.empSal};
+  $http.post("http://127.0.0.1/employee/emp/restex/create/",empobj).success(function(data,status,header,config){$scope.message=data;});
+  $scope.empName="";
+  $scope.empId="";
+  $scope.empExp="";
+  $scope.empSal="";
+  
+  $http.get("http://127.0.0.1/employee/emp/restex/").success(function (response) {$scope.names = response.employee;});
+  
+  };
+  $scope.deleteEmp(id) = function()
+  {
+  $http.delete("http://127.0.0.1/employee/emp/restex/?id="+id).success(function(data,status,header,config){$scope.message=data;})
+  
+  $http.get("http://127.0.0.1/employee/emp/restex/").success(function (response) {$scope.names = response.employee;});
+  
+  };
+});
+
+
+</script>
+
+</body>
+</html>

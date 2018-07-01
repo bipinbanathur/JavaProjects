@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="dateApp">
+<head>
+<title>Date Picker Example</title>
+<script src="http://bbanathu-in/material/js/angular.js"></script>
+<script src="http://bbanathu-in/material/js/angular-animate.min.js"></script>
+<script src="http://bbanathu-in/material/js/angular-aria.min.js"></script>
+<script src="http://bbanathu-in/material/js/angular-material.js"></script>
+
+
+<link 	rel="stylesheet" href="http://bbanathu-in/material/css/custom.css">
+<link 	rel="stylesheet" href="http://bbanathu-in/material/css/angular-material.css">  
+</head>
+<body>
+<div ng-controller="AppCtrl"><md-content><md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker></md-content></div>
+</body>
+<script>
+angular.module('dateApp', ['ngMaterial']).controller('AppCtrl', function ($scope) 
+{
+	$scope.myDate = new Date();
+});
+</script>
+</html>
