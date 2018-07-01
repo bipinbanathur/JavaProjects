@@ -1,16 +1,18 @@
-package repoapp;
+package com.rtaware.repoapp.test;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.rtaware.repoapp.model.ordata.DBResultSet;
 import com.rtaware.repoapp.model.ordata.TableColumn;
 import com.rtaware.repoapp.model.ordata.TableRecord;
 
 public class TestClass
 {
-
-	
-	public static void main(String[] args)
+	@Test
+	private void testMode()
 	{
-		
 		DBResultSet 	resutlSet = new DBResultSet();
 		try
 		{
@@ -42,6 +44,14 @@ public class TestClass
 		{
 			e.printStackTrace();
 		}
+		
+		
+		//JSONAssert.assertEquals("{\"id\":\"1\",name:\"Name 1\"}", , JSONCompareMode.LENIENT);
+		//new JSONObject(resutlSet.toString());
+		//Assertions.assertArrayEquals(JSONObject, new JSONObject(resutlSet.toString()), "{}");
 		System.out.println(resutlSet);
+		
 	}
+	
+
 }

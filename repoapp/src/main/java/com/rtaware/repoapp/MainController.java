@@ -61,7 +61,7 @@ public class MainController
 	
 	@RequestMapping(value="/repo", method = RequestMethod.POST)
 
-    public ResponseEntity<String> process(@RequestBody String requestBody) 
+    public ResponseEntity<DBResultSet> process(@RequestBody String requestBody) 
 	{
 		DBResultSet 	resutlSet = new DBResultSet();
 		try
@@ -94,7 +94,7 @@ public class MainController
 		{
 			e.printStackTrace();
 		}
-		return new ResponseEntity<String>(resutlSet.toString(), HttpStatus.OK);
+		return new ResponseEntity<DBResultSet>(resutlSet, HttpStatus.OK);
     }
 	
 
