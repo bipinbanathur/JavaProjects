@@ -73,7 +73,7 @@ var app = angular.module('myApp', []);
 app.controller('myctr', function($scope, $http) 
 {
 	
-	$scope.server = "http://adc2201480.us.oracle.com:7101/"; //[//http://127.0.0.1:7101/ , //http://adc2201480.us.oracle.com:7101/]
+	$scope.server = ""; //[//http://127.0.0.1:7101/ , //http://adc2201480.us.oracle.com:7101/]
 	$scope.pr_uri = $scope.server+"services/ideas/report/pf";
 	$scope.rl_uri = $scope.server+"services/ideas/report/releases";
 	$scope.bd_uri = $scope.server+"services/ideas/report/builds";	
