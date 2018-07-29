@@ -1,9 +1,0 @@
-public class Java10
-{
-	public static voind main(String[] args)
-	{
-			var list = new ArrayList<String>(); // infers ArrayList<String>  
-			var stream = list.stream(); // infers Stream<String> 
-			System.out.println("Hello World");
-	}
-}

@@ -1,9 +1,0 @@
-public void iterateList()
-{
-  List<String> myList = new ArrayList<>();
-  myList.add("Bipin");
-  myList.add("Anu");
-  myList.add("Asw");
-  myList.forEach(i-> System.out.println(i));
-}
-iterateList();
