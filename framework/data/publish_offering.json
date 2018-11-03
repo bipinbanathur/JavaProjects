@@ -1,0 +1,127 @@
+{
+  "@type": "urn:x-hp:2012:software:cloud:data_model:catalog:item",
+  "service_offering": 
+  {
+    "@self": "/csa/api/service/offering/<<offeringID>>"
+  },
+  "categories": 
+  [
+    {
+      "@self": "/csa/api/category/90d96588360da0c701360da0f4c700ea"
+    }
+  ],
+  "catalog": 
+  {
+    "@self": "/csa/api/catalog/<<catalogID>>",
+    "@type": "urn:x-hp:2012:software:cloud:data_model:catalog",
+    "icon": "/csa/api/blobstore/briefcase-consumer_default_img-60.png?tag=library",
+    "name": "Global Shared Catalog",
+    "description": "Global Shared Catalog",
+    "ext": 
+	{
+      "csa_name_key": "Global Shared Catalog"
+    },
+    "@content_version": 2,
+    "global": true,
+    "categories": 
+	{
+      "@filter": "/csa/api/catalog/<<catalogID>>/category/filter"
+    },
+    "approval_policies":
+	{
+      "@self": "/csa/api/catalog/approval/",
+      "@total_results": 1,
+      "members": 
+	  [
+        {
+          "@self": "/csa/api/catalog/approval/90e795425475f42001549e8077fe52a6",
+          "@type": "urn:x-hp:2012:software:cloud:data_model:catalog:approval:user",
+          "name": "No Approval",
+          "description": null,
+          "ext": {
+            "csa_name_key": "NO_APPROVAL"
+          },
+          "@content_version": 1,
+          "organization": {
+            "@self": "/csa/api/organization/90e795425475f42001549e807733529f",
+            "@type": "urn:x-hp:2012:software:cloud:data_model:organization",
+            "name": "ITBA_Test_Org"
+          },
+          "automation": {
+            "enabled": true,
+            "replyType": "Approved",
+            "waitTime": 0
+          },
+          "selected": true,
+          "minimumApprovals": 0,
+          "minimumDenials": 0,
+          "approvers": {
+            "@type": "urn:x-hp:2012:software:cloud:data_model:person:collection",
+            "@total_results": 0,
+            "members": [
+              
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+},
+"categories": [
+{
+  "@self": "/csa/api/category/90d96588360da0c701360da0f4cc00ec"
+}
+],
+"catalog": {
+"@self": "/csa/api/catalog/<<catalogID>>",
+"@type": "urn:x-hp:2012:software:cloud:data_model:catalog",
+"icon": "/csa/api/blobstore/briefcase-consumer_default_img-60.png?tag=library",
+"name": "Global Shared Catalog",
+"description": "Global Shared Catalog",
+"ext": {
+  "csa_name_key": "Global Shared Catalog"
+},
+"@content_version": 2,
+"global": true,
+"categories": {
+  "@filter": "/csa/api/catalog/<<catalogID>>/category/filter"
+},
+"approval_policies": {
+  "@self": "/csa/api/catalog/approval/",
+  "@total_results": 1,
+  "members": [
+    {
+      "@self": "/csa/api/catalog/approval/90e795425475f42001549e8077fe52a6",
+      "@type": "urn:x-hp:2012:software:cloud:data_model:catalog:approval:user",
+      "name": "No Approval",
+      "description": null,
+      "ext": {
+        "csa_name_key": "NO_APPROVAL"
+      },
+      "@content_version": 1,
+      "organization": {
+        "@self": "/csa/api/organization/90e795425475f42001549e807733529f",
+        "@type": "urn:x-hp:2012:software:cloud:data_model:organization",
+        "name": "ITBA_Test_Org"
+      },
+      "automation": {
+        "enabled": true,
+        "replyType": "Approved",
+        "waitTime": 0
+      },
+      "selected": true,
+      "minimumApprovals": 0,
+      "minimumDenials": 0,
+      "approvers": {
+        "@type": "urn:x-hp:2012:software:cloud:data_model:person:collection",
+        "@total_results": 0,
+        "members": [
+          
+        ]
+      }
+    }
+  ]
+}
+}
+}

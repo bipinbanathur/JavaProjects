@@ -1,0 +1,10 @@
+{
+"categoryName"				: "APPLICATION_SERVERS",
+"subscriptionName"			: "API Subscription",
+"subscriptionDescription"	: "API Subscription",
+"startDate"					: "2016-06-02T16:17:43.000Z",
+"endDate"					: "2017-06-01T16:17:43.000Z",
+"fields"					: {},							
+"pricing"					: {},							
+"action"					: "ORDER"						
+}

@@ -1,0 +1,18 @@
+{
+  "@type"		: "urn:x-hp:2012:software:cloud:data_model:service-offering",
+  "tags"		: 
+  [    
+  ],
+  "icon"		: "/csa/api/blobstore/Server_RGB_blue_NT.png?tag=library",
+  "name"		: "API Offering NV",
+  "container"	: 
+  {
+    "@self"		: "/csa/api/service/offering/container/0173c720a8a04a878c1ff88c474d3bd3"
+  },
+  "version"		: "2.1.0",
+  "topology"	: 
+  {
+    "uri"		: "/csa/api/service/design/90cd93984e00ca5a014e00f973ad07c9"
+  },
+  "baseConfigurationOn": "/csa/api/service/offering/<<offeringID>>"
+} 
