@@ -5,9 +5,10 @@ import java.util.function.Consumer;
 public class MultiplyHelper
 {
 
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args)
 	{
-		@SuppressWarnings("deprecation")
+		
 		Multiplier multiplier = (oper1, oper2) ->
 		{
 			Consumer<String> c = System.out::println;
