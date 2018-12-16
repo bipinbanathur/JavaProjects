@@ -1,10 +1,10 @@
-///**
-// * 
-// */
-///**
-// * @author bipin.banathur
-// *
-// */
-//module java10
-//{
-//}
+/**
+ * 
+ */
+/**
+ * @author bipin.banathur
+ *
+ */
+module java10
+{
+}
