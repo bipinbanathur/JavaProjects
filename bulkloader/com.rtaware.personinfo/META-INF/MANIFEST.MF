@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Personinfo
+Bundle-SymbolicName: com.rtaware.personinfo;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: RTAWARE
+Require-Bundle: org.eclipse.core.runtime;bundle-version="0.0.0";resolution:=optional;visibility:=reexport
+Automatic-Module-Name: com.rtaware.personinfo
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.rtaware.personinfo

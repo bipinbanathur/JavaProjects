@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.bulkloader.parent</groupId>
+	<artifactId>com.bulkloader.parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<localRepo>file:///E:\Repository\UpdateSite\repository</localRepo>
+		<tychoVersion>1.2.0</tychoVersion>
+		<junitVersion>4.12</junitVersion>
+		<hamcrestVersion>4.12</hamcrestVersion>
+		<snapShotVersion>1.0.0-SNAPSHOT</snapShotVersion>
+	</properties>
+
+	<modules>
+		<module>../com.rtaware.personinfo</module>
+		<module>../com.rtaware.datalib</module>
+		<module>../com.rtaware.bulkloader</module>
+		<module>../com.rtaware.application</module>
+	</modules>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tychoVersion}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-compiler-plugin</artifactId>
+				<version>${tychoVersion}</version>
+				<configuration>
+					<compilerArgument>-warn:+discouraged,forbidden</compilerArgument>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+		<repository>
+			<id>eclipse-repo</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/photon/</url>
+		</repository>
+		<repository>
+			<id>eclipse-local</id>
+			<layout>p2</layout>
+			<url>${localRepo}</url>
+		</repository>
+	</repositories>
+</project>
