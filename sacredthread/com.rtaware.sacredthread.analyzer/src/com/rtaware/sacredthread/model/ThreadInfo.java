@@ -26,14 +26,6 @@ public class ThreadInfo
 	{
 		this.threadStatus = threadStatus;
 	}
-	public ThreadType getThreadType()
-	{
-		return threadType;
-	}
-	public void setThreadType(ThreadType threadType)
-	{
-		this.threadType = threadType;
-	}
 	public Integer getThreadPriority()
 	{
 		return threadPriority;
@@ -74,9 +66,15 @@ public class ThreadInfo
 	{
 		this.threadIsDaemon = threadIsDaemon;
 	}
-	
+	public StringBuilder getThreadStack()
+	{
+		return threadStack;
+	}
+	public void setThreadStack(StringBuilder threadStack)
+	{
+		this.threadStack = threadStack;
+	}
 	private  	ThreadStatus 	threadStatus;
-	private  	ThreadType 		threadType;
 	private 	String 				threadNumber		= 		"";
 	private  	String 				threadName			= 		"";
 	private  	Integer				threadPriority 		= 		0;
@@ -84,6 +82,8 @@ public class ThreadInfo
 	private		String				threadID				= 		"";
 	private		String				threadNativeID		= 		"";
 	private		Boolean				threadIsDaemon 	= 		false;
+	private     StringBuilder		threadStack			= 		new StringBuilder();
+
 	
 	
 }

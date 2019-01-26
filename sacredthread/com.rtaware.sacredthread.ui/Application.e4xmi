@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_c3AF0MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.application" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_c3AF0cjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.window.main" label="Sacred Thread" iconURI="platform:/plugin/com.rtaware.sacredthread.ui/icons/main.png" width="500" height="400">
+    <children xsi:type="basic:PartSashContainer" xmi:id="_2J16AB5lEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.partsashcontainer.0" containerData="" horizontal="true">
+      <children xsi:type="basic:PartStack" xmi:id="_3TRAMB5lEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.partstack.0" containerData="20">
+        <children xsi:type="basic:Part" xmi:id="_45k2sB5lEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.part.dumpnavigator" contributionURI="bundleclass://com.rtaware.sacredthread.ui/com.rtaware.sacredthread.parts.DumpBrowser" label="DumpNavigator" iconURI="platform:/plugin/com.rtaware.sacredthread.ui/icons/tb.gif"/>
+      </children>
+      <children xsi:type="basic:PartStack" xmi:id="_4H6JMB5lEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.partstack.1" containerData="80">
+        <children xsi:type="basic:Part" xmi:id="_FyxWsB5mEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.part.dumpviewer" contributionURI="bundleclass://com.rtaware.sacredthread.ui/com.rtaware.sacredthread.parts.DumpViewer" label="Dump Viewer" iconURI="platform:/plugin/com.rtaware.sacredthread.ui/icons/tdump.png"/>
+        <children xsi:type="basic:Part" xmi:id="_utJrkB_9EemaPoYbGaoJPA" elementId="com.rtaware.sacredthread.ui.part.threadvisualizations" contributionURI="bundleclass://com.rtaware.sacredthread.ui/com.rtaware.sacredthread.parts.ThreadVisualizations" label="ThreadVisualizations"/>
+      </children>
+    </children>
+    <handlers xmi:id="_sB2ZgB5pEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.handler.0" contributionURI="bundleclass://com.rtaware.sacredthread.ui/com.rtaware.sacredthread.handlers.FileOpen" command="_kkPYcB5pEemcsZiRLZ_-NQ"/>
+    <mainMenu xmi:id="_4aZDgB5pEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.menu.0">
+      <children xsi:type="menu:Menu" xmi:id="_4-xi8B5pEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.menu.file" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_88LMoB5pEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.handledmenuitem.open" label="Open" command="_kkPYcB5pEemcsZiRLZ_-NQ"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_DEoYoB5qEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.handledmenuitem.exit" label="Exit"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_6I1iUB5pEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.menu.view" label="View">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_EQxboB5qEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.handledmenuitem.viewthreaddump" label="View Thread Dump"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_7YQi0B5pEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.menu.help" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_FtAwIB5qEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.handledmenuitem.about" label="About"/>
+      </children>
+    </mainMenu>
+  </children>
+  <rootContext xmi:id="_c3AF2cjYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_c3AF2sjYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_c3AF28jYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <commands xmi:id="_kkPYcB5pEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.command.fileopen" commandName="FileOpen"/>
+  <commands xmi:id="_mbBT4B5pEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.command.removethread" commandName="RemoveThread"/>
+  <commands xmi:id="_o_FzIB5pEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.command.exitapp" commandName="ExitApp"/>
+  <commands xmi:id="_qSiYAB5pEemcsZiRLZ_-NQ" elementId="com.rtaware.sacredthread.ui.command.help" commandName="Help"/>
+  <addons xmi:id="_c3AF0sjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_c3AF08jYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_c3AF1MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_c3AF1cjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_c3AF1sjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
+  <addons xmi:id="_c3AF18jYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_c3AF2MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>
