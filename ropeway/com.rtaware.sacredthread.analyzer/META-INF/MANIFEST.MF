@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Analyzer
+Bundle-SymbolicName: com.rtaware.sacredthread.analyzer
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.rtaware.sacredthread.dumpreader,
+ com.rtaware.sacredthread.model,
+ com.rtaware.sacredthread.util
+Automatic-Module-Name: com.rtaware.sacredthread.analyzer
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.eclipse.jface.viewers,
+ org.eclipse.swt.graphics
