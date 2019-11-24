@@ -1,0 +1,160 @@
+<div class="sub-nav" align ="left" class="text-center" >
+    <ul>
+        <li ng-class="{selected : $scope.subNav === 0}"><a href="" ng-click="subNav = 0">Tests</a></li>
+        <li ng-class="{selected : $scope.subNav === 1}"><a href="" ng-click="subNav = 1">Test Monitoring</a></li>
+		<li ng-class="{selected : $scope.subNav === 1}"><a href="" ng-click="subNav = 2">Test Cases</a></li>
+		<li ng-class="{selected : $scope.subNav === 2}"><a href="" ng-click="subNav = 3">Defects</a></li>
+
+	<div class="sub-nav-content-container">
+    
+	<div ng-show="subNav === 0"> 	
+
+	<table class="table table-maverix table-maverix-large">
+	<tr><td align ="left"> <span class="entypo-newspaper">  </span> <span>  &nbsp; </span> Solution </td> <td>&nbsp;:&nbsp; </td> 	<td align ="left">{{solution}}		</td></tr>
+	<tr><td align ="left"> <span class="entypo-archive">	</span> <span>  &nbsp; </span> Release 	</td> <td>&nbsp;:&nbsp; </td>	<td align ="left">{{release}}		</td></tr>
+	<tr><td align ="left"> <span class="entypo-box">		</span> <span>  &nbsp; </span> Product 	</td> <td>&nbsp;:&nbsp; </td>	<td align ="left">{{product}}		</td></tr>
+	</table>
+	
+	<br>
+	
+
+	<div class="table-cell" style="height: 200px">
+	<table class="table table-maverix table-maverix-large" >
+	<tr><th align ="left"> </span> <span>  &nbsp; </span> Test Set Name </th>  	<th align ="left">View Test Cases</th></tr>
+	<tbody ng:repeat="ts in test_sets">	
+	<tr><td align ="left"> <span class="entypo-doc-text">  	</span> <span>  &nbsp; </span> {{ts.name}} </td>  	<td align ="left"><a class="btn btn-help" href=""><span class="entypo-ccw"  ng-click="loadTests(ts.name)" ></span></a>	</td></tr>
+	</tbody> 
+	</table>
+	</div>
+	
+	<div class="table-cell" style="height: 500px">
+	<table class="table table-maverix table-maverix-large" >
+	<tr><th align ="left">  TC Name 																		</th>	<th align ="left">TC Type												</th><th align ="left">Status</th>				<th align ="left">Edit</th></tr>	
+	
+	<tbody ng:repeat="test in test_cases">	
+	<tr><td align ="left"> <span class="entypo-doc-text">  	</span> <span>  &nbsp; </span> {{test.name}}</td>  	<td align ="left"> {{test.type}}		</td><td align ="left"> {{test.status}}</td>				<td align ="left"><a class="btn btn-help" href=""><span class="entypo-ccw" ng-click="loadTests(test.name)"></span></a>	</td></tr>
+	</tbody>	
+	
+	</table>
+	</div>
+	
+	</div>
+
+	<div ng-show="subNav === 1"> 		
+	
+	<div class="toolbar">
+	<div style="float: left">
+	<a class="toolbar-button" href=""><span class="entypo-plus"></span></a>
+	<a class="toolbar-button" href=""><span class="entypo-minus"></span></a>	
+	<input type="text" ng-model="ts_name" />
+	<a class="toolbar-button" href=""><span class="entypo-ccw" ng-click="getTestSets(ts_name)"  ></span></a>
+	</div></div>
+
+	<div class="table-cell" style="height: 200px">
+	<table>
+	<tr ng-repeat="entity in testsets.entities"> <td>	
+	<!-- Filed Table -->
+	<table class="table table-maverix table-maverix-small">
+	<tr> <td ng-repeat="field in entity.Fields" align = "left"> <div ng-repeat="val in field.values"> {{val.value}} </div> </td> </tr>	
+	</table>
+	<!-- Filed Table -->
+	</td></tr>
+	</table>	
+	</div>	
+	
+	<div class="toolbar">
+	<div style="float: left">
+	<a class="toolbar-button" href=""><span class="entypo-plus"></span></a>
+	<a class="toolbar-button" href=""><span class="entypo-minus"></span></a>	
+	<input type="text" ng-model="ts_id" />
+	<a class="toolbar-button" href=""><span class="entypo-ccw" ng-click="getTestInstance(ts_id)"  ></span></a>
+	</div></div>
+	
+	<div class="table-cell" style="height: 200px">
+	<table>
+	<tr ng-repeat="entity in testinstances.entities"> <td>	
+	<!-- Filed Table -->
+	<table class="table table-maverix table-maverix-small">
+	<tr> <td ng-repeat="field in entity.Fields" align = "left"> <div ng-repeat="val in field.values"> {{val.value}} </div> </td> </tr>	
+	</table>
+	<!-- Filed Table -->
+	</td></tr>
+	</table>	
+	</div>
+
+	<div class="toolbar">
+	<div style="float: left">
+	<a class="toolbar-button" href=""><span class="entypo-plus"></span></a>
+	<a class="toolbar-button" href=""><span class="entypo-minus"></span></a>	
+	<input type="text" ng-model="test_id" />
+	<a class="toolbar-button" href=""><span class="entypo-ccw" ng-click="getTest(test_id)"  ></span></a>
+	</div></div>
+	
+	<div class="table-cell" style="height: 200px">
+	<table>
+	<tr ng-repeat="entity in test.entities"> <td>	
+	<!-- Filed Table -->
+	<table class="table table-maverix table-maverix-small">
+	<tr> <td ng-repeat="field in entity.Fields" align = "left"> <div ng-repeat="val in field.values"> {{val.value}} </div> </td> </tr>	
+	</table>
+	<!-- Filed Table -->
+	</td></tr>
+	</table>	
+	</div>
+	
+	</div>
+	
+
+	<div ng-show="subNav === 2"> 
+
+	<div class="toolbar">
+	<div style="float: left">
+	<a class="toolbar-button" href=""><span class="entypo-plus"></span></a>
+	<a class="toolbar-button" href=""><span class="entypo-minus"></span></a>	
+	<input type="text" ng-model="testOwner" />
+	<a class="toolbar-button" href=""><span class="entypo-ccw" ng-click="getTests(testOwner)"  ></span></a>
+	</div></div>
+	
+
+	<div class="table-cell" style="height: 500px">
+	<table>
+	<tr ng-repeat="entity in tests.entities"> <td>
+	<!-- Filed Table -->
+	<table class="table table-maverix table-maverix-small">
+	<tr> <td ng-repeat="field in entity.Fields" align = "left"> <div ng-repeat="val in field.values"> {{val.value}} </div> </td> </tr>	
+	</table>
+	<!-- Filed Table -->
+	</td></tr></table>
+	</div>
+	
+	</div> 
+	 
+
+	
+	
+	<div ng-show="subNav === 3"> 
+	
+	<div class="toolbar"><div style="float: left"><a class="toolbar-button" href=""><span class="entypo-plus"></span></a><a class="toolbar-button" href=""><span class="entypo-minus"></span></a></div></div>
+	
+	<div class="table-cell" style="height: 1500px">
+	<table>
+	<tr ng-repeat="entity in defects.entities"> <td>	
+	<!-- Filed Table -->
+	<table class="table table-maverix table-maverix-small">
+	<tr> <td ng-repeat="field in entity.Fields" align = "left"> <div ng-repeat="val in field.values"> {{val.value}} </div> </td> </tr>	
+	</table>
+	<!-- Filed Table -->	
+	</td>
+	</tr>
+	</table>
+	
+	</div>
+	
+	</div>	
+	
+	</div> 		
+	
+  </div>
+
+
+</div>

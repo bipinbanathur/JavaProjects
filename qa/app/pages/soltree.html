@@ -1,0 +1,12 @@
+
+<ul>
+	<li ng-repeat="sol in solutions" 	ng-click="showReleases(sol)"> 					<span class="entypo-newspaper"></span> <span>  &nbsp; </span> <span>{{sol.solution}}</span> <br>
+	<ul>
+		<li ng-repeat="rel in sol.releases"  ng-click="showProducts(rel)" >				<span class="entypo-archive"></span>	<span>  &nbsp; </span><span>{{rel.release}}</span>  <br><!--  ng-show="sol.active" -->
+		<ul>
+			<li ng-repeat="prod in rel.products" ng-show="rel.active"  ng-click="selectProducts(prod)">				<span class="entypo-box"></span> <span>  &nbsp; </span> <span>{{prod.product}}</span> <br></li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>

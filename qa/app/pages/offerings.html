@@ -1,0 +1,108 @@
+<div class="row">
+
+				Selected Test Components <br> <br>
+				
+				<table class="table table-maverix table-maverix-large">
+				<tr><td> <span class="entypo-newspaper"></span> <span>  &nbsp; </span> Solution </td> <td>&nbsp;:&nbsp; </td> 	<td>{{solution}}	</td></tr>
+				<tr><td> <span class="entypo-archive">	</span> <span>  &nbsp; </span> Release 	</td> <td>&nbsp;:&nbsp; </td>	<td>{{release}}		</td></tr>
+				<tr><td> <span class="entypo-box">		</span> <span>  &nbsp; </span> Product 	</td> <td>&nbsp;:&nbsp; </td>	<td>{{product}}		</td></tr>
+				</table>
+				
+				Deploy Systems for Selected Test Components <br> <br>
+							
+				<table class="table table-maverix table-maverix-large">
+				<tbody ng:repeat="deploy in deployments">	
+				<tr><td> <span class="entypo-monitor"></span> <span>  &nbsp; </span>{{deploy.name}} </td> <td>&nbsp;:&nbsp; </td> 	<td>	<a class="btn btn-help" href=""><span class="entypo-ccw" ng-click="setOfferings(offeringID)" ></span></a> </td></tr>
+				</tbody>			
+				</table>
+				
+				<table>
+				<tr><td>Deployment ID	</td><td>&nbsp;</td><td><input type="text" ng-model="offerID" readonly>			</td><td></td></tr>
+				<tr><td>Request ID		</td><td>&nbsp;</td><td><input type="text" ng-model="resp.response" readonly>	</td><td><a class="btn btn-help" href=""><span class="entypo-ccw" ng-click="getRequestStatus(resp.response)" ></span></a></td></tr>
+				<tr><td>Request Status	</td><td>&nbsp;</td><td><pre>{{ req  | json }}	</pre>							</td><td></td></tr>
+				</table>
+
+				<br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br>
+								<table><tr><td> CSA Offerings  </td>
+								<td> &nbsp; </td>
+								<td>
+								<a class="btn btn-help" href=""><span class="entypo-ccw" ng-click="getOfferings()" ></span></a>
+								</td>
+								</tr>
+								</table>
+	
+	
+	
+	        <div > <!--class="table-cell" style="width: 800px,height:500px" -->
+            <table width="1000" border = "1"> <!-- class="table table-maverix table-maverix-large" -->
+			<tr><th width="800">Offering  &nbsp;  </th><th>Subscribe  &nbsp; </th></tr> 
+			<tbody ng:repeat="offering in offerings.members">
+                <tr>
+                    <td width="800"> 	<p class="info-main">{{offering.displayName}}	</p></td>
+					<td> 
+					<button ng-click="assignOffering(offering.id)"  style="line-height: 3rem;  min-width: 0;  width: 3rem; height: 3rem; border-radius: 100%; padding: 3px 3px 3px 3px;"	class="btn btn-success" data-toggle="modal" data-target="#myModal" ></button> 					
+					</td>
+                </tr>
+			</tbody>
+            </table>
+        </div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"><span class="entypo-users"></span> Subscribe Offering</h4>
+                <span class="modal-subtitle">Provision VM</span>
+            </div>
+            <div class="modal-body">
+        <form role="form">
+		
+		    <div class="form-group">
+                <label for="exampleInputName1">Offering ID</label>
+                <input type="text" class="form-control" id="exampleInputName1" value = "{{selectedOffering}}"  readonly>
+            </div>
+			
+            <div class="form-group">
+                <label for="exampleInputName1">VM Name</label>
+                <input type="text" class="form-control" id="exampleInputName1" placeholder="Provide the VM Name">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">User Name</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Admin User Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Provide Password Text">
+            </div>
+            <div class="form-group">
+                <label>Operating System</label>
+                <select>
+                    <option>Linux RHEL 6</option>
+                    <option>RHEL 6</option>
+					<option>CentOS</option>
+                </select>
+                <p class="help-block">Linux is the default Operating System</p>
+            </div>
+            <div class="form-group">
+                <label>OS Template</label>
+                <select>
+                    <option>RHEL 6_DEMO</option>
+                    <option>RHEL 6</option>
+					<option>CentOS</option>
+                </select>
+                <p class="help-block">RHEL 6_DEMO is the default OS  Template</p>
+            </div>
+        </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-on-grey" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-on-grey" data-dismiss="modal" ng-click="raiseRequest()" >OK</button>
+            </div>
+        </div>
+    </div>
+</div>

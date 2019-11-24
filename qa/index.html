@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" ng-app="myApp" ng-controller="AppCtrl">
+<head>
+
+<link rel="icon" type="image/png" href="img/favicon.ico">
+<meta charset="utf-8">
+<meta name="mobile-web-app-capable" 				content="yes">
+<meta name="application-name" 						content="Maverix">
+<meta name="apple-mobile-web-app-capable" 			content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" 	content="black">
+<meta name="apple-mobile-web-app-title" 			content="Maverix">
+<meta http-equiv="X-UA-Compatible" 					content="IE=edge">
+
+<title>Gauss Tools Test Home..</title>
+
+<link href="components/bootstrap/less/bootstrap.css" 				rel="stylesheet">
+<link href="components/css-toggle-switch/dist/toggle-switch.css" 	rel="stylesheet">
+<link href="components/rangeslider.js/dist/rangeslider.css" 		rel="stylesheet">
+<link href="css/maverix.css" 										rel="stylesheet">
+</head>
+
+
+<body>
+
+<div class="sidebar">
+
+
+	<div class="sidebar-navicontainer">
+        <div class="sidebar-headbox"><span class="sidebar-header">Dashboard</span></div>
+        <ul class="nav">
+		<li ng-class="{ selected: isActive('/home')}">  <a href="#/home">  <span class="entypo-monitor"></span>&nbsp;Home</a></li>		
+		<li ng-class="{ selected: isActive('/notify')}"><a href="#/notify"><span class="entypo-mail">	</span>&nbsp;Notifications <span class="sidebar-badge">1</span></a></li>
+        </ul>
+    </div>
+	
+	<div class="sidebar-navicontainer">
+		<div class="sidebar-headbox"><span class="sidebar-header">Test Preparations</span></div>
+		<ul class="nav">
+		<li ng-class="{ selected: isActive('/tad')}">   <a href="#/tad">   <span class="entypo-tools">	</span>&nbsp;Test A&D</a></li>		
+		<li ng-class="{ selected: isActive('/offerings')}">	<a href="#/offerings">	<span class="entypo-tools"></span>&nbsp;Deploy Systems</a></li>
+		</ul>
+	</div>
+	<div class="sidebar-navicontainer">
+		<div class="sidebar-headbox"><span class="sidebar-header">Test Management</span></div>
+			<ul class="nav">
+			<li ng-class="{ selected: isActive('/testrepo')}">		<a href="#/testrepo">		<span class="entypo-chart-bar"></span>&nbsp;Test Reports</a></li>
+			<li ng-class="{ selected: isActive('/testinfo')}">		<a href="#/testinfo">		<span class="entypo-doc-text"></span>&nbsp;Test Details</a></li>
+        </ul>
+    </div>
+	
+		<div class="sidebar-navicontainer">
+		<div class="sidebar-headbox"><span class="sidebar-header">Test Execution</span></div>
+			<ul class="nav">
+			<li ng-class="{ selected: isActive('/trigger')}">	<a href="#/trigger"><span class="entypo-ccw"></span>&nbsp;Trigger Script</a></li>
+        </ul>
+    </div>
+
+	<div class="sidebar-navicontainer">
+		<div class="sidebar-headbox"><span class="sidebar-header">Administration</span></div>
+		<ul class="nav">	
+			<li><span class="entypo-user"></span>Users</li>
+			<li><span class="entypo-users"></span> Responsibilities</li>
+			<li><span class="entypo-tools"></span> System Configurations</li>
+		</ul>
+	</div>
+	
+		<div class="sidebar-navicontainer">
+		<div class="sidebar-headbox"><span class="sidebar-header">Useful Links</span></div>
+		<ul class="nav">	
+			<li><span class="entypo-doc-text"></span> ALM</li>
+			<li><span class="entypo-doc-text"></span> AGM</li>
+			<li><span class="entypo-doc-text"></span> R&D Wiki</li>
+			<li><span class="entypo-doc-text"></span> QA Forums</li>
+		</ul>
+	</div>
+</div>
+
+
+<div class="heading-bar">
+    <span class="heading-one"><img ng-src="{{img}}" width="100"height="50"> <font face="sans-serif"> {{title}} </font></span>
+</div>
+
+<div class="content"><div class="container-fluid container-maverix" ng-view></div></div>
+
+
+<script src="components/jquery/dist/jquery.min.js"></script>
+<script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="components/rangeslider.js/dist/rangeslider.min.js"></script>
+<script src="components/flot/jquery.flot.js"></script>
+<script src="components/flot/jquery.flot.pie.js"></script>
+<script src="components/angular/angular.js"></script>
+<script src="components/angular-route/angular-route.js"></script>
+<script src="app/js/app.js"></script>
+<script src="app/js/services.js"></script>
+<script src="app/js/controllers.js"></script>
+<script src="app/js/filters.js"></script>
+<script src="app/js/directives.js"></script>
+
+
+
+<script>
+
+$(document).ready(function ($scope, $http) 
+{
+        $(document).on("focus", function (e) {console.log("Focussed");});
+        $(window).on('focus', function () {$("body").removeClass("blur");});
+        $(window).on('blur', function (){$("body").addClass("blur");});
+        $('input[type="range"]').rangeslider({polyfill: false});
+    });
+
+</script>
+</body>
+</html>

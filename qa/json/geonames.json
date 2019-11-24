@@ -1,0 +1,8 @@
+{
+	"stors":
+	[
+		{"name":"TOR1.GaussTools.SR.200", "ttypes" : [ 	{"name" : "Functional Valid"}, {"name": "Functional Invalid"}], "fis" : [ 	{"name" : "Backup"}, {"name": "Restore"}]},
+		{"name":"TOR2.GaussTools.SR.200", "ttypes" : [	{"name" : "Functional Valid"}, {"name": "Functional Invalid"}], "fis" : [ 	{"name" : "Backup"}, {"name": "Restore"}]},
+		{"name":"TOR3.GaussTools.SR.200", "ttypes" : [	{"name" : "Functional Valid"}, {"name": "Functional Invalid"}], "fis" : [ 	{"name" : "Backup"}, {"name": "Restore"}]}
+	]
+}

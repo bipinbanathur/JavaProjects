@@ -1,0 +1,53 @@
+<div class="sub-nav">
+    <ul>
+        <li ng-class="{selected : $parent.subNav1 === 0}"><a href="" ng-click="$parent.subNav1 = 0">Test Selection</a></li>
+        <li ng-class="{selected : $parent.subNav1 === 1}"><a href="" ng-click="$parent.subNav1 = 1">Test Environments</a></li>
+        <li ng-class="{selected : $parent.subNav1 === 2}"><a href="" ng-click="$parent.subNav1 = 2">Documents</a></li>
+        <li ng-class="{selected : $parent.subNav1 === 5}"><a href="" ng-click="$parent.subNav1 = 3">Settings</a></li>
+        <li ng-class="{selected : $parent.subNav1 === 6}"><a href="" ng-click="$parent.subNav1 = 4">Help</a></li>
+    </ul>
+</div>
+
+<div class="sub-nav-content-container">
+    <div ng-show="$parent.subNav1 === 0">	
+	<table>
+	<tr height="8px"> 
+	<td>Select Test Components</td> 
+	<td>&nbsp;&nbsp;</td>   
+	<td><a class="btn btn-modern" ng-click="startSession(selectedSolution,selectedRelease,selectedProduct)" >Start Session</a></td>
+	</tr>
+	</table>
+	
+	<div class="table-cell" style="height: 98px">
+	<table class="table table-maverix table-maverix-large">
+	<tr><td> <span class="entypo-newspaper"></span> <span>  &nbsp; </span>Solution </td> <td>&nbsp;:&nbsp; </td> 	<td>{{selectedSolution}}	</td></tr>
+	<tr><td> <span class="entypo-archive">	</span> <span>  &nbsp; </span>Release 	</td> <td>&nbsp;:&nbsp; </td>	<td>{{selectedRelease}}		</td></tr>
+	<tr><td> <span class="entypo-box">		</span> <span>  &nbsp; </span>Product 	</td> <td>&nbsp;:&nbsp; </td>	<td>{{selectedProduct}}		</td></tr>
+	</table>	
+	</div>
+	<ng-tree></ng-tree>
+	</div>
+	
+    <div ng-show="$parent.subNav1 === 1">
+	
+	<div class="table-cell" style="height: 500px">
+	<table class="table table-maverix table-maverix-small">	
+	<tr><td> &nbsp;&nbsp;					 </td> <td>Environment Name 	</td><td>OS Platform		</td>  <td>Nodes</td>		<td>Owner</td> <td>Status	  </td> <td>Actions</td> </tr>
+	<tr><td> <span class="entypo-box"></span></td> <td>Roach Main Cluster	</td><td>SUSE 11 SP1 Linux	</td>  <td><a href ="">2 </a></td>	<td>Bipin	</td> <td>Normal  </td>  <td><a class="btn btn-help" href=""><span class="entypo-ccw" ng-click="setOfferings(offeringID)" ></span></a></td> </tr>
+	<tr><td> <span class="entypo-box"></span></td> <td>Roach MPP Tool 1		</td><td>SUSE SP1 Linux		</td>  <td><a href ="">24</a></td>	<td>Bipin	</td> <td>Down    </td>  <td><a class="btn btn-help" href=""><span class="entypo-ccw" ng-click="setOfferings(offeringID)" ></span></a></td> </tr>
+	<tr><td> <span class="entypo-box"></span></td> <td>Roach MPP Tool 2		</td><td>RHEL 6.4 Linux		</td>  <td><a href ="">3 </a></td>	<td>Bipin	</td> <td>Degraded</td>  <td><a class="btn btn-help" href=""><span class="entypo-ccw" ng-click="setOfferings(offeringID)" ></span></a></td> </tr>
+	<tr><td> <span class="entypo-box"></span></td> <td>Roach MPP Tool 3		</td><td>SUSE 12  Linux		</td>  <td><a href ="">2 </a></td>	<td>Bipin	</td> <td>Normal  </td>  <td><a class="btn btn-help" href=""><span class="entypo-ccw" ng-click="setOfferings(offeringID)" ></span></a></td> </tr>
+	<tr><td> <span class="entypo-box"></span></td> <td>Roach MPP Tool 4		</td><td>SUSE 11 SP2 Linux	</td>  <td><a href ="">2 </a></td>	<td>Bipin	</td> <td>Normal  </td>  <td><a class="btn btn-help" href=""><span class="entypo-ccw" ng-click="setOfferings(offeringID)" ></span></a></td> </tr>
+	</table>	
+	</div>
+	
+	</div>
+    <div ng-show="$parent.subNav1 === 2">2	</div>
+	<div ng-show="$parent.subNav1 === 3">3	</div>
+    <div ng-show="$parent.subNav1 === 4">4	</div>
+	</div>
+
+
+</div>
+</div>
+

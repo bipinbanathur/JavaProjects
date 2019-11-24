@@ -1,0 +1,287 @@
+<div class="sub-nav">
+    <ul>
+        <li ng-class="{selected : $parent.subNav1 === 0}"><a href="" ng-click="$parent.subNav1 = 0">Requirements</a>	</li>  
+        <li ng-class="{selected : $parent.subNav1 === 2}"><a href="" ng-click="$parent.subNav1 = 1">Test Type & Feature Interaction Analysis</a>			</li>
+        <li ng-class="{selected : $parent.subNav1 === 6}"><a href="" ng-click="$parent.subNav1 = 2">Test Specifications</a>	</li>
+		<li ng-class="{selected : $parent.subNav1 === 6}"><a href="" ng-click="$parent.subNav1 = 3">Test Cases</a>	</li>
+    </ul>
+
+</div>
+
+<div>				
+				<table class="table table-maverix table-maverix-large">
+				<tr><td> <span class="entypo-newspaper"></span> <span>  &nbsp; </span> Solution </td> <td>&nbsp;:&nbsp; </td> 	<td>{{solution}}	</td></tr>
+				<tr><td> <span class="entypo-archive">	</span> <span>  &nbsp; </span> Release 	</td> <td>&nbsp;:&nbsp; </td>	<td>{{release}}		</td></tr>
+				<tr><td> <span class="entypo-box">		</span> <span>  &nbsp; </span> Product 	</td> <td>&nbsp;:&nbsp; </td>	<td>{{product}}		</td></tr>
+				</table>
+</div>
+				
+<div class="sub-nav-content-container">
+
+    <div ng-show="$parent.subNav1 === 0">
+	
+	<div class="toolbar">
+    <div style="float: left"><a class="toolbar-button" href="" data-toggle="modal" data-target="#manageSR" ng-click="assignTS(ts.name)"><span class="entypo-plus"></span></a>
+	</div>&nbsp;&nbsp;System Requirements
+	<div style="float: right">
+	<span class="search-input">
+	<span class="entypo-search"></span>
+	<input type="text" class="mvx-search" placeholder=""/></span>
+	</div>
+    </div>
+	
+	<div>
+	<table class="table table-maverix table-maverix-small" >
+	<tr><th>SR ID </th> <th>SR Name </th> <th>Manage</th></tr>
+	<tbody ng:repeat="sr in srs">
+	<tr>
+	<td>{{sr.id}} 	</td> 
+	<td>{{sr.name}}	</td> 
+	<td><a class="btn btn-help" href=""><span class="entypo-ccw" class="btn btn-success" data-toggle="modal" data-target="#manageSR" ng-click="updateSR(sr)"></span></a></td>
+	</tr>
+	</tbody>
+	</table>
+	</div>
+	
+	
+	<div class="toolbar">
+    <div style="float: left"><a class="toolbar-button" href="" data-toggle="modal" data-target="#manageTR" ng-click="assignTS(ts.name)"><span class="entypo-plus"></span></a>
+	</div>&nbsp;&nbsp;Test Original Requirements
+	<div style="float: right">
+	<span class="search-input">
+	<span class="entypo-search"></span>
+	<input type="text" class="mvx-search" placeholder=""/></span>
+	</div>
+    </div>
+	
+	<table class="table table-maverix table-maverix-small">
+	<tr><th>SR ID </th> <th>TOR ID </th><th>TOR Name </th><th>Manage </th></tr>
+	<tbody ng:repeat="tor in tors">
+	<tr>
+	<td>{{tor.srid}} 	</td> 
+	<td>{{tor.torid}} 	</td> 
+	<td>{{tor.name}}	</td> 
+	<td><a class="btn btn-help" href=""><span class="entypo-ccw" class="btn btn-success" data-toggle="modal" data-target="#manageTR" ng-click="updateTOR(tor)"></span></a></td>
+	</tr>
+	</tbody>
+	</table>
+	
+	</div>
+		
+	<div ng-show="$parent.subNav1 === 1">
+	
+	<div>
+	<table class="table table-maverix table-maverix-small">
+	<tr><th>SR ID </th> <th>TOR ID </th><th>TOR Name </th><th>TTA</th><th>FIA </th></tr>
+	<tbody ng:repeat="tor in tors">
+	<tr>
+	<td>{{tor.srid}} 	</td> 
+	<td>{{tor.torid}} 	</td> 
+	<td>{{tor.name}}	</td> 
+	<td><a class="btn btn-help" href=""><span class="entypo-ccw" class="btn btn-success" data-toggle="modal" data-target="#testTypes" ng-click="updateTOR(tor)"></span></a></td>
+	<td><a class="btn btn-help" href=""><span class="entypo-ccw" class="btn btn-success" data-toggle="modal" data-target="#fiAnalysis" ng-click="updateTOR(tor)"></span></a></td>
+	</tr>
+	</tbody>
+	</table>
+	</div>
+	</div>
+	<div ng-show="$parent.subNav1 === 2">
+
+	<!-- <div class="container"> -->
+	<h3>Production Test Specification , Test Scenation Derivation</h3> <br> <br>
+	<link href="css/style.css"rel="stylesheet">
+	<div class="css-treeview">
+	<ul>
+			<li ng-repeat="stor in stors" >				
+				<input type="checkbox" id = top{{$index}} /> <label for=top{{$index}} >{{stor.name}}</label>
+				<ul>
+					<li> 
+						<input type="checkbox" id = fia{{$index}} /> <label for=fia{{$index}} >Functioal Interaction Analysis</label>
+						<ul>
+							<li ng-repeat="fi in stor.fis"> 
+								<input type="checkbox" id={{$parent.$index}}fi{{$index}} /> <label for={{$parent.$index}}fi{{$index}}>{{fi.name}}</label>
+							</li>
+						</ul>
+					</li>
+					<li> 
+						<input type="checkbox" id = fia{{$index}} /> <label for=fia{{$index}} >Test Type Analysis</label>
+						<ul>
+							<li ng-repeat="tt in stor.ttypes"> 
+								<input type="checkbox" id={{$parent.$index}}tt{{$index}} /> <label for={{$parent.$index}}tt{{$index}}>{{fi.name}}</label>
+							</li>
+						</ul>
+					</li>
+				</ul>				
+			</li>
+	</ul>
+	</div>
+	</div>
+	
+	
+
+	<!-- </div> -->
+    <div ng-show="$parent.subNav1 === 3">3	</div>
+	
+	</div>	
+	
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="manageSR" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"><span class="entypo-users"></span> Manage System Requirements</h4>
+                <span class="modal-subtitle">Add/Update/Delete SR</span>
+            </div>
+            <div class="modal-body">
+        <form role="form">
+
+			
+            <div class="form-group">
+                <label for="exampleInputName1">SR  ID</label>
+                <input type="text" class="form-control" id="exampleInputName1" placeholder="Provide SR ID" value={{activeSR.id}}> 
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">SR Name </label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter SR Name" value={{activeSR.name}}>
+            </div>
+			
+        </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-on-grey" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-on-grey" data-dismiss="modal" ng-click="raiseRequest()" >OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="manageTR" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"><span class="entypo-users"></span> Manage Test Requirements</h4>
+                <span class="modal-subtitle">Add/Update/Delete TOR</span>
+            </div>
+            <div class="modal-body">
+        <form role="form">
+
+			<div class="form-group">
+                <label>System Requirement</label> <br>
+                <select><option ng:repeat="sr in srs" >{{sr.id}}</option></select>
+
+            </div>
+            <div class="form-group">
+                <label for="exampleInputName1">TOR  ID</label>
+                <input type="text" class="form-control" id="exampleInputName1" placeholder="Provide TOR ID" value={{activeTOR.torid}}> 
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">SR Name </label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter SR Name" value={{activeTOR.name}}>
+            </div>
+			
+
+        </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-on-grey" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-on-grey" data-dismiss="modal" ng-click="raiseRequest()" >OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="testTypes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"><span class="entypo-users"></span> Test Type Analysis</h4>
+                <span class="modal-subtitle">Test Type Analysis"</span>
+            </div>
+			<div class="modal-body">
+			<form role="form">
+		
+				<div class="form-group"><label for="testset">Applicable Test Types</label></div>
+			
+				<div>
+				<table>
+				<tr> <td> SR ID 	</td> <td>&nbsp;:&nbsp;</td><td>{{activeTOR.srid}} </td> 
+				<tr> <td> TOR ID	</td> <td>&nbsp;:&nbsp;</td><td>{{activeTOR.torid}} </td> 
+				<tr> <td> TOR Name  </td> <td>&nbsp;:&nbsp;</td><td>{{activeTOR.name}} </td> 
+				</table>
+				</div> <br>
+			
+				<div class="table-cell" style="height: 250px">
+			
+					<table class="table table-maverix table-maverix-small">
+					<tr><th>Test Type</th><th>Applicability</th></tr>
+					<tbody ng:repeat="ttype in ttypes">			
+					<tr><td>{{ttype.name}}</td><td><input type="checkbox"></td></tr>
+					</tbody>
+					</table>
+				</div> 
+       
+			<div class="modal-footer">
+                <button type="button" class="btn btn-on-grey" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-on-grey" data-dismiss="modal" ng-click="triggerScriptNew()" >OK</button>
+			</div>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>	
+<!-- Modal -->
+
+
+<div class="modal fade" id="fiAnalysis" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"><span class="entypo-users"></span> Feature Interaction Analysis</h4>
+                <span class="modal-subtitle">FIA Analysis"</span>
+            </div>
+			<div class="modal-body">
+			<form role="form">
+		
+			<div class="form-group"><label for="testset">Feature Interactions</label></div>
+			<div>
+			<table>
+			<tr> <td> SR ID 	</td> <td>&nbsp;:&nbsp;</td><td>{{activeTOR.srid}} </td> 
+			<tr> <td> TOR ID	</td> <td>&nbsp;:&nbsp;</td><td>{{activeTOR.torid}} </td> 
+			<tr> <td> TOR Name  </td> <td>&nbsp;:&nbsp;</td><td>{{activeTOR.name}} </td> 
+			
+			</table>
+			</div>
+			<br>
+			<div class="table-cell" style="height: 250px">
+			
+			<table class="table table-maverix table-maverix-small">
+			<tr><th>Product Features</th><th>Applicability</th></tr>
+			<tbody ng:repeat="feature in features">
+			<tr><td>{{feature.name}}</td><td><input type="checkbox"></td></tr>
+			</tbody>
+			</table>
+			</div>
+        
+
+			   <div class="modal-footer">
+                <button type="button" class="btn btn-on-grey" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-on-grey" data-dismiss="modal" ng-click="triggerScriptNew()" >OK</button>
+            </div>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>

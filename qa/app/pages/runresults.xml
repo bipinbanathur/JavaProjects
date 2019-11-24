@@ -1,0 +1,166 @@
+<Results>
+    <GeneralInfo>
+        <Name/>
+        <RunStartTime>2016-04-19 04:46:41.902</RunStartTime>
+        <Timezone>Pacific Standard Time</Timezone>
+        <OrchestrationToolName>JUnit</OrchestrationToolName>
+        <OrchestrationToolVersion/>
+        <ReportTitle>LeanFT Report</ReportTitle>
+    </GeneralInfo>
+    <ReportNode type="Run">
+        <Data>
+            <Name>Run Results</Name>
+            <Description><![CDATA[ ]]></Description>
+            <StartTime>2016-04-19 04:46:41.902</StartTime>
+            <Result>Passed</Result>
+            <Links/>
+            <Duration>4</Duration>
+            <Extension>
+                <Any>
+                    <IconKey>Run</IconKey>
+                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                </Any>
+            </Extension>
+            <Environment>
+                <OSInfo>Microsoft Windows NT 6.2.9200.0</OSInfo>
+                <HostName>WIN-22084CMJ2B6</HostName>
+                <NumberOfCores>2</NumberOfCores>
+                <CpuInfo/>
+                <TotalMemory>4095</TotalMemory>
+                <Locale>en-US</Locale>
+                <Timezone>Pacific Standard Time</Timezone>
+                <User>Administrator</User>
+            </Environment>
+            <TestedApplication/>
+            <ToolName>LeanFT</ToolName>
+        </Data>
+        <ReportNode type="Package">
+            <Data>
+                <Name>csatest</Name>
+                <Description><![CDATA[Version: N/A]]></Description>
+                <StartTime>2016-04-19 04:46:42.010</StartTime>
+                <Result>Passed</Result>
+                <Links/>
+                <Duration>3</Duration>
+                <Extension>
+                    <Any>
+                        <IconKey>Package</IconKey>
+                        <IsHtmlErrorText>true</IsHtmlErrorText>
+                    </Any>
+                </Extension>
+            </Data>
+            <ReportNode type="Class">
+                <Data>
+                    <Name>csatest.TestMain</Name>
+                    <Description/>
+                    <StartTime>2016-04-19 04:46:42.010</StartTime>
+                    <Result>Passed</Result>
+                    <Links/>
+                    <Duration>3</Duration>
+                    <Extension>
+                        <Any>
+                            <IconKey>Class</IconKey>
+                            <IsHtmlErrorText>true</IsHtmlErrorText>
+                        </Any>
+                    </Extension>
+                </Data>
+                <ReportNode type="Test">
+                    <Data>
+                        <Name>testProvider</Name>
+                        <Description/>
+                        <StartTime>2016-04-19 04:46:42.014</StartTime>
+                        <Result>Passed</Result>
+                        <Links/>
+                        <Duration>3</Duration>
+                        <Extension>
+                            <Any>
+                                <IconKey>Test</IconKey>
+                                <IsHtmlErrorText>true</IsHtmlErrorText>
+                            </Any>
+                        </Extension>
+                    </Data>
+                    <ReportNode type="Verification">
+                        <Data>
+                            <Name>Verification</Name>
+                            <Description/>
+                            <StartTime>2016-04-19 04:46:42.802</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Extension>
+                                <Any>
+                                    <Verification>
+                                        <Operation>areEqual</Operation>
+                                        <Data>&lt;style&gt;.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}&lt;/style&gt;&lt;table class='ex-table'&gt;&lt;tr&gt;&lt;td class='ex-name'&gt;arg0&lt;/td&gt;&lt;td class='ex-name'&gt;arg1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;style&gt;.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}&lt;/style&gt;&lt;tr&gt;&lt;td class='ex-value'&gt;&lt;style&gt;.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}&lt;/style&gt;&lt;table class='ex-table'&gt;&amp;quot;xAuthToken&amp;quot;&lt;/table&gt;&lt;/td&gt;&lt;td class='ex-value'&gt;&lt;style&gt;.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}&lt;/style&gt;&lt;table class='ex-table'&gt;&amp;quot;xAuthToken&amp;quot;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tr&gt;&lt;/table&gt;</Data>
+                                    </Verification>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>VerifySuccess</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                        <ErrorListItemStatusIndicatorIconKey>VerifySuccess</ErrorListItemStatusIndicatorIconKey>
+                                        <HideFlowTreeNodeStatusIndicator>true</HideFlowTreeNodeStatusIndicator>
+                                    </CustomUIElements>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="CustomStep">
+                        <Data>
+                            <Name>Assertion : getXToken</Name>
+                            <Description><![CDATA[Actual : xAuthToken,   Expected : xAuthToken]]></Description>
+                            <StartTime>2016-04-19 04:46:42.804</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>0</Duration>
+                            <Extension>
+                                <Any>
+                                    <IconKey>CustomStep</IconKey>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="Verification">
+                        <Data>
+                            <Name>Verification</Name>
+                            <Description/>
+                            <StartTime>2016-04-19 04:46:43.859</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Extension>
+                                <Any>
+                                    <Verification>
+                                        <Operation>areEqual</Operation>
+                                        <Data>&lt;style&gt;.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}&lt;/style&gt;&lt;table class='ex-table'&gt;&lt;tr&gt;&lt;td class='ex-name'&gt;arg0&lt;/td&gt;&lt;td class='ex-name'&gt;arg1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;style&gt;.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}&lt;/style&gt;&lt;tr&gt;&lt;td class='ex-value'&gt;&lt;style&gt;.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}&lt;/style&gt;&lt;table class='ex-table'&gt;&amp;quot;20.0&amp;quot;&lt;/table&gt;&lt;/td&gt;&lt;td class='ex-value'&gt;&lt;style&gt;.ex-table{border-collapse: collapse !important;width: auto;height: auto;}.ex-table,.ex-table tr,.ex-table td{border: 1px solid #c6c6c6;}.ex-table td{padding: 5px 10px;vertical-align: top;width: auto;}.ex-table .ex-name{font-size: 13px;font-weight: bold;background-color: #f3f3f3;white-space: nowrap;}.ex-table .ex-value{color: #5a5a5a;}&lt;/style&gt;&lt;table class='ex-table'&gt;&amp;quot;20.0&amp;quot;&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tr&gt;&lt;/table&gt;</Data>
+                                    </Verification>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                    <IconKey>VerifySuccess</IconKey>
+                                    <CustomUIElements>
+                                        <DescriptionLabel>Data</DescriptionLabel>
+                                        <ErrorListItemStatusIndicatorIconKey>VerifySuccess</ErrorListItemStatusIndicatorIconKey>
+                                        <HideFlowTreeNodeStatusIndicator>true</HideFlowTreeNodeStatusIndicator>
+                                    </CustomUIElements>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                    <ReportNode type="CustomStep">
+                        <Data>
+                            <Name>Assertion : getOrganizations</Name>
+                            <Description><![CDATA[Actual Organization Count : 20.0,Expected Organization Count : 20.0]]></Description>
+                            <StartTime>2016-04-19 04:46:43.859</StartTime>
+                            <Result>Passed</Result>
+                            <Links/>
+                            <Duration>0</Duration>
+                            <Extension>
+                                <Any>
+                                    <IconKey>CustomStep</IconKey>
+                                    <IsHtmlErrorText>true</IsHtmlErrorText>
+                                </Any>
+                            </Extension>
+                        </Data>
+                    </ReportNode>
+                </ReportNode>
+            </ReportNode>
+        </ReportNode>
+    </ReportNode>
+</Results>
